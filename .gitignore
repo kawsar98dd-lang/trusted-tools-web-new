@@ -1,0 +1,11 @@
+# Local secrets / Cloudflare development variables
+.dev.vars
+.env
+.env.*
+!.env.example
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

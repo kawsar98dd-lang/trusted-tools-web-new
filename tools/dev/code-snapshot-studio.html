@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- charset/viewport must come first so the browser reads them before any script -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#020617">
+
+    <!-- 
+        =======================================================================
+        [BUYER CONFIGURATION] - SETTINGS & CUSTOMIZATION
+        =======================================================================
+        1. ANALYTICS: Replace 'assets/js/analytics-loader.js' with your ID.
+        2. ADS: Configure ad units in 'assets/js/ads-manager.js'.
+        3. MAPS: N/A for this tool.
+        4. THEME: Primary colors can be changed in the :root CSS variables.
+        =======================================================================
+    -->
+
+    <!-- ANALYTICS LOADER -->
+    <script src="../../assets/js/site-config.js"></script>
+    <script src="../../assets/js/meta-manager.js"></script>
+    <script src="../../assets/js/analytics-loader.js"></script>
+
+    <title>Code Snap Studio — Pro Code to Image Converter | Trusted Tools</title>
+    <meta name="title" content="Code Snap Studio — Pro Code to Image Converter | Trusted Tools">
+    <meta name="description" content="Transform your source code into stunning, professional screenshots with 3D Isometric Tilt, macOS/Windows frames, premium gradient backgrounds, and 1-click Prettier beautify. 100% client-side processing — zero uploads, total privacy.">
+    <meta name="keywords" content="code to image, code screenshot tool, carbon alternative, beautiful code snippets, code to png, developer tools, syntax highlighting, 3D code snap, isometric code image, source code visualizer, code snippet generator, code beautifier">
+    <meta name="author" content="MD KAWSAR">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- OPEN GRAPH (Facebook/LinkedIn) META TAGS -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://trustedtoolsweb.com/tools/dev/dev-code-snap.html">
+    <meta property="og:title" content="Code Snap Studio — Beautiful Code Snippet Generator">
+    <meta property="og:description" content="Generate high-resolution, shareable code images with customizable frames, gradient backgrounds, and 3D isometric effects. Free developer tool.">
+    <meta property="og:image" content="https://trustedtoolsweb.com/assets/tools/dev/dev-code-snap/img/og-banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- TWITTER CARD META TAGS -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://trustedtoolsweb.com/tools/dev/dev-code-snap.html">
+    <meta property="twitter:title" content="Code Snap Studio — Pro Developer Tool">
+    <meta property="twitter:description" content="The most advanced browser-based tool to capture and beautify source code snippets. 3D tilt, custom frames, QR branding, Ultra-HD export.">
+    <meta property="twitter:image" content="https://trustedtoolsweb.com/assets/tools/dev/dev-code-snap/img/og-banner.webp">
+
+    <link rel="canonical" href="https://trustedtoolsweb.com/tools/dev/dev-code-snap.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="../../assets/img/logo.webp">
+    <link rel="apple-touch-icon" href="../../assets/img/logo.webp">
+
+    <!-- EXTERNAL LIBRARIES -->
+    <link rel="stylesheet" href="../../assets/library/fonts/Inter/fonts.css">
+    <link rel="stylesheet" href="../../assets/library/fonts/Fira-Code/fonts.css">
+    <link rel="stylesheet" href="../../assets/library/fontawesome/css/all.min.css" crossorigin="anonymous">
+
+    <!-- Default HLjs theme; swapped dynamically by theme selector -->
+    <link rel="stylesheet" id="hljs-theme-link" href="../../assets/library/parsers-text/highlightjs/highlight-dark.min.css">
+
+    <!-- GLOBAL STYLESHEETS -->
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/tools-template.css">
+
+    <!-- =====================================================================
+         SCHEMA.ORG — WebApplication
+         (Fake aggregateRating removed: only real, verifiable ratings are allowed.)
+    ====================================================================== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Code Snap Studio",
+        "url": "https://trustedtoolsweb.com/tools/dev/dev-code-snap.html",
+        "description": "Professional tool for converting source code into beautiful visuals with custom frames, 3D tilt effects, premium gradient backgrounds, syntax theme selection, line numbers, and multi-format export. 100% client-side processing.",
+        "applicationCategory": "DeveloperApplication",
+        "genre": "Developer Tools",
+        "browserRequirements": "Requires JavaScript",
+        "softwareVersion": "3.1.0",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "featureList": "Syntax Highlighting, 180+ Languages Auto-Detection, 3D Isometric Tilt, macOS/Windows Frames, Ultra-HD PNG & WebP Export, QR Branding, Custom Watermark, Prettier Code Beautify, Syntax Theme Switcher, Line Numbers, Custom Gradient Builder",
+        "screenshot": "https://trustedtoolsweb.com/assets/tools/dev/dev-code-snap/img/og-banner.webp",
+        "author": {
+            "@type": "Person",
+            "name": "MD KAWSAR"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <!-- =====================================================================
+         SCHEMA.ORG — FAQPage (text matches the visible FAQ below)
+    ====================================================================== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is Code Snap Studio free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Code Snap Studio is completely free. There are no subscriptions, forced watermarks, or usage limits. All processing happens in your browser."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does Code Snap Studio upload my code to a server?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Code Snap Studio is 100% client-side. Your source code never leaves your browser, ensuring complete privacy and zero data latency."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What programming languages are supported?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Code Snap Studio uses highlight.js with auto-detection, supporting over 180 programming languages including JavaScript, Python, TypeScript, Rust, Go, SQL, HTML, CSS, and many more."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What export formats are available?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can export your code snap as a High-Res PNG (4x scale) or an optimized WebP image. Both formats produce crisp, retina-ready output suitable for social media, portfolios, and documentation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I add my own branding to the code image?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You can add a custom text watermark (e.g., your Twitter/GitHub handle) and optionally embed a QR code pointing to any URL — perfect for linking to your GitHub repo or portfolio."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Code Snap Studio a good alternative to Carbon?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Code Snap Studio offers features not found in Carbon, including 3D isometric tilt, custom gradient backgrounds, WebP export, line numbers, multiple syntax themes, and QR code branding — all processed locally without uploading your code."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- =====================================================================
+         SCHEMA.ORG — BreadcrumbList
+    ====================================================================== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://trustedtoolsweb.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Developer Tools",
+                "item": "https://trustedtoolsweb.com/tools/dev/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Code Snap Studio",
+                "item": "https://trustedtoolsweb.com/tools/dev/dev-code-snap.html"
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Non-Blocking Top Progress Bar -->
+    <div id="topProgressBar" class="css-progress-bar" role="progressbar" aria-label="Page loading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+    <header id="global-header" class="site-header"></header>
+
+    <main id="main-content">
+
+        <!-- AD SLOT: TOP BANNER -->
+        <div class="ad-slot" data-ad-slot="top-banner" aria-label="Advertisement">
+            <span class="css-ad-label">Advertisement Space</span>
+        </div>
+
+        <!-- HERO TITLE AREA -->
+        <div class="container animated-entry" style="margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; border-bottom: none;">
+            <div class="security-badge">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i> 100% Client-Side Processing
+            </div>
+            <h1 class="tool-title">Code <span>Snap Studio</span></h1>
+            <p class="subtitle">The ultimate tool for developers to create professional, high-fidelity code screenshots for portfolios, social media, and documentation.</p>
+        </div>
+
+        <!-- MAIN WORKSPACE -->
+        <div class="container animated-entry css-workspace-container">
+
+            <div class="css-workspace">
+
+                <!-- ── CONTROLS SIDEBAR ── -->
+                <aside class="css-controls" id="controlsPanel" aria-label="Customization controls">
+
+                    <!-- Canvas Background -->
+                    <div class="css-control-group">
+                        <label class="css-control-label" id="label-bg">
+                            <i class="fa-solid fa-palette" aria-hidden="true"></i> Canvas Background
+                        </label>
+                        <div class="css-grid-buttons" role="group" aria-labelledby="label-bg">
+                            <div class="css-btn-opt active" role="button" tabindex="0" aria-pressed="true"  onclick="CodeSnapEngine.updateBg('css-bg-mesh-1', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">Cyan Wave</div>
+                            <div class="css-btn-opt" role="button" tabindex="0" aria-pressed="false" onclick="CodeSnapEngine.updateBg('css-bg-mesh-2', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">Amethyst</div>
+                            <div class="css-btn-opt" role="button" tabindex="0" aria-pressed="false" onclick="CodeSnapEngine.updateBg('css-bg-mesh-3', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">Sunset</div>
+                            <div class="css-btn-opt" role="button" tabindex="0" aria-pressed="false" onclick="CodeSnapEngine.updateBg('css-bg-mesh-4', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">Midnight</div>
+                            <div class="css-btn-opt" role="button" tabindex="0" aria-pressed="false" onclick="CodeSnapEngine.updateBg('css-bg-mesh-5', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">Ice Blue</div>
+                            <div class="css-btn-opt" role="button" tabindex="0" aria-pressed="false" onclick="CodeSnapEngine.updateBg('css-bg-mesh-6', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">Rose Pink</div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Gradient Builder -->
+                    <div class="css-control-group">
+                        <label class="css-control-label" id="label-gradient">
+                            <i class="fa-solid fa-droplet" aria-hidden="true"></i> Custom Gradient
+                        </label>
+                        <div class="css2-gradient-row">
+                            <div class="css2-color-swatch-wrap">
+                                <span class="css2-swatch-label">Start</span>
+                                <input
+                                    type="color"
+                                    id="gradColorA"
+                                    class="css2-color-input"
+                                    value="#00e5ff"
+                                    aria-label="Gradient start color"
+                                    title="Gradient start color"
+                                >
+                            </div>
+                            <div class="css2-gradient-angle-wrap">
+                                <span class="css2-swatch-label">Angle</span>
+                                <span class="css2-angle-display" id="gradAngleVal">135°</span>
+                                <input
+                                    type="range"
+                                    id="gradAngle"
+                                    class="range-slider"
+                                    min="0"
+                                    max="360"
+                                    value="135"
+                                    aria-label="Gradient angle"
+                                    oninput="document.getElementById('gradAngleVal').textContent = this.value + '°'"
+                                    style="width: 60px;"
+                                >
+                            </div>
+                            <div class="css2-color-swatch-wrap">
+                                <span class="css2-swatch-label">End</span>
+                                <input
+                                    type="color"
+                                    id="gradColorB"
+                                    class="css2-color-input"
+                                    value="#b300ff"
+                                    aria-label="Gradient end color"
+                                    title="Gradient end color"
+                                >
+                            </div>
+                        </div>
+                        <button
+                            class="btn btn-secondary css2-apply-gradient-btn"
+                            onclick="CodeSnapEngine.applyCustomGradient()"
+                            aria-label="Apply custom gradient background"
+                        >
+                            <i class="fa-solid fa-paintbrush" aria-hidden="true"></i> Apply Gradient
+                        </button>
+                    </div>
+
+                    <!-- Window Frame -->
+                    <div class="css-control-group">
+                        <label class="css-control-label" id="label-frame">
+                            <i class="fa-solid fa-window-maximize" aria-hidden="true"></i> Window Frame
+                        </label>
+                        <div class="css-grid-buttons" role="group" aria-labelledby="label-frame">
+                            <div class="css-btn-opt active" role="button" tabindex="0" aria-pressed="true"  onclick="CodeSnapEngine.updateFrame('mac', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">macOS Pro</div>
+                            <div class="css-btn-opt" role="button" tabindex="0" aria-pressed="false" onclick="CodeSnapEngine.updateFrame('win', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">Windows 11</div>
+                            <div class="css-btn-opt" role="button" tabindex="0" aria-pressed="false" onclick="CodeSnapEngine.updateFrame('none', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">Glass Only</div>
+                            <div class="css-btn-opt" id="tiltBtn" role="button" tabindex="0" aria-pressed="false" onclick="CodeSnapEngine.toggleTilt()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">3D Perspective</div>
+                        </div>
+                    </div>
+
+                    <!-- Syntax Theme Selector -->
+                    <div class="css-control-group">
+                        <label class="css-control-label" id="label-theme" for="syntaxThemeSelect">
+                            <i class="fa-solid fa-swatchbook" aria-hidden="true"></i> Syntax Theme
+                        </label>
+                        <div class="css2-theme-select-wrap">
+                            <select
+                                id="syntaxThemeSelect"
+                                class="css2-theme-select"
+                                aria-label="Select syntax highlighting theme"
+                                onchange="CodeSnapEngine.updateSyntaxTheme(this.value)"
+                            >
+                                <option value="highlight-dark">Default Dark</option>
+                                <option value="atom-one-dark">Atom One Dark</option>
+                                <option value="dracula">Dracula</option>
+                                <option value="monokai">Monokai</option>
+                                <option value="github-dark">GitHub Dark</option>
+                                <option value="night-owl">Night Owl</option>
+                                <option value="tokyo-night-dark">Tokyo Night</option>
+                                <option value="vs2015">VS 2015</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down css2-theme-select-arrow" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <!-- Adjustments (padding + font) -->
+                    <div class="css-control-group">
+                        <label class="css-control-label">
+                            <i class="fa-solid fa-sliders" aria-hidden="true"></i> Adjustments
+                        </label>
+                        <div class="css-slider-wrap">
+                            <div class="css-slider-header">
+                                <span>Canvas Padding</span>
+                                <span id="paddingVal">60px</span>
+                            </div>
+                            <input type="range" id="paddingRange" class="range-slider" min="20" max="150" value="60" aria-label="Canvas padding" oninput="CodeSnapEngine.updatePadding(this.value)">
+                        </div>
+                        <div class="css-slider-wrap css-slider-mt">
+                            <div class="css-slider-header">
+                                <span>Font Size</span>
+                                <span id="fontVal">15px</span>
+                            </div>
+                            <input type="range" id="fontRange" class="range-slider" min="12" max="24" value="15" aria-label="Code font size" oninput="CodeSnapEngine.updateFont(this.value)">
+                        </div>
+
+                        <!-- Line Numbers Toggle -->
+                        <div class="css-slider-wrap css-slider-mt">
+                            <div class="css2-toggle-row">
+                                <span class="css2-toggle-label">Line Numbers</span>
+                                <label class="css2-toggle-switch" aria-label="Toggle line numbers">
+                                    <input
+                                        type="checkbox"
+                                        id="lineNumbersToggle"
+                                        onchange="CodeSnapEngine.toggleLineNumbers(this.checked)"
+                                    >
+                                    <span class="css2-toggle-track"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- QR Signature -->
+                    <div class="css-control-group">
+                        <label class="css-control-label" for="qrInput">
+                            <i class="fa-solid fa-qrcode" aria-hidden="true"></i> QR Signature
+                        </label>
+                        <input
+                            type="url"
+                            class="input-control"
+                            id="qrInput"
+                            placeholder="URL for QR Signature..."
+                            aria-label="URL for QR signature"
+                            oninput="CodeSnapEngine.updateQR(this.value)"
+                        >
+                    </div>
+
+                    <!-- Custom Watermark -->
+                    <div class="css-control-group">
+                        <label class="css-control-label" for="watermarkInput">
+                            <i class="fa-solid fa-signature" aria-hidden="true"></i> Watermark Handle
+                        </label>
+                        <input
+                            type="text"
+                            class="input-control"
+                            id="watermarkInput"
+                            placeholder="@MisterVillain"
+                            maxlength="32"
+                            aria-label="Custom watermark text handle"
+                            oninput="CodeSnapEngine.updateWatermark(this.value)"
+                        >
+                    </div>
+
+                    <!-- Beautify -->
+                    <div class="css-control-group css-control-group-last">
+                        <button
+                            class="btn btn-secondary css-btn-full"
+                            onclick="CodeSnapEngine.beautify()"
+                            aria-label="Auto-beautify code using Prettier"
+                        >
+                            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Auto Beautify Code
+                        </button>
+                    </div>
+
+                </aside>
+
+                <!-- ── PREVIEW & EDITOR ── -->
+                <section class="css-preview-container" aria-label="Code preview and editor">
+
+                    <!-- Source Code Editor -->
+                    <div class="css-editor-box">
+                        <div class="css-editor-header">
+                            <span><i class="fa-solid fa-code" aria-hidden="true"></i> SOURCE EDITOR</span>
+                            <span id="langDisplay" aria-live="polite" aria-label="Detected language">AUTO-DETECT</span>
+                        </div>
+                        <textarea
+                            id="codeInput"
+                            class="css-code-input"
+                            spellcheck="false"
+                            placeholder="Paste your code here..."
+                            aria-label="Source code editor"
+                            oninput="CodeSnapEngine.syncCode()"
+                        >/**
+ * @name CodeSnapStudio
+ * @desc Transform code into art
+ */
+async function generateSnap(code) {
+    const config = {
+        quality: "Ultra-HD",
+        render: "3D Isometric",
+        ready: true
+    };
+    
+    return await renderVisuals(config);
+}</textarea>
+                    </div>
+
+                    <!-- Canvas Capture Area -->
+                    <div class="css-canvas-wrapper css-bg-mesh-1" id="captureArea" role="img" aria-label="Code snapshot preview canvas">
+                        <div class="css-snap-frame" id="snapFrame">
+                            <div class="css-frame-header" id="frameHeader">
+                                <div class="css-dot css-dot-r"></div>
+                                <div class="css-dot css-dot-y"></div>
+                                <div class="css-dot css-dot-g"></div>
+                            </div>
+                            <!-- pre/code updated dynamically for line-number mode -->
+                            <pre id="snapPre"><code class="css-code-display" id="codeOutput"></code></pre>
+                            <!-- QR badge -->
+                            <div id="qrContainer" class="css-qr-signature" style="display: none;" aria-hidden="true"></div>
+                            <!-- Watermark badge -->
+                            <div id="watermarkBadge" class="css2-watermark" aria-hidden="true" style="display: none;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons Bar -->
+                    <div class="css-action-bar">
+                        <div class="btn-area">
+
+                            <!-- Multi-Format Export Dropdown -->
+                            <div class="css2-export-wrap" id="exportWrap">
+                                <button
+                                    class="btn btn-primary bg-btn-export"
+                                    onclick="CodeSnapEngine.toggleExportMenu(event)"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    aria-controls="exportDropdown"
+                                    id="exportMainBtn"
+                                >
+                                    <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i> Export Image <i class="fa-solid fa-chevron-up" aria-hidden="true" style="font-size:11px; margin-left:4px;"></i>
+                                </button>
+                                <div class="css2-export-dropdown" id="exportDropdown" role="menu" aria-label="Export format options">
+                                    <button class="css2-export-item" role="menuitem" onclick="CodeSnapEngine.exportPNG()">
+                                        <i class="fa-solid fa-image" aria-hidden="true"></i> Export Ultra PNG (4x)
+                                    </button>
+                                    <div class="css2-export-divider" role="separator"></div>
+                                    <button class="css2-export-item" role="menuitem" onclick="CodeSnapEngine.exportWebP()">
+                                        <i class="fa-solid fa-file-image" aria-hidden="true"></i> Export WebP (Optimized)
+                                    </button>
+                                </div>
+                            </div>
+
+                            <button
+                                class="btn btn-secondary"
+                                onclick="CodeSnapEngine.copyToClipboard()"
+                                aria-label="Copy snapshot to clipboard"
+                            >
+                                <i class="fa-solid fa-copy" aria-hidden="true"></i> Copy to Clipboard
+                            </button>
+                            <button
+                                class="btn btn-secondary"
+                                onclick="CodeSnapEngine.shareState()"
+                                aria-label="Share configuration as a URL"
+                            >
+                                <i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Share Config
+                            </button>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+
+        <!-- SEO & INFORMATION SECTION -->
+        <div class="info-section-wrapper">
+            <div class="info-card">
+                <img
+                    src="../../assets/tools/dev/dev-code-snap/img/demo-preview.webp"
+                    alt="Code Snap Studio — Professional code screenshot generator showing a JavaScript snippet with cyan wave gradient background and macOS window frame"
+                    class="css-info-preview-img"
+                    loading="lazy"
+                    width="1200"
+                    height="630"
+                >
+
+                <h2 class="text-accent-cyan">Professional Snippet Generation</h2>
+                <p><strong>Code Snap Studio</strong> is a high-performance, client-side developer tool engineered for creators, educators, and software engineers. We provide a premium environment to transform raw source code into visually arresting assets ready for high-impact communication.</p>
+
+                <h3>Why Use Code Snap Studio?</h3>
+                <p>In a world of information overload, visual clarity is key. Whether you are presenting a technical concept on LinkedIn, documenting a library on GitHub, or showcasing your portfolio, the presentation of your code reflects your professionalism. Code Snap Studio is a powerful free alternative to Carbon.now.sh — with more features, more privacy, and zero server uploads.</p>
+
+                <ul class="css-feature-list">
+                    <li>
+                        <i class="fa-solid fa-check-double text-success" aria-hidden="true"></i>
+                        <div><strong>Intelligent Highlighting:</strong> Supports 180+ languages with advanced auto-detection for perfect syntax visuals.</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check-double text-success" aria-hidden="true"></i>
+                        <div><strong>Isometric Projection:</strong> Unique 3D tilt effects for a modern architectural look that stands out on feeds.</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check-double text-success" aria-hidden="true"></i>
+                        <div><strong>Retina Ready:</strong> High-resolution exports (4x PNG, optimized WebP) for crystal clear text on any high-dpi display.</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check-double text-success" aria-hidden="true"></i>
+                        <div><strong>Zero Data Latency:</strong> All processing is handled 100% locally in your browser for total privacy.</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check-double text-success" aria-hidden="true"></i>
+                        <div><strong>Interactive QR & Watermark:</strong> Embed dynamic links or GitHub repo URLs directly into your screenshots, plus a custom text handle for personal branding.</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check-double text-success" aria-hidden="true"></i>
+                        <div><strong>Multiple Syntax Themes:</strong> Choose from Dracula, Monokai, GitHub Dark, Night Owl, Tokyo Night, and more for the perfect aesthetic.</div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check-double text-success" aria-hidden="true"></i>
+                        <div><strong>Custom Gradient Builder:</strong> Design your own two-color gradient background with a full angle control — infinite background possibilities.</div>
+                    </li>
+                </ul>
+
+                <h3>Workflow Integration</h3>
+                <p>Our tool integrates Prettier.js for one-click code formatting, ensuring your snippets follow industry standard style guides before you snap them. The state-sharing feature allows you to encode your entire configuration (code, colors, gradient, frame, tilt, theme, QR and watermark) into a single URL, perfect for team collaboration or revisiting your designs later.</p>
+
+                <!-- FAQ SECTION (matches FAQPage schema above) -->
+                <h3>Frequently Asked Questions</h3>
+                <section aria-label="Frequently asked questions about Code Snap Studio">
+
+                    <details>
+                        <summary><strong>Is Code Snap Studio free to use?</strong></summary>
+                        <p>Yes, Code Snap Studio is completely free. There are no subscriptions, forced watermarks, or usage limits. All processing happens in your browser.</p>
+                    </details>
+
+                    <details>
+                        <summary><strong>Does Code Snap Studio upload my code to a server?</strong></summary>
+                        <p>No. Code Snap Studio is 100% client-side. Your source code never leaves your browser, ensuring complete privacy and zero data latency.</p>
+                    </details>
+
+                    <details>
+                        <summary><strong>What programming languages are supported?</strong></summary>
+                        <p>Code Snap Studio uses highlight.js with auto-detection, supporting over 180 programming languages including JavaScript, Python, TypeScript, Rust, Go, SQL, HTML, CSS, and many more.</p>
+                    </details>
+
+                    <details>
+                        <summary><strong>What export formats are available?</strong></summary>
+                        <p>You can export your code snap as a High-Res PNG (4x scale) or an optimized WebP image. Both formats produce crisp, retina-ready output suitable for social media, portfolios, and documentation.</p>
+                    </details>
+
+                    <details>
+                        <summary><strong>Can I add my own branding to the code image?</strong></summary>
+                        <p>Yes. You can add a custom text watermark (e.g., your Twitter/GitHub handle) and optionally embed a QR code pointing to any URL — perfect for linking to your GitHub repo or portfolio.</p>
+                    </details>
+
+                    <details>
+                        <summary><strong>Is Code Snap Studio a good alternative to Carbon?</strong></summary>
+                        <p>Code Snap Studio offers features not found in Carbon, including 3D isometric tilt, custom gradient backgrounds, WebP export, line numbers, multiple syntax themes, and QR code branding — all processed locally without uploading your code.</p>
+                    </details>
+
+                </section>
+            </div>
+        </div>
+
+        <!-- AD SLOT: BOTTOM BANNER -->
+        <div class="ad-slot" data-ad-slot="bottom-banner" aria-label="Advertisement"></div>
+
+        <!-- RELATED TOOLS GRID -->
+        <div class="container" style="margin-top: 50px;">
+            <!--
+                IMPORTANT:
+                1. Set data-category to the category of the current page (e.g., "pdf", "media", "dev").
+                2. Set data-current-page to the filename of the current page (e.g., "pdf-compressor.html").
+            -->
+            <div id="dynamic-related-tools"
+                 data-category="dev"
+                 data-current-page="dev-code-snap.html">
+            </div>
+        </div>
+
+        <script type="module" src="../../assets/js/related-tools.js"></script>
+
+        <!-- Tools Comment Section -->
+        <section class="ttw-comments-section animated-entry delay-2" aria-label="User Discussion">
+            <div class="container">
+                <div class="trusted-comments-widget" data-page-id="auto">
+                    <div class="ttw-skeleton-loader" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                        <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2rem; color: var(--accent-cyan);" aria-hidden="true"></i>
+                        <p style="margin-top: 15px; font-weight: 500;">Initializing secure discussion portal...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="global-footer" class="cyber-footer"></footer>
+
+    <!-- =====================================================================
+         EXTERNAL LIBRARIES — defer/async for performance
+    ====================================================================== -->
+    <script src="../../assets/library/parsers-text/highlightjs/highlight.min.js" defer></script>
+    <script src="../../assets/library/canvas-engine/html2canvas.min.js" defer></script>
+    <script src="../../assets/library/qr-engine/qrcodejs/qrcode.min.js" defer></script>
+    <script src="../../assets/library/parsers-text/prettier/standalone.js" defer></script>
+    <script src="../../assets/library/parsers-text/prettier/parser-babel.js" defer></script>
+
+    <!-- CORE SCRIPTS -->
+    <script src="../../assets/js/ads-manager.js" defer></script>
+    <script type="module" src="../../assets/js/global.js"></script>
+
+    <script>
+        /**
+         * =========================================================================
+         * CODE SNAP STUDIO ENGINE (Pro Version 3.1)
+         * =========================================================================
+         * 3.1 changes:
+         *  - Fix: gutter font size now stays in sync with code font size
+         *  - Fix: share link now restores frame, tilt, QR and custom gradient
+         *  - Fix: share link no longer breaks on non-Latin watermark text
+         *  - Fix: watermark position updates when QR is added/removed later
+         *  - Fix: progress bar resets if clipboard capture fails
+         *  - New: Tab key inserts indentation in the source editor
+         *  - New: Escape closes the export menu
+         * =========================================================================
+         */
+        const CodeSnapEngine = (function () {
+
+            // ── Internal State ──────────────────────────────────────────────────
+            const state = {
+                bg:             'css-bg-mesh-1',
+                frame:          'mac',
+                tilt:           false,
+                padding:        60,
+                fontSize:       15,
+                qrText:         '',
+                watermark:      '',
+                lineNumbers:    false,
+                syntaxTheme:    'highlight-dark',
+                customGradient: null,
+                isProcessing:   false
+            };
+
+            // Highlight.js theme CDN base — swap the stylesheet href dynamically
+            const HLJS_CDN_BASE = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/';
+
+            // Map of option values to CDN stylesheet filenames
+            const THEME_MAP = {
+                'highlight-dark':   null,                            // local default, no swap needed
+                'atom-one-dark':    'atom-one-dark.min.css',
+                'dracula':          'base16/dracula.min.css',
+                'monokai':          'base16/monokai.min.css',
+                'github-dark':      'github-dark.min.css',
+                'night-owl':        'night-owl.min.css',
+                'tokyo-night-dark': 'tokyo-night-dark.min.css',
+                'vs2015':           'vs2015.min.css'
+            };
+
+            // ── DOM References (populated after DOMContentLoaded) ─────────────
+            let dom = {};
+
+            const initDom = () => {
+                dom = {
+                    input:       document.getElementById('codeInput'),
+                    output:      document.getElementById('codeOutput'),
+                    snapPre:     document.getElementById('snapPre'),
+                    frame:       document.getElementById('snapFrame'),
+                    wrapper:     document.getElementById('captureArea'),
+                    header:      document.getElementById('frameHeader'),
+                    qr:          document.getElementById('qrContainer'),
+                    watermark:   document.getElementById('watermarkBadge'),
+                    tiltBtn:     document.getElementById('tiltBtn'),
+                    padLabel:    document.getElementById('paddingVal'),
+                    fontLabel:   document.getElementById('fontVal'),
+                    langDisplay: document.getElementById('langDisplay'),
+                    progressBar: document.getElementById('topProgressBar'),
+                    themeLink:   document.getElementById('hljs-theme-link'),
+                    exportWrap:  document.getElementById('exportWrap'),
+                    exportBtn:   document.getElementById('exportMainBtn')
+                };
+            };
+
+            // ── Progress Bar ────────────────────────────────────────────────────
+            const setProgress = (percent) => {
+                dom.progressBar.style.width = percent + '%';
+                dom.progressBar.setAttribute('aria-valuenow', percent);
+                if (percent >= 100) {
+                    setTimeout(() => {
+                        dom.progressBar.style.width = '0%';
+                    }, 500);
+                }
+            };
+
+            // ── Find a control button by its onclick text ───────────────────────
+            const findOptBtn = (needle) => {
+                return Array.from(document.querySelectorAll('.css-btn-opt')).find(el => {
+                    const attr = el.getAttribute('onclick');
+                    return attr && attr.includes(needle);
+                });
+            };
+
+            // ── Sync gutter font size with code font size ───────────────────────
+            const applyGutterFont = () => {
+                document.querySelectorAll('.css2-line-num').forEach(el => {
+                    el.style.fontSize = `${state.fontSize}px`;
+                });
+            };
+
+            // ── Debounced Code Sync ─────────────────────────────────────────────
+            let syncTimer;
+            const syncCode = () => {
+                clearTimeout(syncTimer);
+                syncTimer = setTimeout(() => {
+                    const code = dom.input.value;
+
+                    if (state.lineNumbers) {
+                        renderWithLineNumbers(code);
+                    } else {
+                        dom.output.textContent = code;
+                        const result = hljs.highlightAuto(code);
+                        dom.output.innerHTML = result.value;
+                        dom.langDisplay.textContent = result.language
+                            ? result.language.toUpperCase()
+                            : 'TEXT';
+                    }
+                }, 100);
+            };
+
+            // ── Line Numbers Renderer ───────────────────────────────────────────
+            const renderWithLineNumbers = (code) => {
+                const result = hljs.highlightAuto(code || dom.input.value);
+                const lines   = (code || dom.input.value).split('\n');
+
+                dom.langDisplay.textContent = result.language
+                    ? result.language.toUpperCase()
+                    : 'TEXT';
+
+                // Build gutter HTML
+                const gutterHtml = lines
+                    .map((_, i) => `<span class="css2-line-num">${i + 1}</span>`)
+                    .join('\n');
+
+                // Rebuild pre > [gutter + code] structure
+                dom.snapPre.innerHTML = `
+                    <span class="css2-line-gutter" aria-hidden="true">${gutterHtml}</span>
+                    <code class="css-code-display css2-code-with-lines" id="codeOutput">${result.value}</code>
+                `;
+
+                // Re-grab output reference (innerHTML replaced it)
+                dom.output = document.getElementById('codeOutput');
+                dom.snapPre.classList.add('css2-lined-pre');
+                dom.output.style.fontSize = `${state.fontSize}px`;
+                applyGutterFont();
+            };
+
+            // ── Toggle Line Numbers ─────────────────────────────────────────────
+            const toggleLineNumbers = (enabled) => {
+                state.lineNumbers = enabled;
+
+                if (!enabled) {
+                    // Restore standard structure
+                    dom.snapPre.classList.remove('css2-lined-pre');
+                    dom.snapPre.innerHTML = '<code class="css-code-display" id="codeOutput"></code>';
+                    dom.output = document.getElementById('codeOutput');
+                    dom.output.style.fontSize = `${state.fontSize}px`;
+                }
+
+                syncCode();
+            };
+
+            // ── Syntax Theme Switcher ───────────────────────────────────────────
+            const updateSyntaxTheme = (themeKey) => {
+                if (!Object.prototype.hasOwnProperty.call(THEME_MAP, themeKey)) return;
+                state.syntaxTheme = themeKey;
+                const filename = THEME_MAP[themeKey];
+
+                if (!filename) {
+                    // Revert to local default stylesheet
+                    dom.themeLink.href = '../../assets/library/parsers-text/highlightjs/highlight-dark.min.css';
+                } else {
+                    dom.themeLink.href = HLJS_CDN_BASE + filename;
+                }
+
+                // Re-run highlighting after theme loads
+                dom.themeLink.onload = () => syncCode();
+                syncCode();
+            };
+
+            // ── Background Updater ──────────────────────────────────────────────
+            const updateBg = (className, btn) => {
+                state.bg = className;
+                state.customGradient = null;
+                dom.wrapper.className = 'css-canvas-wrapper ' + className;
+
+                // Remove custom gradient CSS var when using a preset
+                dom.wrapper.style.removeProperty('--css2-custom-gradient');
+                dom.wrapper.style.background = '';
+
+                // Update ARIA pressed states
+                btn.closest('.css-grid-buttons')
+                   .querySelectorAll('.css-btn-opt')
+                   .forEach(b => {
+                       b.classList.remove('active');
+                       b.setAttribute('aria-pressed', 'false');
+                   });
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+            };
+
+            // ── Custom Gradient Builder ─────────────────────────────────────────
+            const applyCustomGradient = (silent) => {
+                const colorA = document.getElementById('gradColorA').value;
+                const colorB = document.getElementById('gradColorB').value;
+                const angle  = document.getElementById('gradAngle').value;
+                const grad   = `linear-gradient(${angle}deg, ${colorA}, ${colorB})`;
+
+                // Clear preset active states — no preset is "active" anymore
+                document.querySelectorAll('[id="label-bg"] ~ .css-grid-buttons .css-btn-opt')
+                    .forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-pressed', 'false');
+                    });
+
+                // Apply inline gradient directly
+                state.bg = 'css-bg-custom-gradient';
+                state.customGradient = { a: colorA, b: colorB, g: angle };
+                dom.wrapper.className = 'css-canvas-wrapper';
+                dom.wrapper.style.background = grad;
+
+                if (silent !== true) showToast('Custom Gradient Applied!');
+            };
+
+            // ── Frame Updater ───────────────────────────────────────────────────
+            const updateFrame = (type, btn) => {
+                state.frame = type;
+                dom.header.style.display = type === 'none' ? 'none' : 'flex';
+
+                if (type === 'mac') {
+                    dom.header.innerHTML = '<div class="css-dot css-dot-r"></div><div class="css-dot css-dot-y"></div><div class="css-dot css-dot-g"></div>';
+                    dom.frame.style.background = '#1e1e1e';
+                    dom.frame.style.backdropFilter = 'none';
+                    dom.frame.style.border = '';
+                } else if (type === 'win') {
+                    dom.header.innerHTML = '<div style="font-size:10px; opacity:0.6; font-weight:800; text-transform:uppercase;">Snippet_Tool.exe</div><div class="css-win-controls"><span><i class="fa-solid fa-minus" aria-hidden="true"></i></span><span><i class="fa-regular fa-square" aria-hidden="true"></i></span><span><i class="fa-solid fa-xmark" aria-hidden="true"></i></span></div>';
+                    dom.frame.style.background = '#1a1a1a';
+                    dom.frame.style.backdropFilter = 'none';
+                    dom.frame.style.border = '';
+                } else if (type === 'none') {
+                    dom.frame.style.background = 'rgba(15, 23, 42, 0.75)';
+                    dom.frame.style.backdropFilter = 'blur(16px)';
+                    dom.frame.style.border = '1px solid rgba(255,255,255,0.1)';
+                }
+
+                btn.closest('.css-grid-buttons')
+                   .querySelectorAll('.css-btn-opt')
+                   .forEach(b => {
+                       if (b.id !== 'tiltBtn') {
+                           b.classList.remove('active');
+                           b.setAttribute('aria-pressed', 'false');
+                       }
+                   });
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+            };
+
+            // ── 3D Tilt Toggle ──────────────────────────────────────────────────
+            const toggleTilt = () => {
+                state.tilt = !state.tilt;
+                dom.frame.classList.toggle('css-isometric-tilt', state.tilt);
+                dom.tiltBtn.classList.toggle('active', state.tilt);
+                dom.tiltBtn.setAttribute('aria-pressed', state.tilt ? 'true' : 'false');
+            };
+
+            // ── Padding & Font ──────────────────────────────────────────────────
+            const updatePadding = (val) => {
+                state.padding = val;
+                dom.wrapper.style.padding = `${val}px`;
+                dom.padLabel.textContent = `${val}px`;
+            };
+
+            const updateFont = (val) => {
+                state.fontSize = val;
+                dom.output.style.fontSize = `${val}px`;
+                dom.fontLabel.textContent = `${val}px`;
+
+                // Also update gutter line-num font size if line numbers are on
+                if (state.lineNumbers) {
+                    applyGutterFont();
+                }
+            };
+
+            // ── QR Code ─────────────────────────────────────────────────────────
+            const updateQR = (text) => {
+                state.qrText = text;
+
+                if (!text.trim()) {
+                    dom.qr.style.display = 'none';
+                } else {
+                    dom.qr.style.display = 'block';
+                    dom.qr.innerHTML = '';
+                    try {
+                        new QRCode(dom.qr, {
+                            text:         text,
+                            width:        80,
+                            height:       80,
+                            colorDark:    '#000000',
+                            colorLight:   '#ffffff',
+                            correctLevel: QRCode.CorrectLevel.H
+                        });
+                    } catch (e) {
+                        console.error('QR Generation Error:', e);
+                    }
+                }
+
+                // Keep watermark position in sync with QR visibility
+                if (state.watermark.trim()) {
+                    dom.watermark.classList.toggle('css2-watermark-shifted', !!text.trim());
+                }
+            };
+
+            // ── Custom Watermark ────────────────────────────────────────────────
+            const updateWatermark = (text) => {
+                state.watermark = text;
+                const handle = text.trim();
+
+                if (!handle) {
+                    dom.watermark.style.display = 'none';
+                    dom.watermark.textContent = '';
+                    return;
+                }
+
+                dom.watermark.style.display = 'block';
+                // Prefix with @ if user didn't include it
+                dom.watermark.textContent = handle.startsWith('@') ? handle : '@' + handle;
+
+                // Shift if QR is also visible
+                dom.watermark.classList.toggle('css2-watermark-shifted', !!state.qrText.trim());
+            };
+
+            // ── Export Dropdown Toggle ──────────────────────────────────────────
+            const toggleExportMenu = (e) => {
+                e.stopPropagation();
+                const wrap    = dom.exportWrap;
+                const isOpen  = wrap.classList.toggle('open');
+                dom.exportBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            };
+
+            const closeExportMenu = () => {
+                dom.exportWrap.classList.remove('open');
+                dom.exportBtn.setAttribute('aria-expanded', 'false');
+            };
+
+            // Close export dropdown on outside click or Escape
+            const initExportOutsideClick = () => {
+                document.addEventListener('click', (e) => {
+                    if (!dom.exportWrap.contains(e.target)) {
+                        closeExportMenu();
+                    }
+                });
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && dom.exportWrap.classList.contains('open')) {
+                        closeExportMenu();
+                        dom.exportBtn.focus();
+                    }
+                });
+            };
+
+            // ── Tab key indentation in source editor ────────────────────────────
+            const initEditorTabKey = () => {
+                dom.input.addEventListener('keydown', (e) => {
+                    if (e.key !== 'Tab' || e.shiftKey || e.ctrlKey || e.metaKey || e.altKey) return;
+                    e.preventDefault();
+                    const start = dom.input.selectionStart;
+                    const end   = dom.input.selectionEnd;
+                    dom.input.value = dom.input.value.substring(0, start) + '    ' + dom.input.value.substring(end);
+                    dom.input.selectionStart = dom.input.selectionEnd = start + 4;
+                    syncCode();
+                });
+            };
+
+            // ── Shared html2canvas capture helper ───────────────────────────────
+            const captureCanvas = (scale = 4) => {
+                return html2canvas(dom.wrapper, {
+                    scale,
+                    useCORS:         true,
+                    backgroundColor: null,
+                    logging:         false,
+                    allowTaint:      true,
+                    onclone: (clonedDoc) => {
+                        const cloned = clonedDoc.getElementById('captureArea');
+                        if (cloned) cloned.style.overflow = 'hidden';
+                    }
+                });
+            };
+
+            // ── Export PNG (Ultra-HD 4x) ─────────────────────────────────────────
+            const exportPNG = async () => {
+                closeExportMenu();
+
+                if (state.isProcessing) return;
+                state.isProcessing = true;
+                setProgress(20);
+                showToast('Generating Ultra-HD PNG…');
+
+                try {
+                    const origTransition  = dom.frame.style.transition;
+                    dom.frame.style.transition = 'none';
+                    setProgress(50);
+
+                    const canvas = await captureCanvas(4);
+                    setProgress(80);
+
+                    const link      = document.createElement('a');
+                    link.download   = `CodeSnap_Pro_${Date.now()}.png`;
+                    link.href       = canvas.toDataURL('image/png', 1.0);
+                    link.click();
+
+                    dom.frame.style.transition = origTransition;
+                    setProgress(100);
+                    showToast('Ultra-HD PNG Export Complete!');
+                } catch (err) {
+                    setProgress(0);
+                    showToast('Export Failed: Browser Limit', true);
+                    console.error('PNG Export Error:', err);
+                } finally {
+                    state.isProcessing = false;
+                }
+            };
+
+            // ── Export WebP ──────────────────────────────────────────────────────
+            const exportWebP = async () => {
+                closeExportMenu();
+
+                if (state.isProcessing) return;
+                state.isProcessing = true;
+                setProgress(20);
+                showToast('Generating Optimized WebP…');
+
+                try {
+                    const origTransition  = dom.frame.style.transition;
+                    dom.frame.style.transition = 'none';
+                    setProgress(50);
+
+                    const canvas = await captureCanvas(3);
+                    setProgress(80);
+
+                    // WebP at 0.92 quality — excellent balance of size vs fidelity
+                    const webpDataUrl = canvas.toDataURL('image/webp', 0.92);
+
+                    // Fallback: if browser doesn't support WebP export it returns PNG
+                    const ext  = webpDataUrl.startsWith('data:image/webp') ? 'webp' : 'png';
+                    const link = document.createElement('a');
+                    link.download = `CodeSnap_Pro_${Date.now()}.${ext}`;
+                    link.href     = webpDataUrl;
+                    link.click();
+
+                    dom.frame.style.transition = origTransition;
+                    setProgress(100);
+                    showToast(`WebP Export Complete! (.${ext})`);
+                } catch (err) {
+                    setProgress(0);
+                    showToast('Export Failed: Browser Limit', true);
+                    console.error('WebP Export Error:', err);
+                } finally {
+                    state.isProcessing = false;
+                }
+            };
+
+            // ── Copy to Clipboard ────────────────────────────────────────────────
+            const copyToClipboard = async () => {
+                if (state.isProcessing) return;
+                state.isProcessing = true;
+                setProgress(40);
+                showToast('Rendering to Clipboard…');
+
+                try {
+                    const canvas = await captureCanvas(2);
+                    canvas.toBlob(async (blob) => {
+                        try {
+                            if (!blob) throw new Error('Empty image blob');
+                            const item = new ClipboardItem({ 'image/png': blob });
+                            await navigator.clipboard.write([item]);
+                            setProgress(100);
+                            showToast('Image Copied Successfully!');
+                        } catch (e) {
+                            setProgress(0);
+                            showToast('Clipboard API Error', true);
+                            console.error('Clipboard write error:', e);
+                        } finally {
+                            state.isProcessing = false;
+                        }
+                    });
+                } catch (e) {
+                    state.isProcessing = false;
+                    setProgress(0);
+                    showToast('Clipboard capture failed', true);
+                    console.error('Clipboard capture error:', e);
+                }
+            };
+
+            // ── Beautify ─────────────────────────────────────────────────────────
+            const beautify = () => {
+                if (state.isProcessing) return;
+                state.isProcessing = true;
+                setProgress(30);
+
+                setTimeout(() => {
+                    try {
+                        const formatted = prettier.format(dom.input.value, {
+                            parser:      'babel',
+                            plugins:     [prettierPlugins.babel],
+                            semi:        true,
+                            singleQuote: false,
+                            printWidth:  60
+                        });
+                        dom.input.value = formatted;
+                        syncCode();
+                        setProgress(100);
+                        showToast('Code Beautified Successfully!');
+                    } catch (e) {
+                        setProgress(0);
+                        showToast('Prettier: Check code syntax', true);
+                    } finally {
+                        state.isProcessing = false;
+                    }
+                }, 300);
+            };
+
+            // ── Share State via URL hash ─────────────────────────────────────────
+            const shareState = () => {
+                try {
+                    const data = {
+                        c:  btoa(encodeURIComponent(dom.input.value)),
+                        b:  state.bg,
+                        f:  state.frame,
+                        t:  state.tilt,
+                        p:  state.padding,
+                        s:  state.fontSize,
+                        th: state.syntaxTheme,
+                        ln: state.lineNumbers,
+                        wm: encodeURIComponent(state.watermark),
+                        q:  encodeURIComponent(state.qrText),
+                        g:  state.customGradient
+                    };
+                    const hash = btoa(JSON.stringify(data));
+                    const url  = window.location.origin + window.location.pathname + '#' + hash;
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(url);
+                    }
+                    window.location.hash = hash;
+                    showToast('Config Link Copied to Clipboard!');
+                } catch (e) {
+                    showToast('Sharing failed', true);
+                    console.error('Share state error:', e);
+                }
+            };
+
+            // ── Restore State from URL hash ──────────────────────────────────────
+            const loadState = () => {
+                const hash = window.location.hash.substring(1);
+                if (hash) {
+                    try {
+                        const data = JSON.parse(atob(hash));
+                        if (data.c) dom.input.value = decodeURIComponent(atob(data.c));
+
+                        if (data.p) {
+                            document.getElementById('paddingRange').value = data.p;
+                            updatePadding(data.p);
+                        }
+                        if (data.s) {
+                            document.getElementById('fontRange').value = data.s;
+                            updateFont(data.s);
+                        }
+                        if (data.th) {
+                            document.getElementById('syntaxThemeSelect').value = data.th;
+                            updateSyntaxTheme(data.th);
+                        }
+                        if (data.ln) {
+                            document.getElementById('lineNumbersToggle').checked = true;
+                            toggleLineNumbers(true);
+                        }
+                        if (data.wm) {
+                            const wm = decodeURIComponent(data.wm);
+                            document.getElementById('watermarkInput').value = wm;
+                            updateWatermark(wm);
+                        }
+                        if (data.q) {
+                            const q = decodeURIComponent(data.q);
+                            document.getElementById('qrInput').value = q;
+                            updateQR(q);
+                        }
+                        if (data.f && ['mac', 'win', 'none'].indexOf(data.f) !== -1) {
+                            const fBtn = findOptBtn("updateFrame('" + data.f + "'");
+                            if (fBtn) updateFrame(data.f, fBtn);
+                        }
+                        if (data.t === true && !state.tilt) {
+                            toggleTilt();
+                        }
+                        if (data.g && data.g.a && data.g.b) {
+                            const hexOk = /^#[0-9a-fA-F]{6}$/;
+                            const angle = parseInt(data.g.g, 10);
+                            if (hexOk.test(data.g.a) && hexOk.test(data.g.b) && angle >= 0 && angle <= 360) {
+                                document.getElementById('gradColorA').value = data.g.a;
+                                document.getElementById('gradColorB').value = data.g.b;
+                                document.getElementById('gradAngle').value = angle;
+                                document.getElementById('gradAngleVal').textContent = angle + '°';
+                                applyCustomGradient(true);
+                            }
+                        } else if (data.b) {
+                            const btn = findOptBtn("'" + data.b + "'");
+                            if (btn) updateBg(data.b, btn);
+                        }
+                    } catch (e) {
+                        console.warn('State restore failed:', e);
+                    }
+                }
+                syncCode();
+            };
+
+            // ── Mobile Warning ───────────────────────────────────────────────────
+            const checkMobileWarning = () => {
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                    navigator.userAgent
+                );
+                if (isMobile) {
+                    setTimeout(() => {
+                        showToast('This advanced tool works best on desktop devices.', true);
+                    }, 1200);
+                }
+            };
+
+            // ── Public API ───────────────────────────────────────────────────────
+            return {
+                init: () => {
+                    initDom();
+                    checkMobileWarning();
+                    loadState();
+                    initExportOutsideClick();
+                    initEditorTabKey();
+                    setProgress(100);
+                },
+                syncCode,
+                updateBg,
+                applyCustomGradient,
+                updateFrame,
+                toggleTilt,
+                updatePadding,
+                updateFont,
+                updateSyntaxTheme,
+                toggleLineNumbers,
+                updateQR,
+                updateWatermark,
+                toggleExportMenu,
+                exportPNG,
+                exportWebP,
+                copyToClipboard,
+                beautify,
+                shareState
+            };
+
+        })();
+
+        // Bootstrap on load — after deferred scripts have executed
+        window.addEventListener('DOMContentLoaded', CodeSnapEngine.init);
+    </script>
+
+    <!-- Comment JS -->
+    <script type="module" src="../../assets/js/comments.js" defer></script>
+
+</body>
+</html>

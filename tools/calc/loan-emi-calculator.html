@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- ═══════════════════════════════════════════════════
+         SITE FRAMEWORK SCRIPTS (must be first)
+         Loads global config, meta tags, and analytics
+         ═══════════════════════════════════════════════════ -->
+    <script src="../../assets/js/site-config.js"></script>
+    <script src="../../assets/js/meta-manager.js"></script>
+    <script src="../../assets/js/analytics-loader.js"></script>
+
+    <!-- Character encoding and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#050510">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- ═══════════════════════════════════════════════════
+         SEO SETTINGS
+         ═══════════════════════════════════════════════════ -->
+    <!-- Title targets high-intent keywords: "Home & Car Loan EMI Calculator" -->
+    <title>Home &amp; Car Loan EMI Calculator — Smart EMI Ultra Pro Max | Trusted Tools Web</title>
+    <meta name="description" content="Free Home &amp; Car Loan EMI Calculator with Amortization Schedule, Lump-sum Pre-payment analysis, CSV Export, PDF Download &amp; AI Affordability check. 100% client-side secure.">
+    <meta name="keywords"    content="home loan emi calculator, car loan emi calculator, smart emi calculator, amortization schedule, loan affordability checker, prepayment calculator, financial tools">
+    <meta name="author"      content="MD KAWSAR">
+    <meta name="robots"      content="index, follow">
+    <link rel="canonical"    href="https://trustedtoolsweb.com/calc-loan-emi.html" />
+
+    <!-- Favicon -->
+    <link rel="icon"             type="image/webp" href="../../assets/img/logo.webp">
+    <link rel="apple-touch-icon"                   href="../../assets/img/all-web-icon/calc-loan-emi.webp">
+
+    <!-- Open Graph (Facebook / LinkedIn sharing) -->
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://trustedtoolsweb.com/calc-loan-emi.html">
+    <meta property="og:title"       content="Home &amp; Car Loan EMI Calculator — Smart EMI Ultra Pro Max">
+    <meta property="og:description" content="Advanced Loan EMI Calculator with PDF reports, CSV export, lump-sum prepayment and Affordability AI.">
+    <meta property="og:image"       content="https://trustedtoolsweb.com/assets/tools/calc/calc-loan-emi/emi-cover.webp">
+    <meta property="og:site_name"   content="Trusted Tools Web">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="Home &amp; Car Loan EMI Calculator — Smart EMI Ultra Pro Max">
+    <meta name="twitter:description" content="Advanced Loan EMI Calculator with PDF reports, CSV export & AI advisor.">
+    <meta name="twitter:image"       content="https://trustedtoolsweb.com/assets/tools/calc/calc-loan-emi/emi-cover.webp">
+
+    <!-- ═══════════════════════════════════════════════════
+         EXTERNAL LIBRARIES (DO NOT MODIFY PATHS)
+         ═══════════════════════════════════════════════════ -->
+    <link rel="stylesheet" href="../../assets/library/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/library/fonts/Inter/fonts.css">
+    <link rel="stylesheet" href="../../assets/library/fonts/Orbitron/fonts.css">
+    <script src="../../assets/library/data-viz/chartjs/chart.min.js"></script>
+    <script src="../../assets/library/pdf-engine/jspdf/jspdf.umd.min.js"></script>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../assets/css/global.css">
+
+    <!-- Tools Template CSS + Section 20 (EMI-specific) additions -->
+    <link rel="stylesheet" href="../../assets/css/tools-template.css">
+
+    <!-- ═══════════════════════════════════════════════════
+         SCHEMA MARKUP — JSON-LD Structured Data
+         Using SoftwareApplication for richer Google treatment
+         ═══════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Home & Car Loan EMI Calculator — Smart EMI Ultra Pro Max",
+        "url": "https://trustedtoolsweb.com/calc-loan-emi.html",
+        "description": "A comprehensive, client-side loan EMI calculator for home loans, car loans, and personal loans. Features include amortization schedule, lump-sum prepayment analysis, CSV & PDF export, and an AI-powered affordability advisor.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "brand": { "@type": "Brand", "name": "Trusted Tools Web" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": "EMI Calculation, Amortization Schedule, CSV Export, PDF Report, Lump-sum Prepayment, AI Affordability Advisor, Currency Toggle",
+        "screenshot": "https://trustedtoolsweb.com/assets/tools/calc/calc-loan-emi/emi-cover.webp"
+    }
+    </script>
+
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════
+         GLOBAL HEADER — injected by global.js
+         ═══════════════════════════════════════════════════ -->
+    <header id="global-header" class="site-header"></header>
+
+    <!-- ═══════════════════════════════════════════════════
+         TOAST NOTIFICATION AREA
+         ═══════════════════════════════════════════════════ -->
+    <div class="toast-wrapper" id="toastArea" role="status" aria-live="polite" aria-atomic="false"></div>
+
+    <!-- ═══════════════════════════════════════════════════
+         MAIN CONTENT
+         ═══════════════════════════════════════════════════ -->
+    <main>
+
+        <div class="container animated-entry">
+
+            <!-- [AD SLOT] Top Banner -->
+            <div class="ad-slot" data-ad-slot="top-banner"></div>
+
+            <!-- ── HERO SECTION ──────────────────────────────── -->
+
+            <div class="security-badge" aria-label="Privacy guarantee">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> 100% Client-Side Secure
+            </div>
+
+            <!--
+                H1 balances brand identity AND primary search keywords:
+                "Home & Car Loan EMI Calculator" is the high-volume query;
+                "Smart EMI Ultra Pro Max" is the brand differentiator.
+            -->
+            <h1 class="tool-title">
+                <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+                Home &amp; Car Loan <span>EMI Calculator</span>
+            </h1>
+
+            <!-- Subtitle reinforces secondary keywords naturally -->
+            <p class="subtitle">
+                Smart EMI Ultra Pro Max — Calculate Loan Installments, Check Affordability &amp; Download PDF / CSV Reports Instantly.
+            </p>
+
+
+            <!-- ═══════════════════════════════════════════════
+                 TAB NAVIGATION
+                 ═══════════════════════════════════════════════ -->
+            <nav class="tab-nav" role="tablist" aria-label="Calculator mode selector">
+                <button class="tab-btn active"
+                        onclick="switchMode('standard')"
+                        id="tab-standard"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="calculator-panels">
+                    <i class="fa-solid fa-calculator" aria-hidden="true"></i> Standard EMI
+                </button>
+                <button class="tab-btn"
+                        onclick="switchMode('advanced')"
+                        id="tab-advanced"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="calculator-panels">
+                    <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Advanced Pro
+                </button>
+                <button class="tab-btn"
+                        onclick="switchMode('afford')"
+                        id="tab-afford"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="calculator-panels">
+                    <i class="fa-solid fa-wallet" aria-hidden="true"></i> Affordability AI
+                </button>
+            </nav>
+
+
+            <!-- ═══════════════════════════════════════════════
+                 MAIN CALCULATOR GRID
+                 Two-column: Left = Inputs, Right = Results
+                 ═══════════════════════════════════════════════ -->
+            <div class="emi-calculator-grid" id="calculator-panels">
+
+                <!-- ── LEFT COLUMN: Input Controls ────────────── -->
+                <div class="emi-input-section">
+
+                    <!-- INPUT: Loan Amount -->
+                    <div class="emi-input-group">
+                        <div class="emi-label-row">
+                            <label for="loanAmount">Loan Amount</label>
+                            <span id="disp-amt" class="emi-highlight-val" aria-live="polite">500,000</span>
+                        </div>
+                        <div class="emi-input-wrapper">
+                            <i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>
+                            <input type="text"
+                                   id="loanAmount"
+                                   value="500000"
+                                   aria-label="Loan Amount"
+                                   inputmode="numeric"
+                                   oninput="sync('loanAmount', 'rangeAmount')">
+                        </div>
+                        <input type="range"
+                               id="rangeAmount"
+                               min="10000"
+                               max="10000000"
+                               value="500000"
+                               step="5000"
+                               aria-label="Loan Amount Slider"
+                               oninput="sync('rangeAmount', 'loanAmount')">
+                    </div>
+
+                    <!-- INPUT: Interest Rate -->
+                    <div class="emi-input-group">
+                        <div class="emi-label-row">
+                            <label for="interestRate">Interest Rate (%)</label>
+                            <span id="disp-rate" class="emi-highlight-val" aria-live="polite">9%</span>
+                        </div>
+                        <div class="emi-input-wrapper">
+                            <i class="fa-solid fa-percent" aria-hidden="true"></i>
+                            <input type="number"
+                                   id="interestRate"
+                                   value="9"
+                                   step="0.1"
+                                   min="0.1"
+                                   max="100"
+                                   aria-label="Annual Interest Rate"
+                                   oninput="sync('interestRate', 'rangeRate')">
+                        </div>
+                        <input type="range"
+                               id="rangeRate"
+                               min="1"
+                               max="30"
+                               value="9"
+                               step="0.1"
+                               aria-label="Interest Rate Slider"
+                               oninput="sync('rangeRate', 'interestRate')">
+                    </div>
+
+                    <!-- INPUT: Loan Tenure -->
+                    <div class="emi-input-group">
+                        <div class="emi-label-row">
+                            <label for="loanTenure">Tenure (Years)</label>
+                            <span id="disp-year" class="emi-highlight-val" aria-live="polite">5 Years</span>
+                        </div>
+                        <div class="emi-input-wrapper">
+                            <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                            <input type="number"
+                                   id="loanTenure"
+                                   value="5"
+                                   step="0.5"
+                                   min="0.5"
+                                   max="30"
+                                   aria-label="Loan Tenure in Years"
+                                   oninput="sync('loanTenure', 'rangeTenure')">
+                        </div>
+                        <input type="range"
+                               id="rangeTenure"
+                               min="0.5"
+                               max="30"
+                               value="5"
+                               step="0.5"
+                               aria-label="Tenure Slider"
+                               oninput="sync('rangeTenure', 'loanTenure')">
+                    </div>
+
+
+                    <!-- ═══════════════════════════════════════════
+                         ADVANCED PRO PANEL
+                         Shown when tab = 'advanced'
+                         ═══════════════════════════════════════════ -->
+                    <div id="advanced-features"
+                         class="emi-advanced-panel hidden"
+                         role="region"
+                         aria-label="Advanced Pro Features">
+
+                        <div class="emi-section-badge">PRO FEATURES</div>
+
+                        <!-- INPUT: Moratorium period -->
+                        <div class="emi-input-group">
+                            <label class="emi-label-row" for="moratorium">
+                                Moratorium (Months)
+                                <span class="emi-tooltip-trigger" tabindex="0"
+                                      aria-describedby="tip-moratorium"
+                                      title="Interest is compounded and added to principal during this period. EMIs start after it ends.">
+                                    <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                                </span>
+                            </label>
+                            <div class="emi-input-wrapper">
+                                <i class="fa-solid fa-pause" aria-hidden="true"></i>
+                                <input type="number"
+                                       id="moratorium"
+                                       placeholder="0"
+                                       value="0"
+                                       min="0"
+                                       max="360"
+                                       aria-label="Moratorium period in months"
+                                       oninput="calculateUltra()">
+                            </div>
+                        </div>
+
+                        <!-- INPUT: Monthly pre-payment -->
+                        <div class="emi-input-group">
+                            <label class="emi-label-row" for="extraEMI">
+                                Monthly Pre-payment
+                                <span class="emi-tooltip-trigger" tabindex="0"
+                                      title="Extra amount paid every month on top of the regular EMI. Reduces total interest and tenure significantly.">
+                                    <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                                </span>
+                            </label>
+                            <div class="emi-input-wrapper">
+                                <i class="fa-solid fa-piggy-bank" aria-hidden="true"></i>
+                                <input type="number"
+                                       id="extraEMI"
+                                       placeholder="Extra Amount"
+                                       value="0"
+                                       min="0"
+                                       aria-label="Monthly Pre-payment Amount"
+                                       oninput="calculateUltra()">
+                            </div>
+                        </div>
+
+                        <!-- NEW INPUT: Lump-sum pre-payment -->
+                        <div class="emi-input-group">
+                            <label class="emi-label-row" for="lumpSum">
+                                Lump-sum Pre-payment
+                                <span class="emi-tooltip-trigger" tabindex="0"
+                                      title="A one-time large payment made at the month specified below. Directly reduces the outstanding principal.">
+                                    <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                                </span>
+                            </label>
+                            <div class="emi-input-wrapper">
+                                <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
+                                <input type="number"
+                                       id="lumpSum"
+                                       placeholder="One-time amount (0)"
+                                       value="0"
+                                       min="0"
+                                       aria-label="Lump-sum Pre-payment Amount"
+                                       oninput="calculateUltra()">
+                            </div>
+                        </div>
+
+                        <!-- NEW INPUT: Month at which lump-sum is applied -->
+                        <div class="emi-input-group">
+                            <label class="emi-label-row" for="lumpSumMonth">
+                                Apply Lump-sum at Month #
+                            </label>
+                            <div class="emi-input-wrapper">
+                                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                                <input type="number"
+                                       id="lumpSumMonth"
+                                       placeholder="e.g. 12"
+                                       value="12"
+                                       min="1"
+                                       aria-label="Month number to apply lump-sum payment"
+                                       oninput="calculateUltra()">
+                            </div>
+                        </div>
+
+                        <!-- Savings summary (shown after calculation with lump-sum active) -->
+                        <div id="lumpSumSavings" class="emi-savings-box hidden" role="status" aria-live="polite"></div>
+
+                    </div><!-- /#advanced-features -->
+
+
+                    <!-- ═══════════════════════════════════════════
+                         AI AFFORDABILITY ADVISOR PANEL
+                         Shown when tab = 'afford'
+                         ═══════════════════════════════════════════ -->
+                    <div id="afford-features"
+                         class="emi-advanced-panel emi-advanced-panel--success hidden"
+                         role="region"
+                         aria-label="AI Affordability Advisor">
+
+                        <div class="emi-section-badge emi-section-badge--success">AI ADVISOR</div>
+
+                        <!-- INPUT: Monthly income -->
+                        <div class="emi-input-group">
+                            <label class="emi-label-row" for="monthlyIncome">Monthly Income</label>
+                            <div class="emi-input-wrapper">
+                                <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
+                                <input type="number"
+                                       id="monthlyIncome"
+                                       placeholder="e.g. 50000"
+                                       min="0"
+                                       aria-label="Monthly Income">
+                            </div>
+                        </div>
+
+                        <!-- INPUT: Existing EMI obligations -->
+                        <div class="emi-input-group">
+                            <label class="emi-label-row" for="currentEMI">Existing EMIs / Month</label>
+                            <div class="emi-input-wrapper">
+                                <i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i>
+                                <input type="number"
+                                       id="currentEMI"
+                                       placeholder="e.g. 5000"
+                                       min="0"
+                                       aria-label="Total Existing EMI obligations per month">
+                            </div>
+                        </div>
+
+                        <div class="btn-area mt-sm">
+                            <button class="btn btn-success emi-btn-full"
+                                    onclick="runAIAdvisor()"
+                                    aria-label="Run AI Affordability Analysis">
+                                <i class="fa-solid fa-robot" aria-hidden="true"></i> Analyze Risk
+                            </button>
+                        </div>
+
+                        <!-- AI response box — populated by runAIAdvisor() -->
+                        <div id="aiResponse"
+                             class="emi-ai-response"
+                             role="status"
+                             aria-live="polite"
+                             aria-label="AI Affordability Result"></div>
+
+                    </div><!-- /#afford-features -->
+
+
+                    <!-- ═══════════════════════════════════════════
+                         PRIMARY ACTION BUTTONS
+                         ═══════════════════════════════════════════ -->
+                    <div class="btn-area" role="group" aria-label="Calculator Actions">
+
+                        <!-- Calculate EMI -->
+                        <button class="btn btn-primary" onclick="calculateUltra()" aria-label="Calculate EMI">
+                            <i class="fa-solid fa-bolt" aria-hidden="true"></i> Calculate
+                        </button>
+
+                        <!-- Generate PDF report -->
+                        <button class="btn btn-secondary" onclick="generatePDF()" aria-label="Download PDF Report">
+                            <i class="fa-solid fa-file-pdf" aria-hidden="true"></i> PDF Report
+                        </button>
+
+                        <!-- Currency toggle -->
+                        <button class="btn btn-secondary emi-btn-icon-only"
+                                onclick="toggleCurrency()"
+                                title="Switch Currency (BDT / USD)"
+                                aria-label="Toggle Currency between BDT and USD">
+                            <i class="fa-solid fa-coins" id="curIcon" aria-hidden="true"></i>
+                        </button>
+
+                    </div>
+
+                </div><!-- /.emi-input-section -->
+
+
+                <!-- ── RIGHT COLUMN: Results & Chart ──────────── -->
+                <div class="emi-result-panel" role="region" aria-label="Calculation Results">
+
+                    <!-- PRIMARY RESULT: Monthly EMI -->
+                    <div class="emi-res-card emi-res-card--highlight">
+                        <div class="emi-res-label">Monthly EMI</div>
+                        <div class="emi-res-value" id="emiValue" aria-live="polite" aria-label="Monthly EMI amount">0</div>
+                        <div id="taxBadge" class="emi-tax-badge" role="note" aria-hidden="true">
+                            <i class="fa-solid fa-check" aria-hidden="true"></i> Best for Tax Saving
+                        </div>
+                    </div>
+
+                    <!-- SECONDARY: Interest & Total -->
+                    <div class="emi-res-row">
+                        <div class="emi-res-card emi-res-card--col">
+                            <div class="emi-res-label">Total Interest</div>
+                            <div class="emi-res-value emi-res-value--sm text-danger"
+                                 id="totalInterest"
+                                 aria-live="polite"
+                                 aria-label="Total interest paid">0</div>
+                        </div>
+                        <div class="emi-res-card emi-res-card--col">
+                            <div class="emi-res-label">Total Amount</div>
+                            <div class="emi-res-value emi-res-value--sm"
+                                 id="totalPayment"
+                                 aria-live="polite"
+                                 aria-label="Total amount payable">0</div>
+                        </div>
+                    </div>
+
+                    <!-- Doughnut chart -->
+                    <div class="emi-chart-wrapper">
+                        <canvas id="loanChart"
+                                aria-label="Donut chart showing Principal vs Total Interest breakdown"
+                                role="img"></canvas>
+                    </div>
+
+                    <!-- Amortization table toggle + CSV export row -->
+                    <div class="btn-area emi-table-btn-row">
+                        <button class="btn btn-secondary emi-btn-full" onclick="toggleTable()" aria-expanded="false" aria-controls="tableContainer" id="toggleTableBtn">
+                            <i class="fa-solid fa-list" aria-hidden="true"></i> Amortization Schedule
+                        </button>
+                        <!-- NEW: Export CSV button (hidden until table is generated) -->
+                        <button class="btn btn-secondary emi-btn-icon-only emi-btn-csv hidden"
+                                id="csvExportBtn"
+                                onclick="exportCSV()"
+                                title="Export Amortization Schedule as CSV"
+                                aria-label="Export amortization schedule as CSV file">
+                            <i class="fa-solid fa-file-csv" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                </div><!-- /.emi-result-panel -->
+
+            </div><!-- /.emi-calculator-grid -->
+
+
+            <!-- ═══════════════════════════════════════════════════
+                 AMORTIZATION SCHEDULE TABLE
+                 Toggled by toggleTable(); populated by generateTable()
+                 ═══════════════════════════════════════════════════ -->
+            <div id="tableContainer" class="emi-amortization-wrapper hidden" role="region" aria-label="Loan Amortization Schedule">
+                <table class="emi-amortization-table" aria-label="Monthly amortization breakdown">
+                    <thead>
+                        <tr>
+                            <th scope="col">Month / Year</th>
+                            <th scope="col">Principal</th>
+                            <th scope="col">Interest</th>
+                            <th scope="col">Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+
+        </div><!-- /.container -->
+
+
+        <!-- [AD SLOT] Bottom Banner -->
+        <div class="ad-slot" data-ad-slot="bottom-banner"></div>
+
+
+        <!-- ═══════════════════════════════════════════════════
+             SEO INFO SECTION
+             ═══════════════════════════════════════════════════ -->
+        <section class="info-section-wrapper" aria-label="Educational Content about EMI Calculators">
+
+            <div class="info-card">
+                <h2><i class="fa-solid fa-calculator" aria-hidden="true"></i> Master Your Home &amp; Car Loan with Smart EMI Ultra Pro Max</h2>
+                <p>Whether you're planning a <strong>home loan</strong>, <strong>car loan</strong>, or <strong>personal loan</strong>, the <strong>Smart EMI Ultra Pro Max</strong> helps you visualize how interest accumulates over time and how strategic pre-payments can save you thousands in the long run.</p>
+                <p>Unlike simple calculators, our tool runs client-side simulations — including <strong>lump-sum prepayment scenarios</strong> and <strong>moratorium period modelling</strong> — to protect your privacy while delivering bank-grade accuracy.</p>
+            </div>
+
+            <div class="info-card">
+                <h2><i class="fa-solid fa-user-shield" aria-hidden="true"></i> Privacy First — 100% Client-Side</h2>
+                <p>Your financial data belongs to you. This <strong>EMI calculator</strong> uses <em>Client-Side Technology</em> — no numbers are ever sent to our servers. Calculate home loan or car loan EMI with complete peace of mind.</p>
+            </div>
+
+            <div class="info-card">
+                <h2><i class="fa-solid fa-snowflake" aria-hidden="true"></i> The "Snowball Effect" of Pre-payments</h2>
+                <img src="../../assets/tools/calc/calc-loan-emi/invest-icon.webp"
+                     alt="Icon illustrating compound interest snowball effect for loan pre-payments"
+                     class="emi-info-icon"
+                     width="100"
+                     height="100"
+                     loading="lazy">
+                <p>Paying just one extra EMI per year — or making a <strong>lump-sum pre-payment</strong> — can reduce your loan tenure by several years. Use the <strong>Advanced Pro</strong> tab to test this strategy. It's not magic; it's pure math working in your favour.</p>
+            </div>
+
+            <div class="info-card">
+                <h2><i class="fa-solid fa-chart-pie" aria-hidden="true"></i> Visualizing Loan Debt</h2>
+                <img src="../../assets/tools/calc/calc-loan-emi/chart-vector.webp"
+                     alt="Smart EMI chart showing interest vs principal breakdown in a donut chart"
+                     class="emi-info-chart"
+                     width="350"
+                     loading="lazy">
+                <p>Our interactive Doughnut Chart makes it visually undeniable: seeing a large interest section often motivates users to increase their monthly EMI slightly — or make a lump-sum payment — to dramatically reduce wasted money over the life of the loan.</p>
+            </div>
+
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════
+             RELATED TOOLS SECTION (Dynamic)
+             ═══════════════════════════════════════════════════ -->
+        <div class="container" style="margin-top:50px;">
+            <div id="dynamic-related-tools"
+                 data-category="calc"
+                 data-current-page="loan-emi-calculator.html">
+            </div>
+        </div>
+        <script type="module" src="../../assets/js/related-tools.js"></script>
+
+        <!-- Tools Comment Section -->
+        <section class="ttw-comments-section animated-entry delay-2" aria-label="User Discussion">
+            <div class="container">
+                <div class="trusted-comments-widget" data-page-id="auto">
+                    <div class="ttw-skeleton-loader" style="text-align:center;padding:40px;color:var(--text-muted);">
+                        <i class="fa-solid fa-circle-notch fa-spin" style="font-size:2rem;color:var(--accent-cyan);" aria-hidden="true"></i>
+                        <p style="margin-top:15px;font-weight:500;">Initializing secure discussion portal...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ═══════════════════════════════════════════════════
+         GLOBAL FOOTER — injected by global.js
+         ═══════════════════════════════════════════════════ -->
+    <footer id="global-footer" class="cyber-footer"></footer>
+
+    <!-- Ad Manager -->
+    <script src="../../assets/js/ads-manager.js"></script>
+
+    <!-- Global JS -->
+    <script type="module" src="../../assets/js/global.js"></script>
+
+    <!-- Tool Logic -->
+    <script src="../../assets/tools/calc/calc-loan-emi/script.js"></script>
+
+    <!-- Comments -->
+    <script type="module" src="../../assets/js/comments.js" defer></script>
+
+</body>
+</html>

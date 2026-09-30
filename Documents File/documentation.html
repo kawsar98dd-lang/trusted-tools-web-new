@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation — Trusted Tools Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --bg:           #080c10;
+            --bg-2:         #0d1117;
+            --sidebar-bg:   #0a0f14;
+            --card-bg:      #111820;
+            --card-border:  #1c2530;
+            --text:         #c9d4df;
+            --text-muted:   #5c6e82;
+            --text-dim:     #3a4a5c;
+            --accent:       #00f3ff;
+            --accent-glow:  rgba(0,243,255,0.15);
+            --accent-2:     #7c3aed;
+            --accent-3:     #10b981;
+            --accent-4:     #f59e0b;
+            --accent-5:     #ef4444;
+            --border:       #1a2330;
+            --code-bg:      #060a0d;
+            --tag-bg:       rgba(0,243,255,0.06);
+            --scrollbar:    #1c2530;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            min-height: 100vh;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-2); }
+        ::-webkit-scrollbar-thumb { background: var(--scrollbar); border-radius: 3px; }
+
+        /* ── SIDEBAR ────────────────────────────────────── */
+        .sidebar {
+            width: 280px;
+            min-width: 280px;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border);
+            height: 100vh;
+            position: fixed;
+            top: 0; left: 0;
+            overflow-y: auto;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 28px 24px 22px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .logo-icon {
+            width: 38px; height: 38px;
+            background: linear-gradient(135deg, var(--accent), #0099cc);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; color: var(--bg);
+            box-shadow: 0 0 20px rgba(0,243,255,0.3);
+            flex-shrink: 0;
+        }
+
+        .brand-text { font-family: 'Syne', sans-serif; }
+        .brand-text .brand-main { font-size: 1rem; font-weight: 800; color: #fff; display: block; }
+        .brand-text .brand-sub { font-size: 0.7rem; color: var(--text-muted); font-weight: 400; }
+
+        .sidebar-version {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--tag-bg);
+            border: 1px solid rgba(0,243,255,0.2);
+            color: var(--accent);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .nav-group { padding: 16px 0 8px; }
+
+        .nav-group-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            padding: 0 24px;
+            margin-bottom: 6px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 24px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            border-right: 2px solid transparent;
+            position: relative;
+        }
+
+        .nav-link i { font-size: 0.8rem; width: 16px; text-align: center; flex-shrink: 0; }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent);
+            background: var(--accent-glow);
+            border-right-color: var(--accent);
+        }
+
+        .nav-link.active { font-weight: 600; }
+
+        .nav-badge {
+            margin-left: auto;
+            background: rgba(0,243,255,0.1);
+            border: 1px solid rgba(0,243,255,0.2);
+            color: var(--accent);
+            font-size: 0.6rem;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding: 20px 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .sidebar-footer a {
+            display: flex; align-items: center; gap: 8px;
+            color: var(--text-muted); text-decoration: none;
+            font-size: 0.82rem;
+            padding: 6px 0;
+            transition: color 0.2s;
+        }
+
+        .sidebar-footer a:hover { color: var(--accent); }
+
+        /* ── MAIN CONTENT ───────────────────────────────── */
+        .content {
+            margin-left: 280px;
+            flex: 1;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .content-inner {
+            max-width: 860px;
+            padding: 60px 70px 80px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            scroll-margin-top: 30px;
+        }
+
+        /* ── TYPOGRAPHY ─────────────────────────────────── */
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        h1 .accent { color: var(--accent); }
+
+        h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2 .h2-icon {
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #e8edf2;
+            margin: 28px 0 12px;
+        }
+
+        p { margin-bottom: 14px; color: var(--text); }
+        p:last-child { margin-bottom: 0; }
+
+        /* ── HERO / INTRO ───────────────────────────────── */
+        .hero {
+            background: linear-gradient(135deg, rgba(0,243,255,0.04) 0%, transparent 60%);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 240px; height: 240px;
+            background: radial-gradient(circle, rgba(0,243,255,0.07), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .meta-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .meta-pill i { color: var(--accent); font-size: 0.75rem; }
+        .meta-pill strong { color: var(--text); }
+
+        /* ── KEY FEATURES GRID ──────────────────────────── */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 22px;
+            transition: border-color 0.25s, transform 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: 12px;
+        }
+
+        .feature-card:hover { transform: translateY(-3px); }
+        .feature-card:hover::after { opacity: 1; }
+
+        .feature-card.cyan { border-top: 2px solid var(--accent); }
+        .feature-card.cyan::after { background: linear-gradient(180deg, rgba(0,243,255,0.04), transparent); }
+        .feature-card.cyan:hover { border-color: var(--accent); }
+
+        .feature-card.purple { border-top: 2px solid var(--accent-2); }
+        .feature-card.purple::after { background: linear-gradient(180deg, rgba(124,58,237,0.04), transparent); }
+        .feature-card.purple:hover { border-color: var(--accent-2); }
+
+        .feature-card.green { border-top: 2px solid var(--accent-3); }
+        .feature-card.green::after { background: linear-gradient(180deg, rgba(16,185,129,0.04), transparent); }
+        .feature-card.green:hover { border-color: var(--accent-3); }
+
+        .feature-card.amber { border-top: 2px solid var(--accent-4); }
+        .feature-card.amber::after { background: linear-gradient(180deg, rgba(245,158,11,0.04), transparent); }
+        .feature-card.amber:hover { border-color: var(--accent-4); }
+
+        .feature-card.red { border-top: 2px solid var(--accent-5); }
+        .feature-card.red::after { background: linear-gradient(180deg, rgba(239,68,68,0.04), transparent); }
+        .feature-card.red:hover { border-color: var(--accent-5); }
+
+        .feat-icon {
+            width: 40px; height: 40px;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 17px;
+            margin-bottom: 14px;
+        }
+
+        .feat-icon.cyan  { background: rgba(0,243,255,0.1);   color: var(--accent); }
+        .feat-icon.purple{ background: rgba(124,58,237,0.12); color: var(--accent-2); }
+        .feat-icon.green { background: rgba(16,185,129,0.1);  color: var(--accent-3); }
+        .feat-icon.amber { background: rgba(245,158,11,0.1);  color: var(--accent-4); }
+        .feat-icon.red   { background: rgba(239,68,68,0.1);   color: var(--accent-5); }
+
+        .feature-card h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #e0e8f0;
+            margin-bottom: 7px;
+        }
+
+        .feature-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
+
+        /* ── ALERT BOXES ────────────────────────────────── */
+        .alert {
+            display: flex;
+            gap: 14px;
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .alert i { font-size: 15px; flex-shrink: 0; margin-top: 2px; }
+
+        .alert.success {
+            background: rgba(16,185,129,0.07);
+            border: 1px solid rgba(16,185,129,0.2);
+            color: #a7f3d0;
+        }
+
+        .alert.success i { color: var(--accent-3); }
+
+        .alert.warning {
+            background: rgba(245,158,11,0.07);
+            border: 1px solid rgba(245,158,11,0.2);
+            color: #fde68a;
+        }
+
+        .alert.warning i { color: var(--accent-4); }
+
+        .alert.info {
+            background: rgba(0,243,255,0.05);
+            border: 1px solid rgba(0,243,255,0.15);
+            color: #a5f3fc;
+        }
+
+        .alert.info i { color: var(--accent); }
+
+        .alert.danger {
+            background: rgba(239,68,68,0.07);
+            border: 1px solid rgba(239,68,68,0.2);
+            color: #fca5a5;
+        }
+
+        .alert.danger i { color: var(--accent-5); }
+
+        /* ── CODE BLOCKS ────────────────────────────────── */
+        .code-wrap {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .code-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            padding: 6px 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+
+        .code-label i { color: var(--accent); }
+
+        pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 0 8px 8px 8px;
+            padding: 20px 24px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            line-height: 1.8;
+            color: #79c0ff;
+        }
+
+        code { font-family: 'JetBrains Mono', monospace; }
+
+        .ic { /* inline code */
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1px 7px;
+            border-radius: 5px;
+            color: #ff8c6b;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+        }
+
+        .hl-key   { color: #ff7b72; }
+        .hl-str   { color: #a5d6ff; }
+        .hl-val   { color: #79c0ff; }
+        .hl-bool  { color: #56d364; }
+        .hl-num   { color: #f2cc60; }
+        .hl-comment { color: #5c7080; font-style: italic; }
+
+        /* ── STEPS ──────────────────────────────────────── */
+        .steps { counter-reset: step-counter; margin: 24px 0; }
+
+        .step {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .step:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 18px; top: 40px;
+            width: 1px; height: calc(100% + 4px);
+            background: var(--border);
+        }
+
+        .step-num {
+            counter-increment: step-counter;
+            width: 38px; height: 38px; min-width: 38px;
+            background: var(--card-bg);
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            position: relative; z-index: 1;
+        }
+
+        .step-body h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #e0e8f0;
+            margin-bottom: 5px;
+        }
+
+        .step-body p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+
+        /* ── PARAM TABLES ───────────────────────────────── */
+        .param-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.84rem; }
+
+        .param-table th {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            text-align: left;
+            font-family: 'Syne', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .param-table td {
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            color: var(--text);
+            vertical-align: top;
+        }
+
+        .param-table tr:nth-child(even) td { background: rgba(255,255,255,0.01); }
+        .param-table tr:hover td { background: rgba(0,243,255,0.02); }
+
+        .param-key { font-family: 'JetBrains Mono', monospace; color: #ff8c6b; font-size: 0.8rem; }
+        .param-type { font-family: 'JetBrains Mono', monospace; color: var(--accent-4); font-size: 0.78rem; }
+        .param-default { font-family: 'JetBrains Mono', monospace; color: var(--accent-3); font-size: 0.78rem; }
+
+        /* ── TOOLS LIST ─────────────────────────────────── */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .tool-pill {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 12px 14px;
+            font-size: 0.82rem;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+
+        .tool-pill i { color: var(--accent); font-size: 0.85rem; }
+        .tool-pill:hover { border-color: rgba(0,243,255,0.3); color: var(--text); }
+
+        /* ── API FEATURE BLOCKS ─────────────────────────── */
+        .api-block {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .api-block-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            gap: 12px;
+        }
+
+        .api-block-header h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: #e0e8f0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .api-num {
+            background: var(--tag-bg);
+            border: 1px solid rgba(0,243,255,0.2);
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .api-status {
+            font-size: 0.72rem;
+            padding: 3px 9px;
+            border-radius: 20px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .api-status.req { background: rgba(239,68,68,0.12); color: #f87171; border: 1px solid rgba(239,68,68,0.2); }
+        .api-status.opt { background: rgba(16,185,129,0.1); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.2); }
+
+        .api-block-body { padding: 20px; }
+        .api-block-body p { font-size: 0.86rem; color: var(--text-muted); margin-bottom: 14px; }
+
+        /* ── FAQ ────────────────────────────────────────── */
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .faq-q {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 16px 20px;
+            cursor: pointer;
+            background: var(--card-bg);
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .faq-q:hover { background: rgba(0,243,255,0.03); }
+
+        .faq-q-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #d0dae5;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .faq-q-icon {
+            background: var(--tag-bg);
+            border: 1px solid rgba(0,243,255,0.15);
+            color: var(--accent);
+            width: 22px; height: 22px; min-width: 22px;
+            border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            margin-top: 1px;
+        }
+
+        .faq-toggle {
+            color: var(--text-dim);
+            transition: transform 0.25s;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .faq-item.open .faq-toggle { transform: rotate(180deg); color: var(--accent); }
+
+        .faq-a {
+            display: none;
+            padding: 0 20px 18px 56px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border);
+            padding-top: 14px;
+        }
+
+        .faq-item.open .faq-a { display: block; }
+
+        /* ── DIVIDER ────────────────────────────────────── */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 40px 0;
+        }
+
+        /* ── FOLDER TREE ────────────────────────────────── */
+        .tree {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 22px 24px;
+            line-height: 2;
+            color: #8b949e;
+        }
+
+        .tree .tree-dir { color: #79c0ff; }
+        .tree .tree-file { color: #c9d1d9; }
+        .tree .tree-comment { color: #5c7080; font-style: italic; }
+        .tree .tree-key { color: #56d364; }
+
+        /* ── SUPPORT LINKS ──────────────────────────────── */
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .support-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 22px;
+            text-decoration: none;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            transition: all 0.25s;
+        }
+
+        .support-card:hover {
+            border-color: rgba(0,243,255,0.3);
+            background: rgba(0,243,255,0.03);
+            transform: translateY(-2px);
+        }
+
+        .support-icon {
+            width: 40px; height: 40px; min-width: 40px;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px;
+        }
+
+        .support-card h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #e0e8f0;
+            margin-bottom: 4px;
+        }
+
+        .support-card p { font-size: 0.78rem; color: var(--text-muted); margin: 0; }
+
+        /* ── SECTION INTRO ──────────────────────────────── */
+        .section-intro {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* ── MOBILE TOGGLE ──────────────────────────────── */
+        .mobile-nav-toggle {
+            display: none;
+            position: fixed;
+            bottom: 24px; right: 24px;
+            width: 48px; height: 48px;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 200;
+            box-shadow: 0 0 30px rgba(0,243,255,0.4);
+        }
+
+        /* ── RESPONSIVE ─────────────────────────────────── */
+        @media (max-width: 1024px) {
+            .content-inner { padding: 40px 36px 60px; }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+            .sidebar.open { transform: translateX(0); }
+            .content { margin-left: 0; }
+            .content-inner { padding: 30px 20px 60px; }
+            h1 { font-size: 2rem; }
+            .mobile-nav-toggle { display: flex; align-items: center; justify-content: center; }
+            .features-grid { grid-template-columns: 1fr; }
+            .tools-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* ── ANIMATIONS ─────────────────────────────────── */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        section { animation: fadeInUp 0.4s ease both; }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════ SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <div class="sidebar-logo">
+            <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="brand-text">
+                <span class="brand-main">Trusted Tools Web</span>
+                <span class="brand-sub">by MD KAWSAR</span>
+            </div>
+        </div>
+        <span class="sidebar-version"><i class="fa-solid fa-circle" style="font-size:6px;"></i> v1.0.0 — Documentation</span>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-group-label">Getting Started</div>
+        <a href="#intro"        class="nav-link active"><i class="fa-solid fa-star"></i> Introduction</a>
+        <a href="#key-features" class="nav-link"><i class="fa-solid fa-bolt"></i> Key Features <span class="nav-badge">NEW</span></a>
+        <a href="#installation" class="nav-link"><i class="fa-solid fa-rocket"></i> Installation & Setup</a>
+        <a href="#structure"    class="nav-link"><i class="fa-solid fa-folder-tree"></i> Folder Structure</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-group-label">Customization</div>
+        <a href="#site-config"      class="nav-link"><i class="fa-solid fa-sliders"></i> site-config.js Guide</a>
+        <a href="#branding"         class="nav-link"><i class="fa-solid fa-palette"></i> Branding & Colors</a>
+        <a href="#tools-management" class="nav-link"><i class="fa-solid fa-toolbox"></i> Managing Tools</a>
+        <a href="#monetization"     class="nav-link"><i class="fa-solid fa-coins"></i> Ads & Analytics</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-group-label">Third-Party APIs</div>
+        <a href="#firebase"   class="nav-link"><i class="fa-solid fa-database"></i> Firebase Setup</a>
+        <a href="#imgbb"      class="nav-link"><i class="fa-solid fa-image"></i> ImgBB (Images)</a>
+        <a href="#cloudinary" class="nav-link"><i class="fa-solid fa-microphone"></i> Cloudinary (Voice)</a>
+        <a href="#telegram"   class="nav-link"><i class="fa-brands fa-telegram"></i> Telegram Alerts</a>
+        <a href="#comment-features" class="nav-link"><i class="fa-solid fa-comments"></i> Comment Features</a>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-group-label">Help & Support</div>
+        <a href="#faq"     class="nav-link"><i class="fa-solid fa-circle-question"></i> FAQ & Troubleshooting</a>
+        <a href="#support" class="nav-link"><i class="fa-solid fa-headset"></i> Support & Credits</a>
+    </div>
+
+    <div class="sidebar-footer">
+        <a href="https://t.me/Md_Kawser2" target="_blank"><i class="fa-brands fa-telegram"></i> Contact Developer</a>
+        <a href="https://t.me/TrustedToolsWeb" target="_blank"><i class="fa-solid fa-users"></i> Join Community</a>
+    </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════ MAIN -->
+<main class="content">
+<div class="content-inner">
+
+    <!-- ══════════════════════════════════════════ 1. INTRODUCTION -->
+    <section id="intro">
+        <div class="hero">
+            <h1>Welcome to<br><span class="accent">Trusted Tools Web</span></h1>
+            <p style="color:var(--text-muted); font-size:0.95rem; max-width:540px; margin-bottom:0;">
+                Thank you for purchasing <strong style="color:var(--text)">Trusted Tools Web</strong>! 
+                এই ডকুমেন্টেশনটি আপনাকে ধাপে ধাপে সাইটটি সেটআপ, কাস্টমাইজ এবং পরিচালনা করতে সাহায্য করবে — কোনো কোডিং অভিজ্ঞতা ছাড়াই।
+            </p>
+            <div class="hero-meta">
+                <span class="meta-pill"><i class="fa-solid fa-user-pen"></i> <strong>Author:</strong> MD KAWSAR</span>
+                <span class="meta-pill"><i class="fa-solid fa-calendar"></i> <strong>Created:</strong> February 2026</span>
+                <span class="meta-pill"><i class="fa-brands fa-html5"></i> <strong>Platform:</strong> HTML5 / CSS3 / Vanilla JS</span>
+                <span class="meta-pill"><i class="fa-solid fa-server"></i> <strong>Server Required:</strong> None</span>
+                <span class="meta-pill"><i class="fa-solid fa-tools"></i> <strong>Total Tools:</strong> 60+</span>
+            </div>
+        </div>
+
+        <div class="alert success">
+            <i class="fa-solid fa-circle-check"></i>
+            <div><strong>শুরু করা অত্যন্ত সহজ!</strong> এই প্রজেক্টে কোনো PHP, MySQL বা ব্যাকএন্ড সার্ভারের প্রয়োজন নেই। শুধু ফাইলগুলো আপলোড করুন, একটি কনফিগ ফাইল এডিট করুন — আপনার সাইট প্রস্তুত!</div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 2. KEY FEATURES -->
+    <section id="key-features">
+        <h2>
+            <span class="h2-icon" style="background:rgba(0,243,255,0.1);color:var(--accent)"><i class="fa-solid fa-bolt"></i></span>
+            Key Features
+        </h2>
+        <p class="section-intro">
+            Trusted Tools Web একটি premium, feature-packed টুলস স্যুট। নিচে এর প্রধান বৈশিষ্ট্যগুলো সংক্ষেপে তুলে ধরা হলো।
+        </p>
+
+        <div class="features-grid">
+
+            <div class="feature-card cyan">
+                <div class="feat-icon cyan"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4>100% Client-Side Architecture</h4>
+                <p>সমস্ত ডেটা প্রক্রিয়াকরণ হয় ব্যবহারকারীর নিজের ব্রাউজারে। আপনার সার্ভারে কোনো ডেটা যায় না — Zero Data Leakage।</p>
+            </div>
+
+            <div class="feature-card purple">
+                <div class="feat-icon purple"><i class="fa-solid fa-toolbox"></i></div>
+                <h4>60+ Premium Tools</h4>
+                <p>Calculator, Security, Image Editor, PDF Tools, Developer Utilities — সব ধরনের টুল একটি প্যাকেজে।</p>
+            </div>
+
+            <div class="feature-card green">
+                <div class="feat-icon green"><i class="fa-solid fa-comments"></i></div>
+                <h4>15-Feature Comment System</h4>
+                <p>Image Attachments, Voice Notes, Upvotes, GDPR, Telegram Alerts সহ শক্তিশালী কমেন্ট ইঞ্জিন।</p>
+            </div>
+
+            <div class="feature-card amber">
+                <div class="feat-icon amber"><i class="fa-solid fa-sliders"></i></div>
+                <h4>One-File Customization</h4>
+                <p>শুধু <span class="ic">site-config.js</span> ফাইল এডিট করে সব ফিচার, রং, নাম, এপিআই কী কনফিগার করুন।</p>
+            </div>
+
+            <div class="feature-card cyan">
+                <div class="feat-icon cyan"><i class="fa-solid fa-wifi-slash"></i></div>
+                <h4>Offline Capable</h4>
+                <p>একবার লোড হলে অনেক টুল ইন্টারনেট ছাড়াও কাজ করে। Privacy-first ডিজাইন।</p>
+            </div>
+
+            <div class="feature-card green">
+                <div class="feat-icon green"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <h4>Built-in SEO System</h4>
+                <p>Auto JSON-LD Schema, Open Graph tags, Twitter Cards — প্রতিটি টুলে SEO সেটআপ করা আছে।</p>
+            </div>
+
+            <div class="feature-card red">
+                <div class="feat-icon red"><i class="fa-solid fa-coins"></i></div>
+                <h4>Monetization Ready</h4>
+                <p>Google AdSense, In-feed Ads, Analytics Loader — সেন্ট্রালাইজড সিস্টেমে একটি ফাইল থেকে নিয়ন্ত্রণ করুন।</p>
+            </div>
+
+            <div class="feature-card purple">
+                <div class="feat-icon purple"><i class="fa-solid fa-mobile"></i></div>
+                <h4>Fully Responsive Design</h4>
+                <p>Mobile, Tablet, Desktop — সব ডিভাইসে নিখুঁতভাবে কাজ করে। TailwindCSS-এর মতো Global CSS Framework।</p>
+            </div>
+
+            <div class="feature-card amber">
+                <div class="feat-icon amber"><i class="fa-solid fa-lock"></i></div>
+                <h4>Privacy & GDPR Compliant</h4>
+                <p>AES-256 Encryption, Zero-Knowledge Architecture, GDPR Consent System, Data Export সুবিধা।</p>
+            </div>
+
+            <div class="feature-card red">
+                <div class="feat-icon red"><i class="fa-solid fa-cloud-upload-alt"></i></div>
+                <h4>Static Hosting Compatible</h4>
+                <p>Cloudflare Pages, Netlify, GitHub Pages, Hostinger, cPanel — যেকোনো হোস্টে আপলোড করুন।</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 3. INSTALLATION -->
+    <section id="installation">
+        <h2>
+            <span class="h2-icon" style="background:rgba(124,58,237,0.12);color:var(--accent-2)"><i class="fa-solid fa-rocket"></i></span>
+            Installation & Setup
+        </h2>
+        <p class="section-intro">
+            এই প্রজেক্ট সম্পূর্ণ Static (HTML/JS/CSS)। তাই যেকোনো সাধারণ ওয়েব হোস্টে আপলোড করেই কাজ শুরু করা যাবে।
+        </p>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h4>ZIP ফাইল Extract করুন</h4>
+                    <p>CodeCanyon থেকে ডাউনলোড করা <span class="ic">.zip</span> ফাইলটি আপনার কম্পিউটারে Extract করুন। আপনি <span class="ic">Code-Canon-Project</span> নামের একটি ফোল্ডার পাবেন।</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h4>site-config.js কাস্টমাইজ করুন</h4>
+                    <p>আপলোড করার আগে <span class="ic">assets/js/site-config.js</span> খুলুন এবং আপনার সাইটের নাম, ডোমেইন, এবং API কী গুলো যুক্ত করুন।</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h4>হোস্টিংয়ে আপলোড করুন</h4>
+                    <p>ফোল্ডারের সব ফাইল আপনার হোস্টিংয়ের <span class="ic">public_html</span> বা <span class="ic">htdocs</span> ফোল্ডারে আপলোড করুন (cPanel File Manager বা FTP ব্যবহার করে)।</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                    <h4>আপনার ডোমেইন ভিজিট করুন</h4>
+                    <p>ব্রাউজারে আপনার ডোমেইন টাইপ করুন — সাইট এখন Live! কোনো Database Setup বা Server Configuration লাগবে না।</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert warning">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <div><strong>Local Testing করতে চাইলে:</strong> সরাসরি ফাইল ডাবল-ক্লিক করে ব্রাউজারে খুলবেন না — এতে কিছু JavaScript কাজ নাও করতে পারে। পরিবর্তে <strong>VS Code Live Server</strong> extension বা <strong>Spck Editor</strong>-এর built-in preview ব্যবহার করুন।</div>
+        </div>
+
+        <h3>Recommended Hosting Platforms</h3>
+        <div class="tools-grid">
+            <div class="tool-pill"><i class="fa-solid fa-cloud"></i> Cloudflare Pages (Free)</div>
+            <div class="tool-pill"><i class="fa-brands fa-github"></i> GitHub Pages (Free)</div>
+            <div class="tool-pill"><i class="fa-solid fa-server"></i> Netlify (Free)</div>
+            <div class="tool-pill"><i class="fa-solid fa-globe"></i> Hostinger</div>
+            <div class="tool-pill"><i class="fa-solid fa-database"></i> cPanel / Shared Hosting</div>
+            <div class="tool-pill"><i class="fa-brands fa-google"></i> Firebase Hosting</div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 4. FOLDER STRUCTURE -->
+    <section id="structure">
+        <h2>
+            <span class="h2-icon" style="background:rgba(16,185,129,0.1);color:var(--accent-3)"><i class="fa-solid fa-folder-tree"></i></span>
+            Folder Structure
+        </h2>
+        <p class="section-intro">ফাইলগুলো কোথায় আছে সেটা জানলে কাস্টমাইজ করা অনেক সহজ হবে।</p>
+
+        <div class="tree">
+<span class="tree-dir">Root/</span>
+├── <span class="tree-file">index.html</span>            <span class="tree-comment">← মূল হোমপেজ</span>
+├── <span class="tree-file">documentation.html</span>    <span class="tree-comment">← এই ফাইল</span>
+│
+├── <span class="tree-dir">assets/</span>               <span class="tree-comment">← সব গ্লোবাল রিসোর্স এখানে</span>
+│   ├── <span class="tree-dir">css/</span>
+│   │   ├── <span class="tree-file">global.css</span>       <span class="tree-comment">← রং, ফন্ট, থিম ভেরিয়েবল</span>
+│   │   └── <span class="tree-file">tools-template.css</span> <span class="tree-comment">← সব টুলের শেয়ার্ড স্টাইল</span>
+│   ├── <span class="tree-dir">js/</span>
+│   │   ├── <span class="tree-key">site-config.js</span>   <span class="tree-comment">← ✅ আপনার প্রধান কনফিগ ফাইল</span>
+│   │   ├── <span class="tree-file">global.js</span>        <span class="tree-comment">← হেডার/ফুটার ইনজেকশন</span>
+│   │   ├── <span class="tree-file">tools-data.js</span>    <span class="tree-comment">← হোমপেজ টুল কার্ড ডেটা</span>
+│   │   ├── <span class="tree-file">analytics-loader.js</span> <span class="tree-comment">← Google Analytics কোড</span>
+│   │   ├── <span class="tree-file">ads-manager.js</span>   <span class="tree-comment">← AdSense/Banner Ads</span>
+│   │   ├── <span class="tree-file">comments.js</span>      <span class="tree-comment">← কমেন্ট সিস্টেম (এডিট করবেন না)</span>
+│   │   └── <span class="tree-file">related-tools.js</span> <span class="tree-comment">← সম্পর্কিত টুল</span>
+│   ├── <span class="tree-dir">img/</span>               <span class="tree-comment">← লোগো, OG Banner ইমেজ</span>
+│   └── <span class="tree-dir">library/</span>           <span class="tree-comment">← Font Awesome (লোকালি হোস্টেড)</span>
+│
+├── <span class="tree-dir">components/</span>            <span class="tree-comment">← হেডার ও ফুটার HTML</span>
+├── <span class="tree-dir">pages/</span>                <span class="tree-comment">← About, Contact, Privacy পেজ</span>
+│
+└── <span class="tree-dir">tools/</span>                <span class="tree-comment">← সব টুল ক্যাটাগরি অনুযায়ী</span>
+    ├── <span class="tree-dir">calc/</span>              <span class="tree-comment">← Calculators (Age, BMI, etc.)</span>
+    ├── <span class="tree-dir">dev/</span>               <span class="tree-comment">← Developer Tools</span>
+    ├── <span class="tree-dir">img/</span>               <span class="tree-comment">← Image Tools</span>
+    ├── <span class="tree-dir">media/</span>             <span class="tree-comment">← Audio / Media Tools</span>
+    ├── <span class="tree-dir">text/</span>              <span class="tree-comment">← Text & Font Tools</span>
+    └── <span class="tree-dir">sec/</span>               <span class="tree-comment">← Security Tools</span>
+        </div>
+
+        <div class="alert info">
+            <i class="fa-solid fa-lightbulb"></i>
+            <div><strong>সোনালী নিয়ম:</strong> শুধু <span class="ic">site-config.js</span>, <span class="ic">global.js</span>, <span class="ic">tools-data.js</span>, <span class="ic">ads-manager.js</span> এবং <span class="ic">global.css</span> ফাইল এডিট করুন। <span class="ic">comments.js</span> কখনো এডিট করবেন না।</div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 5. SITE-CONFIG.JS -->
+    <section id="site-config">
+        <h2>
+            <span class="h2-icon" style="background:rgba(0,243,255,0.1);color:var(--accent)"><i class="fa-solid fa-sliders"></i></span>
+            site-config.js — Master Config Guide
+        </h2>
+        <p class="section-intro">
+            এটি আপনার সবচেয়ে গুরুত্বপূর্ণ ফাইল। সাইটের প্রতিটি ফিচার এই একটি ফাইল থেকে কনফিগার করা হয়।
+            ফাইলটি আছে: <span class="ic">assets/js/site-config.js</span>
+        </p>
+
+        <h3>ধাপ ১ — Basic Information (বেসিক তথ্য)</h3>
+        <p>ফাইলটি খুলুন এবং প্রথমে নিচের অংশটি আপনার তথ্য দিয়ে পূরণ করুন:</p>
+
+        <div class="code-wrap">
+            <div class="code-label"><i class="fa-solid fa-file-code"></i> assets/js/site-config.js</div>
+<pre><span class="hl-key">window.SITE_CONFIG</span> = {
+
+    <span class="hl-comment">// ── আপনার সাইটের নাম এবং তথ্য</span>
+    <span class="hl-key">brandName</span>   : <span class="hl-str">"আপনার সাইটের নাম"</span>,
+    <span class="hl-key">author</span>      : <span class="hl-str">"আপনার নাম"</span>,
+    <span class="hl-key">baseUrl</span>     : <span class="hl-str">"https://yourdomain.com"</span>,  <span class="hl-comment">// শেষে / দেবেন না</span>
+
+    <span class="hl-comment">// ── SEO Description</span>
+    <span class="hl-key">defaultDescription</span> : <span class="hl-str">"আপনার সাইটের SEO বিবরণ"</span>,
+    <span class="hl-key">themeColor</span>         : <span class="hl-str">"#0d1117"</span>,  <span class="hl-comment">// ব্রাউজার থিম রং</span>
+
+    <span class="hl-comment">// ── যোগাযোগ</span>
+    <span class="hl-key">contactEmail</span> : <span class="hl-str">"your@email.com"</span>,
+    <span class="hl-key">mainSiteUrl</span>  : <span class="hl-str">"https://yourdomain.com"</span>,
+};</pre>
+        </div>
+
+        <h3>ধাপ ২ — Social Media (সোশ্যাল মিডিয়া)</h3>
+        <div class="code-wrap">
+            <div class="code-label"><i class="fa-solid fa-file-code"></i> assets/js/site-config.js</div>
+<pre>    <span class="hl-key">facebookAppId</span> : <span class="hl-str">"আপনার Facebook App ID"</span>,
+    <span class="hl-key">twitterHandle</span> : <span class="hl-str">"@YourTwitterHandle"</span>,
+    <span class="hl-key">ogSiteName</span>    : <span class="hl-str">"আপনার সাইটের পুরো নাম"</span>,</pre>
+        </div>
+
+        <div class="alert info">
+            <i class="fa-solid fa-info-circle"></i>
+            <div>Facebook App ID না থাকলে <span class="ic">facebookAppId</span> খালি রাখুন (<span class="ic">""</span>)। Social Sharing তবুও কাজ করবে। Twitter Handle না থাকলেও একই।</div>
+        </div>
+
+        <h3>সব প্যারামিটারের তালিকা</h3>
+        <table class="param-table">
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>কী করে</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="param-key">brandName</td><td class="param-type">string</td><td>সাইটের নাম, হেডারে দেখায়</td></tr>
+                <tr><td class="param-key">author</td><td class="param-type">string</td><td>লেখকের নাম</td></tr>
+                <tr><td class="param-key">baseUrl</td><td class="param-type">string</td><td>আপনার ডোমেইন (https সহ)</td></tr>
+                <tr><td class="param-key">defaultDescription</td><td class="param-type">string</td><td>Google-এ যে বিবরণ দেখাবে</td></tr>
+                <tr><td class="param-key">themeColor</td><td class="param-type">hex color</td><td>মোবাইলে ব্রাউজার ট্যাবের রং</td></tr>
+                <tr><td class="param-key">facebookAppId</td><td class="param-type">string</td><td>Facebook sharing এর জন্য App ID</td></tr>
+                <tr><td class="param-key">twitterHandle</td><td class="param-type">string</td><td>Twitter/X প্রোফাইল হ্যান্ডেল</td></tr>
+                <tr><td class="param-key">ogSiteName</td><td class="param-type">string</td><td>Open Graph-এ সাইটের নাম</td></tr>
+                <tr><td class="param-key">defaultOGImage</td><td class="param-type">path</td><td>শেয়ারিং-এ যে ছবি দেখাবে</td></tr>
+                <tr><td class="param-key">contactEmail</td><td class="param-type">email</td><td>Contact পেজে দেখানো ইমেইল</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 6. BRANDING -->
+    <section id="branding">
+        <h2>
+            <span class="h2-icon" style="background:rgba(245,158,11,0.1);color:var(--accent-4)"><i class="fa-solid fa-palette"></i></span>
+            Branding & Colors
+        </h2>
+        <p class="section-intro">সাইটের নাম, লোগো এবং রং পরিবর্তন করার নির্দেশিকা।</p>
+
+        <h3>সাইটের নাম পরিবর্তন করুন</h3>
+        <p>হেডার এবং ফুটার ডায়নামিকভাবে <span class="ic">assets/js/global.js</span> ফাইল থেকে তৈরি হয়। নাম পরিবর্তন করতে:</p>
+
+        <div class="code-wrap">
+            <div class="code-label"><i class="fa-solid fa-file-code"></i> assets/js/global.js — loadGlobalHeader ফাংশন খুঁজুন</div>
+<pre><span class="hl-comment">// এই অংশটি খুঁজুন এবং Your Brand Name পরিবর্তন করুন:</span>
+headerEl.innerHTML = `
+    &lt;a href="${root}index.html" class="header-logo"&gt;
+        &lt;i class="fa-solid fa-shield-halved"&gt;&lt;/i&gt;
+        <span class="hl-str">Your Brand</span> &lt;span&gt;<span class="hl-str">Name</span>&lt;/span&gt;
+    &lt;/a&gt;
+`;</pre>
+        </div>
+
+        <h3>গ্লোবাল রং (Theme Colors) পরিবর্তন করুন</h3>
+        <p>সাইটের সব রং <span class="ic">assets/css/global.css</span> ফাইলের উপরে <span class="ic">:root</span> ভেরিয়েবলে থাকে:</p>
+
+        <div class="code-wrap">
+            <div class="code-label"><i class="fa-solid fa-file-code"></i> assets/css/global.css</div>
+<pre>:root {
+    <span class="hl-comment">/* প্রধান Accent রং — সবচেয়ে বেশি ব্যবহৃত হয় */</span>
+    <span class="hl-key">--accent-cyan</span>:   <span class="hl-str">#00f3ff</span>;  <span class="hl-comment">/* নীল/সায়ান গ্লো রং */</span>
+
+    <span class="hl-comment">/* ব্যাকগ্রাউন্ড */</span>
+    <span class="hl-key">--bg-primary</span>:    <span class="hl-str">#0d1117</span>;  <span class="hl-comment">/* মূল ব্যাকগ্রাউন্ড */</span>
+    <span class="hl-key">--bg-secondary</span>:  <span class="hl-str">#161b22</span>;  <span class="hl-comment">/* কার্ড ব্যাকগ্রাউন্ড */</span>
+
+    <span class="hl-comment">/* টেক্সট রং */</span>
+    <span class="hl-key">--text-main</span>:     <span class="hl-str">#c9d1d9</span>;  <span class="hl-comment">/* মূল টেক্সট */</span>
+    <span class="hl-key">--text-muted</span>:    <span class="hl-str">#8b949e</span>;  <span class="hl-comment">/* হালকা টেক্সট */</span>
+}</pre>
+        </div>
+
+        <div class="alert success">
+            <i class="fa-solid fa-lightbulb"></i>
+            <div><strong>টিপস:</strong> শুধু <span class="ic">--accent-cyan</span> রং পরিবর্তন করলেই সাইটের মূল থিম রং বদলে যাবে। Hex color picker এর জন্য <a href="https://htmlcolorcodes.com" target="_blank" style="color:var(--accent-3)">htmlcolorcodes.com</a> ব্যবহার করতে পারেন।</div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 7. TOOLS MANAGEMENT -->
+    <section id="tools-management">
+        <h2>
+            <span class="h2-icon" style="background:rgba(124,58,237,0.12);color:var(--accent-2)"><i class="fa-solid fa-toolbox"></i></span>
+            Managing Tools (tools-data.js)
+        </h2>
+        <p class="section-intro">
+            হোমপেজের টুল গ্রিড এবং "Related Tools" সেকশন ডায়নামিকভাবে <span class="ic">assets/js/tools-data.js</span> থেকে তৈরি হয়। এখানে প্রতিটি টুলের তথ্য একটি object হিসেবে থাকে।
+        </p>
+
+        <h3>টুলের তথ্য পরিবর্তন করুন</h3>
+        <p>প্রতিটি টুলের structure এরকম দেখতে:</p>
+
+        <div class="code-wrap">
+            <div class="code-label"><i class="fa-solid fa-file-code"></i> assets/js/tools-data.js — একটি টুলের structure</div>
+<pre>{
+    <span class="hl-key">link</span>:         <span class="hl-str">"tools/calc/age-calculator.html"</span>,  <span class="hl-comment">// টুলের URL পাথ</span>
+    <span class="hl-key">category</span>:     <span class="hl-str">"calc"</span>,                         <span class="hl-comment">// ফিল্টার ক্যাটাগরি</span>
+    <span class="hl-key">classes</span>:      <span class="hl-str">"tool-card"</span>,                    <span class="hl-comment">// CSS ক্লাস</span>
+    <span class="hl-key">themeColor1</span>:  <span class="hl-str">"#00e5ff"</span>,                      <span class="hl-comment">// কার্ডের প্রাইমারি রং</span>
+    <span class="hl-key">themeColor2</span>:  <span class="hl-str">"#d124ff"</span>,                      <span class="hl-comment">// কার্ডের সেকেন্ডারি রং</span>
+    <span class="hl-key">dataName</span>:     <span class="hl-str">"age calculator keywords..."</span>,    <span class="hl-comment">// সার্চ keywords</span>
+    <span class="hl-key">html</span>: `...`                                      <span class="hl-comment">// কার্ডের ভিজুয়াল HTML</span>
+}</pre>
+        </div>
+
+        <h3>নতুন টুল যোগ করার পদ্ধতি</h3>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h4>যেকোনো বিদ্যমান টুলের object কপি করুন</h4>
+                    <p><span class="ic">tools-data.js</span> খুলুন, শেষের একটি object <span class="ic">{...}</span> কপি করুন।</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h4>link, category, dataName আপডেট করুন</h4>
+                    <p>নতুন টুলের URL, ক্যাটাগরি (calc/sec/img/dev/text/media), এবং সার্চ কীওয়ার্ড দিন।</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h4>দুটি থিম রং বেছে নিন</h4>
+                    <p><span class="ic">themeColor1</span> ও <span class="ic">themeColor2</span>-এ দুটি Hex রং দিন। বাকি সব CSS স্বয়ংক্রিয়ভাবে তৈরি হবে।</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert success">
+            <i class="fa-solid fa-circle-check"></i>
+            <div><strong>Zero CSS!</strong> দুটি রং দিলেই কার্ডের badge, icon, title — সব কিছু সেই রংয়ে স্বয়ংক্রিয়ভাবে রঙিন হয়। নতুন CSS লেখার প্রয়োজন নেই।</div>
+        </div>
+
+        <h3>প্রজেক্টে থাকা টুলসমূহ (বিভাগ অনুযায়ী)</h3>
+        <div class="tools-grid">
+            <div class="tool-pill"><i class="fa-solid fa-calculator"></i> Age AI Calculator</div>
+            <div class="tool-pill"><i class="fa-solid fa-shield-halved"></i> 2FA Authenticator PRO</div>
+            <div class="tool-pill"><i class="fa-solid fa-music"></i> Audio Studio PRO</div>
+            <div class="tool-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> TextPro MAX</div>
+            <div class="tool-pill"><i class="fa-brands fa-youtube"></i> Thumbnail Ultra Max</div>
+            <div class="tool-pill"><i class="fa-solid fa-user-shield"></i> AI Privacy Censor</div>
+            <div class="tool-pill"><i class="fa-solid fa-bezier-curve"></i> SVG Vectorizer</div>
+            <div class="tool-pill"><i class="fa-solid fa-expand"></i> AI Upscaler PRO MAX</div>
+            <div class="tool-pill"><i class="fa-solid fa-vault"></i> Data Vault AES-256</div>
+            <div class="tool-pill"><i class="fa-solid fa-file-pdf"></i> Smart DocuScan</div>
+            <div class="tool-pill"><i class="fa-solid fa-plus" style="color:var(--accent-3)"></i> আরও ৫০+ টুল...</div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 8. MONETIZATION -->
+    <section id="monetization">
+        <h2>
+            <span class="h2-icon" style="background:rgba(245,158,11,0.1);color:var(--accent-4)"><i class="fa-solid fa-coins"></i></span>
+            Ads & Analytics Configuration
+        </h2>
+        <p class="section-intro">
+            সেন্ট্রালাইজড সিস্টেম — একটি ফাইল পরিবর্তনেই সব ৬০+ টুল পেজে ads ও analytics যুক্ত হবে।
+        </p>
+
+        <h3>Google Analytics যোগ করুন</h3>
+        <p><span class="ic">assets/js/analytics-loader.js</span> খুলুন এবং আপনার Google Analytics snippet পেস্ট করুন:</p>
+
+        <div class="code-wrap">
+            <div class="code-label"><i class="fa-solid fa-file-code"></i> assets/js/analytics-loader.js</div>
+<pre><span class="hl-comment">// Google Analytics snippet এখানে paste করুন</span>
+(function() {
+    const script = document.createElement(<span class="hl-str">'script'</span>);
+    script.src = <span class="hl-str">'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX'</span>;
+    script.async = <span class="hl-bool">true</span>;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag(<span class="hl-str">'js'</span>, new Date());
+    gtag(<span class="hl-str">'config'</span>, <span class="hl-str">'G-XXXXXXXXXX'</span>); <span class="hl-comment">// ← আপনার Measurement ID</span>
+})();</pre>
+        </div>
+
+        <h3>AdSense / Banner Ads যোগ করুন</h3>
+        <p><span class="ic">assets/js/ads-manager.js</span> খুলুন এবং placeholder গুলো আপনার AdSense কোড দিয়ে প্রতিস্থাপন করুন:</p>
+
+        <div class="code-wrap">
+            <div class="code-label"><i class="fa-solid fa-file-code"></i> assets/js/ads-manager.js</div>
+<pre>const AD_UNITS = {
+    <span class="hl-str">'top-banner'</span>:    <span class="hl-str">'&lt;!-- আপনার AdSense Top Banner Code --&gt;'</span>,
+    <span class="hl-str">'bottom-banner'</span>: <span class="hl-str">'&lt;!-- আপনার AdSense Bottom Banner Code --&gt;'</span>
+};</pre>
+        </div>
+
+        <h3>In-feed Comment Ads (site-config.js থেকে)</h3>
+        <p>কমেন্ট সেকশনে প্রতি N টি কমেন্টের পর Ad দেখাতে <span class="ic">site-config.js</span> এডিট করুন:</p>
+
+        <div class="code-wrap">
+            <div class="code-label"><i class="fa-solid fa-file-code"></i> assets/js/site-config.js → commentSystem.ads</div>
+<pre>ads: {
+    <span class="hl-key">enabled</span>:      <span class="hl-bool">true</span>,          <span class="hl-comment">// true = চালু, false = বন্ধ</span>
+    <span class="hl-key">injectAfterN</span>: <span class="hl-num">5</span>,             <span class="hl-comment">// প্রতি ৫টি কমেন্টের পর Ad আসবে</span>
+    <span class="hl-key">adHTML</span>: <span class="hl-str">`
+        &lt;ins class="adsbygoogle"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"&gt;&lt;/ins&gt;
+    `</span>
+}</pre>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 9. FIREBASE -->
+    <section id="firebase">
+        <h2>
+            <span class="h2-icon" style="background:rgba(245,158,11,0.12);color:#fb923c"><i class="fa-solid fa-fire"></i></span>
+            Firebase Setup (Comment System)
+        </h2>
+        <p class="section-intro">
+            Comment System চালু করতে Firebase প্রয়োজন। এটি বিনামূল্যে পাওয়া যায় এবং সেটআপ সহজ।
+        </p>
+
+        <div class="alert warning">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <div><strong>গুরুত্বপূর্ণ:</strong> Comment System ব্যবহার করতে চাইলে Firebase অবশ্যই কনফিগার করতে হবে। না করলে কমেন্ট সেকশন কাজ করবে না।</div>
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                    <h4>Firebase Console এ যান</h4>
+                    <p><a href="https://console.firebase.google.com" target="_blank" style="color:var(--accent)">console.firebase.google.com</a> এ Google Account দিয়ে Login করুন এবং "Add Project" ক্লিক করুন।</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                    <h4>Web App যোগ করুন</h4>
+                    <p>Project তৈরির পর, Project Settings → "Add App" → Web (&lt;/&gt;) আইকনে ক্লিক করুন। একটি App Name দিন।</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                    <h4>Config কপি করুন</h4>
+                    <p>Firebase আপনাকে একটি config object দেবে। সেখান থেকে প্রতিটি মান <span class="ic">site-config.js</span>-এর <span class="ic">firebase</span> অংশে বসান।</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                    <h4>Firestore Database চালু করুন</h4>
+                    <p>Firebase Console → Firestore Database → "Create Database" → "Start in production mode" সিলেক্ট করুন।</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">5</div>
+                <div class="step-body">
+                    <h4>Google Authentication চালু করুন</h4>
+                    <p>Firebase Console → Authentication → Sign-in Method → Google চালু করুন।</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="code-wrap">
+            <div class="code-label"><i class="fa-solid fa-file-code"></i> assets/js/site-config.js → commentSystem.firebase</div>
+<pre>firebase: {
+    <span class="hl-key">apiKey</span>            : <span class="hl-str">"AIzaSy..."</span>,          <span class="hl-comment">// Firebase Console থেকে</span>
+    <span class="hl-key">authDomain</span>        : <span class="hl-str">"your-app.firebaseapp.com"</span>,
+    <span class="hl-key">projectId</span>         : <span class="hl-str">"your-project-id"</span>,
+    <span class="hl-key">storageBucket</span>     : <span class="hl-str">"your-app.firebasestorage.app"</span>,
+    <span class="hl-key">messagingSenderId</span> : <span class="hl-str">"000000000000"</span>,
+    <span class="hl-key">appId</span>             : <span class="hl-str">"1:000000000000:web:..."</span>
+},</pre>
+        </div>
+
+        <h3>Admin ইমেইল সেট করুন</h3>
+        <div class="code-wrap">
+            <div class="code-label"><i class="fa-solid fa-file-code"></i> assets/js/site-config.js</div>
+<pre><span class="hl-comment">// আপনার Google ইমেইল এখানে দিন — Admin সুবিধা পাবেন</span>
+<span class="hl-key">adminEmails</span>: [<span class="hl-str">"your-admin@gmail.com"</span>],</pre>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 10. IMGBB -->
+    <section id="imgbb">
+        <h2>
+            <span class="h2-icon" style="background:rgba(16,185,129,0.1);color:var(--accent-3)"><i class="fa-solid fa-image"></i></span>
+            ImgBB API — Image Attachments
+        </h2>
+        <p class="section-intro">
+            কমেন্টে ইমেজ আপলোড ফিচারটি ImgBB ব্যবহার করে। ImgBB বিনামূল্যে ছবি হোস্ট করে।
+        </p>
+
+        <div class="api-block">
+            <div class="api-block-header">
+                <h4><span class="api-num">Feature 1</span> Image Attachments</h4>
+                <span class="api-status opt">Optional</span>
+            </div>
+            <div class="api-block-body">
+                <p>ব্যবহারকারীরা কমেন্টে ছবি যুক্ত করতে পারবে। ছবিগুলো ImgBB-তে সংরক্ষিত হবে।</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h4>ImgBB API Key নিন</h4>
+                            <p><a href="https://api.imgbb.com" target="_blank" style="color:var(--accent)">api.imgbb.com</a> এ যান → Login করুন → "Get API Key" ক্লিক করুন।</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h4>site-config.js এ Key বসান</h4>
+                            <p>নিচের কোডে <span class="ic">imgbbApiKey</span>-এ আপনার API Key বসান।</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-wrap">
+                    <div class="code-label"><i class="fa-solid fa-file-code"></i> site-config.js → commentSystem.imageAttachments</div>
+<pre>imageAttachments: {
+    <span class="hl-key">enabled</span>       : <span class="hl-bool">true</span>,             <span class="hl-comment">// চালু/বন্ধ</span>
+    <span class="hl-key">imgbbApiKey</span>   : <span class="hl-str">"আপনার ImgBB Key"</span>, <span class="hl-comment">// এখানে Key বসান</span>
+    <span class="hl-key">expiration</span>    : <span class="hl-num">0</span>,                <span class="hl-comment">// 0 = ছবি কখনো মুছবে না</span>
+    <span class="hl-key">maxSizeMB</span>     : <span class="hl-num">5</span>,                <span class="hl-comment">// সর্বোচ্চ ফাইল সাইজ (MB)</span>
+    <span class="hl-key">acceptedTypes</span> : <span class="hl-str">"image/jpeg,image/png,image/gif,image/webp"</span>
+},</pre>
+                </div>
+
+                <div class="alert info">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>ImgBB Key না থাকলে <span class="ic">enabled: false</span> করে রাখুন। Image upload button তখন দেখাবে না।</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 11. CLOUDINARY -->
+    <section id="cloudinary">
+        <h2>
+            <span class="h2-icon" style="background:rgba(124,58,237,0.12);color:var(--accent-2)"><i class="fa-solid fa-microphone"></i></span>
+            Cloudinary — Voice Notes
+        </h2>
+        <p class="section-intro">
+            কমেন্টে ভয়েস রেকর্ডিং সুবিধা দেয় Cloudinary। এটিও বিনামূল্যে শুরু করা যায়।
+        </p>
+
+        <div class="api-block">
+            <div class="api-block-header">
+                <h4><span class="api-num">Feature 2</span> Voice Notes with AI Enhancement</h4>
+                <span class="api-status opt">Optional</span>
+            </div>
+            <div class="api-block-body">
+                <p>ব্যবহারকারীরা সর্বোচ্চ ৬০ সেকেন্ড পর্যন্ত ভয়েস নোট রেকর্ড করে কমেন্টে যুক্ত করতে পারবে। "Clean Voice" বাটনে ক্লিক করলে Web Audio API দিয়ে গোলমাল ফিল্টার হবে।</p>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h4>Cloudinary Account তৈরি করুন</h4>
+                            <p><a href="https://cloudinary.com" target="_blank" style="color:var(--accent)">cloudinary.com</a> এ Sign Up করুন (বিনামূল্যে)।</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h4>Upload Preset তৈরি করুন</h4>
+                            <p>Dashboard → Settings → Upload → "Add upload preset" → Signing Mode: <strong>Unsigned</strong> রাখুন। Preset Name দিন (যেমন: <span class="ic">ttw_audio_preset</span>)।</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h4>Cloud Name কপি করুন</h4>
+                            <p>Dashboard-এ আপনার Cloud Name দেখতে পাবেন।</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-wrap">
+                    <div class="code-label"><i class="fa-solid fa-file-code"></i> site-config.js → commentSystem.voiceNotes</div>
+<pre>voiceNotes: {
+    <span class="hl-key">enabled</span>            : <span class="hl-bool">true</span>,
+    <span class="hl-key">cloudName</span>          : <span class="hl-str">"আপনার Cloudinary Cloud Name"</span>,
+    <span class="hl-key">uploadPreset</span>       : <span class="hl-str">"ttw_audio_preset"</span>,   <span class="hl-comment">// Preset নাম</span>
+    <span class="hl-key">maxDurationSeconds</span> : <span class="hl-num">60</span>,                    <span class="hl-comment">// সর্বোচ্চ রেকর্ডিং সময়</span>
+    <span class="hl-key">enableVoiceEnhance</span> : <span class="hl-bool">true</span>                   <span class="hl-comment">// Clean Voice ফিচার</span>
+},</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 12. TELEGRAM -->
+    <section id="telegram">
+        <h2>
+            <span class="h2-icon" style="background:rgba(0,136,204,0.12);color:#38bdf8"><i class="fa-brands fa-telegram"></i></span>
+            Telegram Notifications
+        </h2>
+        <p class="section-intro">
+            কেউ কমেন্ট করলে সাথে সাথে আপনার Telegram-এ নোটিফিকেশন আসবে।
+        </p>
+
+        <div class="api-block">
+            <div class="api-block-header">
+                <h4><span class="api-num">Feature 4</span> Real-time Comment Alerts</h4>
+                <span class="api-status opt">Optional</span>
+            </div>
+            <div class="api-block-body">
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h4>Telegram Bot তৈরি করুন</h4>
+                            <p>Telegram-এ <strong>@BotFather</strong>-কে মেসেজ করুন। <span class="ic">/newbot</span> কমান্ড দিন, নাম দিন — Bot Token পাবেন।</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h4>আপনার Chat ID বের করুন</h4>
+                            <p><strong>@userinfobot</strong>-কে Telegram-এ মেসেজ করুন — সে আপনার Chat ID দেবে।</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h4>site-config.js আপডেট করুন</h4>
+                            <p>Bot Token এবং Chat ID বসান।</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-wrap">
+                    <div class="code-label"><i class="fa-solid fa-file-code"></i> site-config.js → commentSystem.telegram</div>
+<pre>telegram: {
+    <span class="hl-key">enabled</span>  : <span class="hl-bool">true</span>,
+    <span class="hl-key">botToken</span> : <span class="hl-str">"1234567890:AAF..."</span>,  <span class="hl-comment">// BotFather থেকে পাওয়া Token</span>
+    <span class="hl-key">chatId</span>   : <span class="hl-str">"আপনার Chat ID"</span>          <span class="hl-comment">// @userinfobot থেকে পাওয়া ID</span>
+},</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 13. ALL COMMENT FEATURES -->
+    <section id="comment-features">
+        <h2>
+            <span class="h2-icon" style="background:rgba(16,185,129,0.1);color:var(--accent-3)"><i class="fa-solid fa-comments"></i></span>
+            Comment System — সব ১৫টি ফিচার
+        </h2>
+        <p class="section-intro">
+            সব ফিচার <span class="ic">site-config.js</span>-এর <span class="ic">commentSystem</span> অবজেক্টের মধ্যে থেকে নিয়ন্ত্রণ করা যায়।
+        </p>
+
+        <table class="param-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Feature</th>
+                    <th>Config Key</th>
+                    <th>Default</th>
+                    <th>বর্ণনা</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Image Attachments</td><td class="param-key">imageAttachments.enabled</td><td class="param-default">true</td><td>কমেন্টে ছবি যুক্ত করার সুবিধা (ImgBB)</td></tr>
+                <tr><td>2</td><td>Voice Notes</td><td class="param-key">voiceNotes.enabled</td><td class="param-default">true</td><td>ভয়েস রেকর্ডিং (Cloudinary)</td></tr>
+                <tr><td>3</td><td>Edit & Delete</td><td class="param-key">userCRUD.editEnabled</td><td class="param-default">true</td><td>নিজের কমেন্ট এডিট/মুছার সুবিধা</td></tr>
+                <tr><td>4</td><td>Telegram Alerts</td><td class="param-key">telegram.enabled</td><td class="param-default">true</td><td>নতুন কমেন্টে Telegram নোটিফিকেশন</td></tr>
+                <tr><td>5</td><td>Upvotes & Sort</td><td class="param-key">upvotes.enabled</td><td class="param-default">true</td><td>Like বাটন ও সর্টিং (newest/mostLiked)</td></tr>
+                <tr><td>6</td><td>Pin Comment</td><td class="param-key">pinComment.enabled</td><td class="param-default">true</td><td>Admin একটি কমেন্ট সবার উপরে রাখতে পারবে</td></tr>
+                <tr><td>7</td><td>Pagination</td><td class="param-key">pagination.commentsPerPage</td><td class="param-default">10</td><td>একসাথে কতটি কমেন্ট লোড হবে</td></tr>
+                <tr><td>8</td><td>Anti-Spam</td><td class="param-key">antiSpam.cooldownSeconds</td><td class="param-default">30</td><td>দুটি পোস্টের মাঝে বিরতি (সেকেন্ড)</td></tr>
+                <tr><td>9</td><td>Markdown</td><td class="param-key">markdown.enabled</td><td class="param-default">true</td><td><code>**bold**</code>, <code>*italic*</code>, <code>`code`</code> সাপোর্ট</td></tr>
+                <tr><td>10</td><td>In-feed Ads</td><td class="param-key">ads.enabled</td><td class="param-default">true</td><td>কমেন্টের মাঝে বিজ্ঞাপন দেখানো</td></tr>
+                <tr><td>11</td><td>Profanity Filter</td><td class="param-key">profanityFilter.enabled</td><td class="param-default">true</td><td>অপছন্দনীয় শব্দ ফিল্টার করা</td></tr>
+                <tr><td>12</td><td>User Badges</td><td class="param-key">badges.enabled</td><td class="param-default">true</td><td>সক্রিয় ব্যবহারকারীদের "Trusted User" ব্যাজ</td></tr>
+                <tr><td>13</td><td>@Mentions</td><td class="param-key">mentions.enabled</td><td class="param-default">true</td><td>কমেন্টে @username হাইলাইট</td></tr>
+                <tr><td>14</td><td>GDPR</td><td class="param-key">gdpr.consentCheckboxEnabled</td><td class="param-default">true</td><td>পোস্টের আগে Privacy consent চেকবক্স</td></tr>
+                <tr><td>15</td><td>SEO Schema</td><td class="param-key">seoSchema.enabled</td><td class="param-default">true</td><td>JSON-LD Discussion Schema auto-inject</td></tr>
+            </tbody>
+        </table>
+
+        <div class="alert info">
+            <i class="fa-solid fa-info-circle"></i>
+            <div>যেকোনো ফিচার বন্ধ করতে শুধু <span class="ic">enabled: false</span> করুন। চালু করতে <span class="ic">enabled: true</span> করুন।</div>
+        </div>
+
+        <h3>Profanity Filter — কাস্টম শব্দ তালিকা</h3>
+        <div class="code-wrap">
+            <div class="code-label"><i class="fa-solid fa-file-code"></i> site-config.js → commentSystem.profanityFilter</div>
+<pre>profanityFilter: {
+    <span class="hl-key">enabled</span>  : <span class="hl-bool">true</span>,
+    <span class="hl-key">wordList</span> : [
+        <span class="hl-str">"spam"</span>, <span class="hl-str">"scam"</span>,   <span class="hl-comment">// ইংরেজি শব্দ</span>
+        <span class="hl-str">"বাজেকথা"</span>,       <span class="hl-comment">// বাংলা শব্দও যোগ করা যাবে</span>
+        <span class="hl-str">"আপনার_শব্দ"</span>    <span class="hl-comment">// নতুন শব্দ এভাবে যোগ করুন</span>
+    ]
+},</pre>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 14. FAQ -->
+    <section id="faq">
+        <h2>
+            <span class="h2-icon" style="background:rgba(0,243,255,0.1);color:var(--accent)"><i class="fa-solid fa-circle-question"></i></span>
+            FAQ & Troubleshooting
+        </h2>
+        <p class="section-intro">সাধারণ সমস্যা এবং তাদের সমাধান — কোনো টেকনিক্যাল জ্ঞান ছাড়াই।</p>
+
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text"><span class="faq-q-icon">Q</span> সাইট আপলোড করার পর Header বা Footer দেখাচ্ছে না কেন?</span>
+                <i class="fa-solid fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-a">
+                এটি সাধারণত ঘটে যখন <span class="ic">global.js</span> ফাইলটি সঠিকভাবে লোড হয় না। নিশ্চিত করুন যে আপলোডের সময় <span class="ic">assets/js/global.js</span> ফাইলটি সঠিক স্থানে আছে। local থেকে টেস্ট করলে Live Server ব্যবহার করুন — সরাসরি <span class="ic">index.html</span> ডাবল-ক্লিক করে খুলবেন না।
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text"><span class="faq-q-icon">Q</span> কমেন্ট সেকশন দেখাচ্ছে না বা Error দিচ্ছে?</span>
+                <i class="fa-solid fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-a">
+                Firebase কনফিগারেশন সঠিক কিনা দেখুন। <span class="ic">site-config.js</span>-এ <span class="ic">firebase</span> অবজেক্টের সব মান সঠিকভাবে বসানো আছে কিনা যাচাই করুন। এছাড়া Firebase Console থেকে Firestore এবং Google Authentication চালু আছে কিনা নিশ্চিত করুন। আপনার Domain টি Firebase Authorized Domains-এ যোগ করুন (Authentication → Settings → Authorized Domains)।
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text"><span class="faq-q-icon">Q</span> ছবি আপলোড হচ্ছে না?</span>
+                <i class="fa-solid fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-a">
+                দুটি কারণ হতে পারে: ১) ImgBB API Key সঠিক নয় — <a href="https://api.imgbb.com" target="_blank" style="color:var(--accent)">api.imgbb.com</a> থেকে নতুন Key নিয়ে সঠিকভাবে বসান। ২) ফাইলের সাইজ <span class="ic">maxSizeMB</span> সীমার বেশি — <span class="ic">maxSizeMB</span> এর মান বাড়িয়ে দিন।
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text"><span class="faq-q-icon">Q</span> Telegram নোটিফিকেশন আসছে না?</span>
+                <i class="fa-solid fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-a">
+                তিনটি জিনিস নিশ্চিত করুন: ১) Bot Token সঠিক কিনা, ২) Chat ID সঠিক কিনা (নেগেটিভ নম্বরও হতে পারে), ৩) আপনি Bot-কে প্রথমে কোনো message পাঠিয়েছেন কিনা। Bot-কে একবার <span class="ic">/start</span> কমান্ড পাঠান।
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text"><span class="faq-q-icon">Q</span> হোমপেজে টুল কার্ডের নাম/আইকন পরিবর্তন করব কীভাবে?</span>
+                <i class="fa-solid fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-a">
+                <span class="ic">assets/js/tools-data.js</span> খুলুন। যে টুলের নাম পরিবর্তন করতে চান, সেটির <span class="ic">html</span> এর মধ্যে <span class="ic">tool-title</span> div খুঁজুন এবং নাম বদলে দিন। আইকন বদলাতে Font Awesome-এর ক্লাস পরিবর্তন করুন (যেমন <span class="ic">fa-calculator</span>)।
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text"><span class="faq-q-icon">Q</span> নতুন টুল পেজ কি সার্চ ফিল্টারে দেখাবে?</span>
+                <i class="fa-solid fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-a">
+                হ্যাঁ, কিন্তু আপনাকে <span class="ic">tools-data.js</span>-এ নতুন টুলের <span class="ic">dataName</span>-এ সঠিক keywords যোগ করতে হবে। ব্যবহারকারী যখন সেই keywords লিখে সার্চ করবে, তখন কার্ডটি ফলাফলে আসবে।
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text"><span class="faq-q-icon">Q</span> Voice Notes ফিচার মোবাইলে কাজ করছে না?</span>
+                <i class="fa-solid fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-a">
+                মোবাইল ব্রাউজার মাইক্রোফোনের অনুমতি চাইবে — অবশ্যই Allow করুন। iOS Safari-তে HTTPS ছাড়া মাইক কাজ করে না, তাই সাইটটি HTTPS-এ হোস্ট করা নিশ্চিত করুন। Cloudinary <span class="ic">cloudName</span> এবং <span class="ic">uploadPreset</span> সঠিক আছে কিনা যাচাই করুন।
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text"><span class="faq-q-icon">Q</span> Google AdSense Ads দেখাচ্ছে না?</span>
+                <i class="fa-solid fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-a">
+                প্রথমত নিশ্চিত করুন আপনার AdSense account approved এবং <span class="ic">ca-pub-XXXXXX</span> code সঠিক। নতুন সাইটে Ad দেখাতে ২৪-৪৮ ঘন্টা সময় লাগতে পারে। AdBlocker থাকলে টেস্ট করার সময় বন্ধ রাখুন।
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+                <span class="faq-q-text"><span class="faq-q-icon">Q</span> সাইটের রং পরিবর্তন করলে কিছু টুলে পুরনো রং থাকছে?</span>
+                <i class="fa-solid fa-chevron-down faq-toggle"></i>
+            </div>
+            <div class="faq-a">
+                <span class="ic">assets/css/global.css</span>-এর <span class="ic">:root</span>-এ রং বদলালে সব পেজে প্রভাব পড়বে। কিন্তু কিছু টুল কার্ড <span class="ic">tools-data.js</span>-এ <span class="ic">themeColor1</span> এবং <span class="ic">themeColor2</span> দিয়ে নিজস্ব রং ব্যবহার করে — সেগুলো আলাদাভাবে পরিবর্তন করতে হবে।
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ 15. SUPPORT -->
+    <section id="support">
+        <h2>
+            <span class="h2-icon" style="background:rgba(239,68,68,0.1);color:var(--accent-5)"><i class="fa-solid fa-headset"></i></span>
+            Support & Credits
+        </h2>
+        <p class="section-intro">
+            সমস্যায় পড়লে নিচের চ্যানেলগুলোতে যোগাযোগ করুন। Standard support-এ বাগ ফিক্স অন্তর্ভুক্ত — নতুন কাস্টম টুল তৈরি নয়।
+        </p>
+
+        <div class="support-grid">
+            <a href="https://t.me/Md_Kawser2" target="_blank" class="support-card">
+                <div class="support-icon" style="background:rgba(0,136,204,0.12);color:#38bdf8;"><i class="fa-brands fa-telegram"></i></div>
+                <div>
+                    <h4>Direct Support</h4>
+                    <p>Telegram: @Md_Kawser2 — সরাসরি Developer-এর সাথে কথা বলুন</p>
+                </div>
+            </a>
+            <a href="https://t.me/TrustedToolsWeb" target="_blank" class="support-card">
+                <div class="support-icon" style="background:rgba(16,185,129,0.1);color:var(--accent-3);"><i class="fa-solid fa-users"></i></div>
+                <div>
+                    <h4>Community Channel</h4>
+                    <p>Trusted Tools Web Telegram Channel — আপডেট ও সাহায্য পান</p>
+                </div>
+            </a>
+            <a href="mailto:contact@trustedtoolsweb.com" class="support-card">
+                <div class="support-icon" style="background:rgba(245,158,11,0.1);color:var(--accent-4);"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                    <h4>Email Support</h4>
+                    <p>contact@trustedtoolsweb.com — গুরুতর সমস্যার জন্য</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="alert success">
+            <i class="fa-solid fa-star"></i>
+            <div><strong>আপনার ৫-স্টার রেটিং আমাদের অনুপ্রেরণা!</strong> যদি এই প্রজেক্টটি আপনার কাজে লাগে, দয়া করে CodeCanyon-এ একটি positive review দিন। এটি আমাদের আরও ভালো টুল তৈরিতে সাহায্য করে। ধন্যবাদ! ⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <h3>Credits & Libraries</h3>
+        <table class="param-table">
+            <thead>
+                <tr><th>Library / Service</th><th>Purpose</th><th>License</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Font Awesome 6</td><td>Icons (locally hosted)</td><td>Free / CC BY 4.0</td></tr>
+                <tr><td>Firebase (Google)</td><td>Comment Database & Auth</td><td>Free Tier Available</td></tr>
+                <tr><td>ImgBB</td><td>Image Hosting for Comments</td><td>Free Tier Available</td></tr>
+                <tr><td>Cloudinary</td><td>Audio/Voice Hosting</td><td>Free Tier Available</td></tr>
+                <tr><td>Telegram Bot API</td><td>Comment Notifications</td><td>Free</td></tr>
+                <tr><td>Web Audio API</td><td>Voice Enhancement (Browser Built-in)</td><td>W3C Standard</td></tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top: 30px; color: var(--text-dim); font-size: 0.8rem; text-align:center;">
+            Trusted Tools Web Documentation — MD KAWSAR © 2026 — All Rights Reserved
+        </p>
+    </section>
+
+</div>
+</main>
+
+<!-- Mobile toggle -->
+<button class="mobile-nav-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')" aria-label="Toggle navigation">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<script>
+    // ── FAQ Toggle
+    function toggleFaq(el) {
+        const item = el.parentElement;
+        item.classList.toggle('open');
+    }
+
+    // ── Active Nav on Scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + id) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+
+    // ── Click nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Close mobile sidebar
+            document.getElementById('sidebar').classList.remove('open');
+        });
+    });
+</script>
+</body>
+</html>

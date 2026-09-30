@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<!--
+    ============================================================
+    PRODUCT NAME  : Ultra Age AI — God Mode Age Calculator
+    AUTHOR        : MD KAWSAR
+    VERSION       : 6.0 (God Mode — Full Refactor)
+    CHANGES       : Full JS rewrite, a11y fixes, 5 new modules,
+                    dirty-checking RAF loop, tiered bio algorithms,
+                    dynamic life-progress, milestone predictor,
+                    intergalactic distance, generation context,
+                    social viral card copy.
+    ============================================================
+-->
+<html lang="en">
+<head>
+    <!-- External Scripts: Analytics (Must be first) -->
+    <script src="../../assets/js/site-config.js"></script>
+    <script src="../../assets/js/meta-manager.js"></script>
+    <script src="../../assets/js/analytics-loader.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Ultra Age AI: God Mode Age Calculator &amp; Life Analytics (Free)</title>
+    <meta name="title"       content="Ultra Age AI: God Mode Age Calculator &amp; Life Analytics (Free)">
+    <meta name="description" content="Calculate your exact age, biological stats, and cosmic age in real-time. Ultra Age AI provides 100% client-side privacy with advanced life analytics and death timer.">
+    <meta name="keywords"    content="age calculator pro, biological age checker, life progress bar, death timer, zodiac finder, cosmic age calculator, ultra age ai, online tools bd, trusted tools web">
+    <meta name="author"      content="MD KAWSAR">
+    <meta name="robots"      content="index, follow, max-image-preview:large">
+
+    <link rel="canonical" href="https://trustedtoolsweb.com/calc-age-calculator.html" />
+
+    <meta property="og:type"         content="website">
+    <meta property="og:url"          content="https://trustedtoolsweb.com/calc-age-calculator.html">
+    <meta property="og:title"        content="Ultra Age AI - God Mode Analytics">
+    <meta property="og:description"  content="Discover your exact age down to the second, consumption stats, and bio-rhythms. 100% Client-side privacy.">
+    <meta property="og:image"        content="https://trustedtoolsweb.com/assets/tools/calc/calc-age-calculator/og-banner.webp">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"    content="Ultra Age AI Dashboard Preview">
+    <meta property="og:site_name"    content="Trusted Tools Web">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:url"         content="https://trustedtoolsweb.com/calc-age-calculator.html">
+    <meta name="twitter:title"       content="Ultra Age AI - God Mode Analytics">
+    <meta name="twitter:description" content="Calculate your life analytics, biological age, and cosmic time instantly. Privacy-first age calculator.">
+    <meta name="twitter:image"       content="https://trustedtoolsweb.com/assets/tools/calc/calc-age-calculator/og-banner.webp">
+
+    <link rel="icon"             type="image/webp" href="../../assets/tools/calc/calc-age-calculator/favicon.webp">
+    <link rel="apple-touch-icon"                   href="../../assets/tools/calc/calc-age-calculator/favicon.webp">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="../../assets/library/fontawesome/css/all.min.css">
+
+    <!-- ✅ GLOBAL CSS FRAMEWORK -->
+    <link rel="stylesheet" href="../../assets/css/tools-template.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+
+    <!-- ── God Mode Upgrade CSS ─────────────────────────────── -->
+    <style>
+        /* ── Hero Age Display ── */
+        .hero-age {
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-hero);
+            border-radius: 15px;
+            border: 1px solid var(--border-main);
+            margin-bottom: 25px;
+            background-image: radial-gradient(circle at center, rgba(255,0,85,.06) 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-age::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 30px,
+                rgba(255,0,85,.02) 30px,
+                rgba(255,0,85,.02) 31px
+            );
+            pointer-events: none;
+        }
+        .exact-age {
+            font-size: clamp(1.6rem, 5vw, 3rem);
+            font-weight: 800;
+            margin: 10px 0;
+            background: var(--gradient-text-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        .timer-box {
+            font-family: 'Courier New', monospace;
+            color: var(--brand-primary);
+            font-size: clamp(1rem, 4vw, 1.4rem);
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(255,0,85,.4);
+            margin: 8px 0;
+        }
+        body.light-mode .timer-box { color: #d63031; text-shadow: none; }
+
+        /* ── Life Progress ── */
+        .progress-track {
+            height: 10px;
+            background: rgba(255,255,255,.05);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        body.light-mode .progress-track { background: rgba(0,0,0,.08); }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            width: 0%;
+            transition: width 1.5s ease-in-out;
+            border-radius: 10px;
+            position: relative;
+        }
+        /* Overrun glow when past expected lifespan */
+        .progress-fill.overrun {
+            background: linear-gradient(90deg, var(--accent-orange), var(--brand-primary));
+            box-shadow: 0 0 12px rgba(255,159,67,.6);
+        }
+
+        /* ── Generation Badge ── */
+        .gen-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .5px;
+            margin-top: 10px;
+            border: 1px solid rgba(255,255,255,.15);
+        }
+
+        /* ── Milestone Card ── */
+        .milestone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .milestone-item {
+            background: var(--bg-body);
+            border: 1px solid var(--border-main);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        .milestone-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 3px; height: 100%;
+            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+        }
+        .milestone-item .m-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 4px;
+        }
+        .milestone-item .m-val {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+        .milestone-item .m-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        .milestone-item.achieved .m-val { color: var(--status-text-success); }
+        .milestone-item.achieved::before { background: var(--status-success); }
+
+        /* ── Intergalactic Distance Card ── */
+        .space-distance {
+            background: linear-gradient(135deg, rgba(0,229,255,.05), rgba(209,36,255,.05));
+            border: 1px solid rgba(0,229,255,.2);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            margin-top: 8px;
+        }
+        .space-distance .distance-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 13px;
+        }
+        .space-distance .distance-row:last-child { border-bottom: none; }
+        .space-distance .distance-val {
+            color: var(--accent-cyan);
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+
+        /* ── Social Share Card ── */
+        .social-card-preview {
+            background: var(--bg-body);
+            border: 1px solid var(--border-main);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            margin-top: 12px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--text-main);
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            word-break: break-word;
+            min-height: 80px;
+        }
+
+        /* ── Copy-success flash ── */
+        @keyframes copyFlash {
+            0%   { box-shadow: 0 0 0 0 rgba(46,204,113,.6); }
+            70%  { box-shadow: 0 0 0 10px rgba(46,204,113,0); }
+            100% { box-shadow: 0 0 0 0 rgba(46,204,113,0); }
+        }
+        .copy-flash { animation: copyFlash .6s ease-out; }
+
+        /* ── Responsive tweaks ── */
+        @media (max-width: 600px) {
+            .hero-age { padding: 20px 15px; }
+            .timer-box { letter-spacing: 1px; }
+            .milestone-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 380px) {
+            .milestone-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Ultra Age AI God Mode",
+        "url": "https://trustedtoolsweb.com/calc-age-calculator.html",
+        "description": "An advanced client-side age analytics tool providing biological, cosmic, and consumption statistics in real-time.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "softwareVersion": "6.0",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "MD KAWSAR",
+            "url": "https://trustedtoolsweb.com"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-box" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Global Header -->
+    <header id="global-header" class="site-header"></header>
+
+    <main>
+        <div class="container animated-entry">
+
+            <!-- Privacy Badge -->
+            <div class="security-badge" role="note">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <span>100% Client-Side Privacy</span>
+            </div>
+
+            <!-- Tool Title -->
+            <h1 class="tool-title">
+                <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+                Ultra Age AI <span>God Mode</span>
+            </h1>
+            <p class="subtitle">Advanced Biological &amp; Chronological Analytics — Calculated in Real-Time.</p>
+
+            <!-- [AD SLOT] Top Banner -->
+            <div class="ad-slot" data-ad-slot="top-banner" aria-hidden="true"></div>
+
+            <!-- ═══════════════════════
+                 INPUT SECTION
+                 ═══════════════════════ -->
+            <div class="input-wrapper" role="form" aria-label="Age calculator inputs">
+                <div class="multi-input-grid">
+                    <div>
+                        <!-- a11y fix: for attribute matches input id -->
+                        <label for="dobInput">
+                            <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                            Date of Birth
+                        </label>
+                        <input type="date" id="dobInput"
+                               aria-label="Date of birth"
+                               aria-required="true"
+                               autocomplete="bday">
+                    </div>
+                    <div>
+                        <label for="tobInput">
+                            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                            Time of Birth <span style="font-weight:400; text-transform:none; letter-spacing:0;">(Optional)</span>
+                        </label>
+                        <input type="time" id="tobInput"
+                               value="00:00"
+                               aria-label="Time of birth, optional"
+                               autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="btn-area">
+                    <button class="btn btn-primary" id="analyzeBtn" onclick="UltraAgeAI.startAnalysis()" aria-label="Analyze my life stream">
+                        <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+                        Analyze Life Stream
+                    </button>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════
+                 RESULT SECTION
+                 ═══════════════════════ -->
+            <section id="resultBox" aria-label="Life analytics results" aria-live="polite" style="display:none;">
+
+                <!-- Hero: Main Age Display -->
+                <div class="hero-age" aria-label="Current age display">
+                    <div class="text-hero-label" aria-hidden="true">CURRENT EXISTENCE DURATION</div>
+                    <div class="exact-age" id="mainAge" aria-label="Exact age">0 Years</div>
+                    <div class="timer-box" id="liveTimer" aria-label="Live time elapsed" aria-atomic="true">00h : 00m : 00s</div>
+
+                    <!-- Generation Badge -->
+                    <div id="genBadge" class="gen-badge" role="note" aria-label="Generational cohort"></div>
+
+                    <!-- Life Progress Bar -->
+                    <div class="mt-xl" style="text-align:left;">
+                        <div class="flex-between" style="font-size:12px; margin-bottom:5px;">
+                            <span class="text-muted" id="progressLabel">Life Progress (vs avg. 80 yr lifespan)</span>
+                            <span id="progressText" style="font-weight:bold; color:var(--brand-primary);" aria-label="Life progress percentage">0%</span>
+                        </div>
+                        <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-labelledby="progressLabel" id="progressBar">
+                            <div class="progress-fill" id="lifeProgressBar"></div>
+                        </div>
+                        <div class="flex-between text-muted mt-sm" style="font-size:10px;">
+                            <span>Birth</span>
+                            <span id="progressEndLabel">80 Yrs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════
+                     STATS GRID — 5 Core Cards
+                     ═══════════════════════ -->
+                <div class="grid-system">
+
+                    <!-- Card 1: Time Breakdown -->
+                    <div class="card" role="region" aria-label="Time expansion statistics">
+                        <div class="card-header">
+                            <i class="fa-regular fa-clock text-primary" aria-hidden="true"></i> Time Expansion
+                        </div>
+                        <div class="stat-row"><span>Months Alive</span>  <span class="stat-val" id="totalMonths">0</span></div>
+                        <div class="stat-row"><span>Weeks Alive</span>   <span class="stat-val" id="totalWeeks">0</span></div>
+                        <div class="stat-row"><span>Days Alive</span>    <span class="stat-val" id="totalDays">0</span></div>
+                        <div class="stat-row"><span>Hours Alive</span>   <span class="stat-val" id="totalHours">0</span></div>
+                        <div class="stat-row"><span>Minutes Alive</span> <span class="stat-val" id="totalMinutes">0</span></div>
+                        <div class="stat-row"><span>Seconds Alive</span> <span class="stat-val" id="totalSeconds" aria-live="polite" aria-atomic="true">0</span></div>
+                    </div>
+
+                    <!-- Card 2: Consumption Stats (Tiered) -->
+                    <div class="card" role="region" aria-label="Estimated consumption statistics">
+                        <div class="card-header">
+                            <i class="fa-solid fa-utensils text-orange" aria-hidden="true"></i> Estimated Consumption
+                        </div>
+                        <div class="stat-row"><span>Food Eaten</span>   <span class="stat-val" id="foodKg">0 kg</span></div>
+                        <div class="stat-row"><span>Water Drank</span>  <span class="stat-val" id="waterL">0 L</span></div>
+                        <div class="stat-row"><span>Steps Walked</span> <span class="stat-val" id="steps">0</span></div>
+                        <div class="stat-row"><span>Dreams Seen</span>  <span class="stat-val" id="dreams">0</span></div>
+                        <div class="stat-row"><span>Words Spoken</span> <span class="stat-val" id="words">0</span></div>
+                        <div class="stat-row text-small-label" style="margin-top:5px;">*Age-tiered global averages</div>
+                    </div>
+
+                    <!-- Card 3: Biological Stats (Tiered) -->
+                    <div class="card" role="region" aria-label="Biological engine status">
+                        <div class="card-header">
+                            <i class="fa-solid fa-heart-pulse text-success" aria-hidden="true"></i> Bio-Engine Status
+                        </div>
+                        <div class="stat-row"><span>Heartbeats</span>    <span class="stat-val text-primary" id="bioHearts">0</span></div>
+                        <div class="stat-row"><span>Breaths Taken</span> <span class="stat-val" id="bioBreaths">0</span></div>
+                        <div class="stat-row"><span>Blood Pumped</span>  <span class="stat-val" id="bioBlood">0 L</span></div>
+                        <div class="stat-row"><span>Hair Growth</span>   <span class="stat-val" id="bioHair">0 m</span></div>
+                        <div class="stat-row"><span>Cells Replaced</span><span class="stat-val">~ Billions</span></div>
+                    </div>
+
+                    <!-- Card 4: Cosmic Age -->
+                    <div class="card" role="region" aria-label="Cosmic age on other planets">
+                        <div class="card-header">
+                            <i class="fa-solid fa-user-astronaut text-accent-secondary" aria-hidden="true"></i> Cosmic Age
+                        </div>
+                        <div class="stat-row"><span>Mercury Age</span> <span class="stat-val" id="ageMerc">0</span></div>
+                        <div class="stat-row"><span>Venus Age</span>   <span class="stat-val" id="ageVen">0</span></div>
+                        <div class="stat-row"><span>Mars Age</span>    <span class="stat-val" id="ageMars">0</span></div>
+                        <div class="stat-row"><span>Jupiter Age</span> <span class="stat-val" id="ageJup">0</span></div>
+                        <div class="stat-row border-top-subtle" style="margin-top:5px; padding-top:10px;">
+                            <span>Next Birthday:</span>
+                            <span class="stat-val text-success" id="nextBday">--</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Mystical Stats -->
+                    <div class="card" role="region" aria-label="Mystical and fun statistics">
+                        <div class="card-header">
+                            <i class="fa-solid fa-wand-magic-sparkles text-accent-purple" aria-hidden="true"></i> Mystical Stats
+                        </div>
+                        <div class="stat-row"><span>Dog Years</span>   <span class="stat-val" id="dogAge">0</span></div>
+                        <div class="stat-row"><span>Cat Years</span>   <span class="stat-val" id="catAge">0</span></div>
+                        <div class="stat-row"><span>Zodiac Sign</span> <span class="stat-val text-accent-cyan" id="zodiac">--</span></div>
+                        <div class="stat-row"><span>Birthstone</span>  <span class="stat-val" id="stone">--</span></div>
+                        <div class="stat-row"><span>Season (BD)</span> <span class="stat-val" id="season">--</span></div>
+                    </div>
+
+                </div><!-- /grid-system -->
+
+
+                <!-- ═══════════════════════════════════════════════
+                     NEW MODULE 1 — MICRO-MILESTONE PREDICTOR
+                     ═══════════════════════════════════════════════ -->
+                <div class="card mt-md" role="region" aria-label="Micro milestone predictor">
+                    <div class="card-header">
+                        <i class="fa-solid fa-flag-checkered text-accent-cyan" aria-hidden="true"></i>
+                        Micro-Milestone Predictor
+                        <span class="badge badge-info" style="margin-left:auto; font-size:10px;">NEW</span>
+                    </div>
+                    <p class="text-muted" style="font-size:13px; margin-bottom:12px;">Exact future dates when you cross legendary numerical thresholds.</p>
+                    <div class="milestone-grid" id="milestoneGrid" aria-label="Milestone dates">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+
+                <!-- ═══════════════════════════════════════════════
+                     NEW MODULE 2 — INTERGALACTIC DISTANCE
+                     ═══════════════════════════════════════════════ -->
+                <div class="card mt-md" role="region" aria-label="Intergalactic travel distance">
+                    <div class="card-header">
+                        <i class="fa-solid fa-satellite text-accent-purple" aria-hidden="true"></i>
+                        Intergalactic Travel Distance
+                        <span class="badge badge-info" style="margin-left:auto; font-size:10px;">NEW</span>
+                    </div>
+                    <p class="text-muted" style="font-size:13px; margin-bottom:12px;">
+                        How far you've hurtled through space since birth — without moving an inch.
+                    </p>
+                    <div class="space-distance" id="spaceDistanceBox" aria-label="Space travel distances">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+
+                <!-- ═══════════════════════════════════════════════
+                     NEW MODULE 3 — SOCIAL VIRAL CARD
+                     ═══════════════════════════════════════════════ -->
+                <div class="card mt-md" role="region" aria-label="Social media viral card generator">
+                    <div class="card-header">
+                        <i class="fa-solid fa-share-nodes text-accent-orange" aria-hidden="true"></i>
+                        Social Media Viral Card
+                        <span class="badge badge-info" style="margin-left:auto; font-size:10px;">NEW</span>
+                    </div>
+                    <p class="text-muted" style="font-size:13px; margin-bottom:8px;">Preview your shareable bio-stats card. Hit the button to copy to clipboard.</p>
+                    <div class="social-card-preview" id="socialCardPreview" aria-label="Social card preview text" role="textbox" aria-readonly="true">
+                        <!-- Populated by JS -->
+                    </div>
+                    <div class="btn-area" style="margin-top:12px;">
+                        <button class="btn btn-secondary" id="copyCardBtn" onclick="UltraAgeAI.copySocialCard()" aria-label="Copy social card to clipboard">
+                            <i class="fa-regular fa-copy" aria-hidden="true"></i> Copy for Social Media
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- Result Action Buttons -->
+                <div class="btn-area">
+                    <button class="btn btn-primary bg-btn-export" onclick="UltraAgeAI.downloadTxt()" aria-label="Export full life report as text file">
+                        <i class="fa-solid fa-file-export" aria-hidden="true"></i> Export Report
+                    </button>
+                    <button class="btn btn-primary bg-btn-print" onclick="window.print()" aria-label="Print life analytics data">
+                        <i class="fa-solid fa-print" aria-hidden="true"></i> Print Data
+                    </button>
+                </div>
+
+            </section><!-- /resultBox -->
+
+
+            <!-- [AD SLOT] Bottom Banner -->
+            <div class="ad-slot" data-ad-slot="bottom-banner" aria-hidden="true"></div>
+
+
+            <!-- ═══════════════════════════════════════════════
+                 SEO INFO SECTION
+                 ═══════════════════════════════════════════════ -->
+            <section class="info-section-wrapper" aria-label="Educational information about the calculator">
+
+                <div class="info-card">
+                    <h2><i class="fa-solid fa-circle-question" aria-hidden="true"></i> User Guide: How to Operate</h2>
+                    <p><strong>Ultra Age AI God Mode</strong> generates complex chronological and biological analytics in real-time.</p>
+                    <ul class="guide-list">
+                        <li>
+                            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                            <div>
+                                <strong>Step 1: Input Biological Data</strong><br>
+                                Select your <strong>Date of Birth</strong> using the calendar input.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                            <div>
+                                <strong>Step 2: Time Synchronization (Optional)</strong><br>
+                                Enter your exact <strong>Time of Birth</strong> for precision down to the second.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+                            <div>
+                                <strong>Step 3: Initiate Analysis</strong><br>
+                                Click <strong>"Analyze Life Stream"</strong> to launch the full analytics engine.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+                            <div>
+                                <strong>Step 4: Share &amp; Export</strong><br>
+                                Copy your <strong>Viral Card</strong> to share on social media, or export the full <code>.txt</code> report.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fa-solid fa-microchip" aria-hidden="true"></i> Technical Architecture: How It Works</h2>
+                    <p><strong>Ultra Age AI v6.0</strong> runs on a high-precision <span class="tech-highlight">Client-Side JavaScript Engine</span> with several critical upgrades over standard calculators.</p>
+                    <h3>1. Dirty-Checking RAF Loop</h3>
+                    <p>The engine uses a <span class="tech-highlight">requestAnimationFrame</span> loop with state-comparison (dirty checking). The DOM is only repainted when a value has actually changed, eliminating unnecessary renders and dramatically reducing CPU load and battery drain on mobile devices.</p>
+                    <h3>2. Age-Tiered Biological Algorithms</h3>
+                    <p>Consumption and biological values (heartbeats, food, water, steps) are calculated using age-bracket multipliers. A newborn's caloric intake and heart rate differ substantially from an adult's — the engine accounts for this with segmented day-bucket calculations across each life phase.</p>
+                    <h3>3. Exact Gregorian Leap-Year Accounting</h3>
+                    <p>Rather than using fractional year constants, the engine performs a day-by-day calendar traversal (bucketed by year) to count exact leap years lived, then cross-references <code>Date.UTC</code> to eliminate timezone drift errors.</p>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fa-solid fa-flag-checkered" aria-hidden="true"></i> Micro-Milestone Science</h2>
+                    <p>The Milestone Predictor calculates the precise future date (to the day) when you will cross significant numerical thresholds — 10,000 days, 1,000 weeks, 1 billion seconds, 100,000 hours, and 1 million minutes. Milestones already passed are shown as achieved. This feature is calculated from your exact birth timestamp, not just your birth date.</p>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fa-solid fa-satellite" aria-hidden="true"></i> Intergalactic Distance: The Physics</h2>
+                    <p>You are always moving through space, even sitting still. Three velocities are combined:</p>
+                    <ul>
+                        <li><strong>Earth's Orbit (Solar):</strong> Earth travels ~107,226 km/h around the Sun.</li>
+                        <li><strong>Solar System (Galactic):</strong> Our entire solar system orbits the Milky Way's core at ~828,000 km/h (NASA data).</li>
+                        <li><strong>Milky Way (Universal):</strong> The galaxy itself moves through the observable universe at approximately 2,160,000 km/h relative to the CMB.</li>
+                    </ul>
+                    <p>Multiplying these speeds by your total hours alive gives a genuinely staggering number — a visceral reminder of cosmic motion.</p>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fa-solid fa-people-group" aria-hidden="true"></i> Generational Cohorts Explained</h2>
+                    <p>Your generation is determined by your birth year using the widely-accepted Pew Research and Beresford Research cohort definitions: <strong>Silent Generation</strong> (1928–1945), <strong>Baby Boomers</strong> (1946–1964), <strong>Gen X</strong> (1965–1980), <strong>Millennials</strong> (1981–1996), <strong>Gen Z</strong> (1997–2012), and <strong>Gen Alpha</strong> (2013–present).</p>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Biological &amp; Vital Algorithms</h2>
+                    <p>The Bio-Engine uses age-segmented heart rate and breath rate baselines based on published medical literature:</p>
+                    <ul>
+                        <li><strong>Infants (0–1 yr):</strong> ~140 bpm / 44 breaths/min</li>
+                        <li><strong>Children (1–10 yr):</strong> ~95 bpm / 26 breaths/min</li>
+                        <li><strong>Adolescents (10–18 yr):</strong> ~80 bpm / 20 breaths/min</li>
+                        <li><strong>Adults (18–60 yr):</strong> ~72 bpm / 16 breaths/min</li>
+                        <li><strong>Seniors (60+ yr):</strong> ~68 bpm / 14 breaths/min</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fa-solid fa-user-shield" aria-hidden="true"></i> Privacy &amp; Data Policy</h2>
+                    <ol>
+                        <li><strong>Zero Data Collection:</strong> Your birth date is processed locally in your browser and never transmitted anywhere.</li>
+                        <li><strong>Offline Capable:</strong> Once loaded, the tool works entirely without an internet connection.</li>
+                        <li><strong>Data Sovereignty:</strong> Export your data at any time as a local <code>.txt</code> file.</li>
+                    </ol>
+                </div>
+
+                <div class="info-card" style="border-left: 4px solid var(--accent-yellow);">
+                    <h2 style="border-left:none; padding-left:0;">
+                        <i class="fa-solid fa-triangle-exclamation" style="color:var(--accent-yellow);" aria-hidden="true"></i>
+                        Disclaimer &amp; Data Accuracy
+                    </h2>
+                    <ul style="list-style:disc; padding-left:20px; color:var(--text-muted); line-height:1.6;">
+                        <li style="margin-bottom:10px;"><strong>Not Medical Advice:</strong> Biological statistics are mathematical approximations. This tool is for educational and entertainment purposes only.</li>
+                        <li style="margin-bottom:10px;"><strong>Estimation Logic:</strong> Consumption metrics are derived from standard human activity models. Individual results vary.</li>
+                        <li><strong>No Liability:</strong> Trusted Tools Web is not responsible for any decisions based on these calculations.</li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <!-- Related Tools -->
+            <div class="container" style="margin-top:50px;">
+                <div id="dynamic-related-tools"
+                     data-category="calc"
+                     data-current-page="age-calculator-pro.html"></div>
+            </div>
+            <script type="module" src="../../assets/js/related-tools.js"></script>
+
+        </div><!-- /container -->
+
+        <!-- Comments Section -->
+        <section class="ttw-comments-section animated-entry delay-2" aria-label="User Discussion">
+            <div class="container">
+                <div class="trusted-comments-widget" data-page-id="auto">
+                    <div class="ttw-skeleton-loader" style="text-align:center; padding:40px; color:var(--text-muted);">
+                        <i class="fa-solid fa-circle-notch fa-spin" style="font-size:2rem; color:var(--accent-cyan);" aria-hidden="true"></i>
+                        <p style="margin-top:15px; font-weight:500;">Initializing secure discussion portal...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="global-footer" class="cyber-footer"></footer>
+
+    <script src="../../assets/js/ads-manager.js"></script>
+    <script type="module" src="../../assets/js/global.js"></script>
+
+    <!-- God Mode Engine v6.0 -->
+    <script src="../../assets/tools/calc/calc-age-calculator/script.js"></script>
+
+    <script type="module" src="../../assets/js/comments.js" defer></script>
+</body>
+</html>
