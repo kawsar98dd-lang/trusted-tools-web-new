@@ -32,21 +32,21 @@
 
     <!-- OPEN GRAPH (Facebook/LinkedIn) META TAGS -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://trustedtoolsweb.com/tools/dev/dev-code-snap.html">
+    <meta property="og:url" content="https://trustedtoolsweb.com/tools/dev/code-snapshot-studio">
     <meta property="og:title" content="Code Snap Studio — Beautiful Code Snippet Generator">
     <meta property="og:description" content="Generate high-resolution, shareable code images with customizable frames, gradient backgrounds, and 3D isometric effects. Free developer tool.">
-    <meta property="og:image" content="https://trustedtoolsweb.com/assets/tools/dev/dev-code-snap/img/og-banner.webp">
+    <meta property="og:image" content="https://trustedtoolsweb.com/assets/img/og-banner.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
     <!-- TWITTER CARD META TAGS -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://trustedtoolsweb.com/tools/dev/dev-code-snap.html">
+    <meta property="twitter:url" content="https://trustedtoolsweb.com/tools/dev/code-snapshot-studio">
     <meta property="twitter:title" content="Code Snap Studio — Pro Developer Tool">
     <meta property="twitter:description" content="The most advanced browser-based tool to capture and beautify source code snippets. 3D tilt, custom frames, QR branding, Ultra-HD export.">
-    <meta property="twitter:image" content="https://trustedtoolsweb.com/assets/tools/dev/dev-code-snap/img/og-banner.webp">
+    <meta property="twitter:image" content="https://trustedtoolsweb.com/assets/img/og-banner.jpg">
 
-    <link rel="canonical" href="https://trustedtoolsweb.com/tools/dev/dev-code-snap.html">
+    <link rel="canonical" href="https://trustedtoolsweb.com/tools/dev/code-snapshot-studio">
 
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="../../assets/img/logo.webp">
@@ -73,7 +73,7 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Code Snap Studio",
-        "url": "https://trustedtoolsweb.com/tools/dev/dev-code-snap.html",
+        "url": "https://trustedtoolsweb.com/tools/dev/code-snapshot-studio",
         "description": "Professional tool for converting source code into beautiful visuals with custom frames, 3D tilt effects, premium gradient backgrounds, syntax theme selection, line numbers, and multi-format export. 100% client-side processing.",
         "applicationCategory": "DeveloperApplication",
         "genre": "Developer Tools",
@@ -82,7 +82,7 @@
         "operatingSystem": "Any",
         "isAccessibleForFree": true,
         "featureList": "Syntax Highlighting, 180+ Languages Auto-Detection, 3D Isometric Tilt, macOS/Windows Frames, Ultra-HD PNG & WebP Export, QR Branding, Custom Watermark, Prettier Code Beautify, Syntax Theme Switcher, Line Numbers, Custom Gradient Builder",
-        "screenshot": "https://trustedtoolsweb.com/assets/tools/dev/dev-code-snap/img/og-banner.webp",
+        "screenshot": "https://trustedtoolsweb.com/assets/img/og-banner.jpg",
         "author": {
             "@type": "Person",
             "name": "MD KAWSAR"
@@ -179,7 +179,7 @@
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Code Snap Studio",
-                "item": "https://trustedtoolsweb.com/tools/dev/dev-code-snap.html"
+                "item": "https://trustedtoolsweb.com/tools/dev/code-snapshot-studio"
             }
         ]
     }
@@ -502,7 +502,7 @@ async function generateSnap(code) {
         <!-- SEO & INFORMATION SECTION -->
         <div class="info-section-wrapper">
             <div class="info-card">
-                <img
+                <img onerror="this.onerror=null;this.style.display='none'"
                     src="../../assets/tools/dev/dev-code-snap/img/demo-preview.webp"
                     alt="Code Snap Studio — Professional code screenshot generator showing a JavaScript snippet with cyan wave gradient background and macOS window frame"
                     class="css-info-preview-img"
@@ -601,7 +601,7 @@ async function generateSnap(code) {
             -->
             <div id="dynamic-related-tools"
                  data-category="dev"
-                 data-current-page="dev-code-snap.html">
+                 data-current-page="code-snapshot-studio.html">
             </div>
         </div>
 
@@ -627,7 +627,7 @@ async function generateSnap(code) {
          EXTERNAL LIBRARIES — defer/async for performance
     ====================================================================== -->
     <script src="../../assets/library/parsers-text/highlightjs/highlight.min.js" defer></script>
-    <script src="../../assets/library/canvas-engine/html2canvas.min.js" defer></script>
+    <script src="../../assets/library/canvas-engine/html2canvas/html2canvas.min.js" defer></script>
     <script src="../../assets/library/qr-engine/qrcodejs/qrcode.min.js" defer></script>
     <script src="../../assets/library/parsers-text/prettier/standalone.js" defer></script>
     <script src="../../assets/library/parsers-text/prettier/parser-babel.js" defer></script>

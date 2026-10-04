@@ -32,7 +32,7 @@ const CONFIG = {
     // [CODECANYON AUTHOR NOTE]:
     // 100% Offline & Client-Side Setup.
     // Points to the local pre-bundled browser module.
-    IMGLY_CDN: "../../assets/library/imgly-bg-removal/background-removal.esm.js",
+    IMGLY_CDN: "../../assets/library/imgly-bg-removal/index.mjs",
 
     // Points to the local directory containing .wasm and .onnx files.
     // MUST end with a trailing slash (/)

@@ -1,24 +1,170 @@
-# --- 1. SEO & Pretty URL Rules ---
-# .html URL থেকে clean URL-এ redirect
-/*.html  /:splat  301
+# Cloudflare Pages _redirects  (format: <source> <destination> [status])
+# Rules are evaluated top-down; the first match wins. Static limit: 2000 rules.
 
-# --- 2. Category Redirects ---
-# পুরনো root-level tool URLs → নতুন /tools/ structure
+# --- 1. Legacy URLs -> current /tools/<category>/<tool> pages ---
+# (old root-level slugs and previous canonical paths; explicit rules only, no wildcards,
+#  so no valid page can ever be intercepted)
+/calc-age-calculator  /tools/calc/age-calculator-pro  301
+/calc-age-calculator.html  /tools/calc/age-calculator-pro  301
+/calc-gst-calculator  /tools/calc/gst-vat-calculator  301
+/calc-gst-calculator.html  /tools/calc/gst-vat-calculator  301
+/calc-gst-vat  /tools/calc/gst-vat-calculator  301
+/calc-gst-vat.html  /tools/calc/gst-vat-calculator  301
+/calc-loan-emi  /tools/calc/loan-emi-calculator  301
+/calc-loan-emi.html  /tools/calc/loan-emi-calculator  301
+/calc-percentage  /tools/calc/percentage-calculator  301
+/calc-percentage.html  /tools/calc/percentage-calculator  301
+/calc-unit-converter  /tools/calc/unit-converter-pro  301
+/calc-unit-converter.html  /tools/calc/unit-converter-pro  301
+/dev-code-converter  /tools/dev/code-encoder-decoder  301
+/dev-code-converter.html  /tools/dev/code-encoder-decoder  301
+/dev-code-snap  /tools/dev/code-snapshot-studio  301
+/dev-code-snap.html  /tools/dev/code-snapshot-studio  301
+/dev-cookie-converter  /tools/dev/cookie-format-converter  301
+/dev-cookie-converter.html  /tools/dev/cookie-format-converter  301
+/dev-internet-speed-test  /tools/dev/internet-speed-test  301
+/dev-internet-speed-test.html  /tools/dev/internet-speed-test  301
+/dev-json-formatter  /tools/dev/json-formatter-validator  301
+/dev-json-formatter.html  /tools/dev/json-formatter-validator  301
+/dev-markdown-editor  /tools/dev/markdown-editor-pro  301
+/dev-markdown-editor.html  /tools/dev/markdown-editor-pro  301
+/dev-mock-json-generator  /tools/dev/mock-data-generator  301
+/dev-mock-json-generator.html  /tools/dev/mock-data-generator  301
+/dev-pwa-studio  /tools/dev/pwa-builder-studio  301
+/dev-pwa-studio.html  /tools/dev/pwa-builder-studio  301
+/dev-sql-studio  /tools/dev/sql-studio-pro  301
+/dev-sql-studio.html  /tools/dev/sql-studio-pro  301
+/dev-web-sandbox  /tools/dev/web-sandbox-studio  301
+/dev-web-sandbox.html  /tools/dev/web-sandbox-studio  301
+/doc-resume-builder  /tools/doc/resume-cv-builder  301
+/doc-resume-builder.html  /tools/doc/resume-cv-builder  301
+/fancy-text-generator  /tools/text/fancy-font-generator  301
+/fancy-text-generator.html  /tools/text/fancy-font-generator  301
+/image-to-pdf-converter  /tools/pdf/image-to-pdf-converter  301
+/image-to-pdf-converter.html  /tools/pdf/image-to-pdf-converter  301
+/img-3d-mockup  /tools/img/3d-device-mockup-studio  301
+/img-3d-mockup.html  /tools/img/3d-device-mockup-studio  301
+/img-ai-upscaler  /tools/img/ai-image-upscaler  301
+/img-ai-upscaler.html  /tools/img/ai-image-upscaler  301
+/img-bg-remover  /tools/img/ai-background-remover  301
+/img-bg-remover.html  /tools/img/ai-background-remover  301
+/img-compressor  /tools/img/image-studio-pro  301
+/img-compressor.html  /tools/img/image-studio-pro  301
+/img-document-scanner  /tools/img/document-scanner-pro  301
+/img-document-scanner.html  /tools/img/document-scanner-pro  301
+/img-exif-stripper  /tools/img/exif-metadata-remover  301
+/img-exif-stripper.html  /tools/img/exif-metadata-remover  301
+/img-meme-generator  /tools/img/meme-generator-studio  301
+/img-meme-generator.html  /tools/img/meme-generator-studio  301
+/img-privacy-censor  /tools/img/ai-face-blur-censor  301
+/img-privacy-censor.html  /tools/img/ai-face-blur-censor  301
+/img-qr-generator  /tools/img/qr-code-generator-pro  301
+/img-qr-generator.html  /tools/img/qr-code-generator-pro  301
+/img-svg-vectorizer  /tools/img/svg-vectorizer-pro  301
+/img-svg-vectorizer.html  /tools/img/svg-vectorizer-pro  301
+/img-youtube-thumbnail  /tools/img/youtube-thumbnail-downloader  301
+/img-youtube-thumbnail.html  /tools/img/youtube-thumbnail-downloader  301
+/media-audio-cutter  /tools/media/audio-studio-pro  301
+/media-audio-cutter.html  /tools/media/audio-studio-pro  301
+/media-screen-recorder  /tools/media/screen-recorder-pro  301
+/media-screen-recorder.html  /tools/media/screen-recorder-pro  301
+/media-tone-generator  /tools/media/tone-frequency-generator  301
+/media-tone-generator.html  /tools/media/tone-frequency-generator  301
+/media-video-studio  /tools/media/video-studio-pro  301
+/media-video-studio.html  /tools/media/video-studio-pro  301
+/online-pdf-compressor  /tools/pdf/pdf-compressor-pro  301
+/online-pdf-compressor.html  /tools/pdf/pdf-compressor-pro  301
+/pdf-compressor  /tools/pdf/pdf-compressor-pro  301
+/pdf-compressor.html  /tools/pdf/pdf-compressor-pro  301
+/pdf-image-to-pdf  /tools/pdf/image-to-pdf-converter  301
+/pdf-image-to-pdf.html  /tools/pdf/image-to-pdf-converter  301
+/pdf-merger  /tools/pdf/pdf-merger-editor  301
+/pdf-merger.html  /tools/pdf/pdf-merger-editor  301
+/pdf-ocr-signer  /tools/pdf/pdf-ocr-signer-pro  301
+/pdf-ocr-signer.html  /tools/pdf/pdf-ocr-signer-pro  301
+/sec-2fa-code  /tools/sec/2fa-authenticator-pro  301
+/sec-2fa-code.html  /tools/sec/2fa-authenticator-pro  301
+/sec-file-encryptor  /tools/sec/file-encryptor-aes256  301
+/sec-file-encryptor.html  /tools/sec/file-encryptor-aes256  301
+/sec-ip-lookup  /tools/sec/ip-address-lookup  301
+/sec-ip-lookup.html  /tools/sec/ip-address-lookup  301
+/sec-js-obfuscator  /tools/sec/js-code-obfuscator  301
+/sec-js-obfuscator.html  /tools/sec/js-code-obfuscator  301
+/sec-p2p-share  /tools/sec/p2p-secure-file-share  301
+/sec-p2p-share.html  /tools/sec/p2p-secure-file-share  301
+/sec-password-generator  /tools/sec/password-generator-pro  301
+/sec-password-generator.html  /tools/sec/password-generator-pro  301
+/sec-steganography  /tools/sec/steganography-vault  301
+/sec-steganography.html  /tools/sec/steganography-vault  301
+/sec/sec-p2p-share  /tools/sec/p2p-secure-file-share  301
+/sec/sec-p2p-share.html  /tools/sec/p2p-secure-file-share  301
+/seo-favicon-generator  /tools/seo/favicon-generator-pro  301
+/seo-favicon-generator.html  /tools/seo/favicon-generator-pro  301
+/seo-hashtag-generator  /tools/seo/hashtag-generator-pro  301
+/seo-hashtag-generator.html  /tools/seo/hashtag-generator-pro  301
+/seo-link-shortener  /tools/seo/link-shortener-pro  301
+/seo-link-shortener.html  /tools/seo/link-shortener-pro  301
+/seo-meta-tags  /tools/seo/meta-tag-generator  301
+/seo-meta-tags.html  /tools/seo/meta-tag-generator  301
+/seo-robots-generator  /tools/seo/robots-txt-generator  301
+/seo-robots-generator.html  /tools/seo/robots-txt-generator  301
+/seo-sitemap-generator  /tools/seo/sitemap-generator-pro  301
+/seo-sitemap-generator.html  /tools/seo/sitemap-generator-pro  301
+/text-data-extractor  /tools/text/bulk-data-extractor  301
+/text-data-extractor.html  /tools/text/bulk-data-extractor  301
+/text-diff-checker  /tools/text/diff-checker-pro  301
+/text-diff-checker.html  /tools/text/diff-checker-pro  301
+/text-editor-advanced  /tools/text/advanced-text-editor  301
+/text-editor-advanced.html  /tools/text/advanced-text-editor  301
+/text-fancy-generator  /tools/text/fancy-font-generator  301
+/text-fancy-generator.html  /tools/text/fancy-font-generator  301
+/text-handwriting-converter  /tools/text/handwriting-converter-pro  301
+/text-handwriting-converter.html  /tools/text/handwriting-converter-pro  301
+/text-number-prefix  /tools/text/number-prefix-formatter  301
+/text-number-prefix.html  /tools/text/number-prefix-formatter  301
+/text-to-speech  /tools/text/text-to-speech-studio  301
+/text-to-speech.html  /tools/text/text-to-speech-studio  301
+/text-typing-speed-test  /tools/text/typing-speed-test  301
+/text-typing-speed-test.html  /tools/text/typing-speed-test  301
+/text-word-counter  /tools/text/word-counter-analyzer  301
+/text-word-counter.html  /tools/text/word-counter-analyzer  301
+/tool-email-alias-gen  /tools/tool/gmail-alias-generator  301
+/tool-email-alias-gen.html  /tools/tool/gmail-alias-generator  301
+/tool-focus-timer  /tools/tool/focus-timer-pomodoro  301
+/tool-focus-timer.html  /tools/tool/focus-timer-pomodoro  301
+/tool-profile-picture  /tools/tool/avatar-generator-pro  301
+/tool-profile-picture.html  /tools/tool/avatar-generator-pro  301
+/tool-random-name  /tools/tool/random-name-generator  301
+/tool-random-name.html  /tools/tool/random-name-generator  301
+/tools/dev/dev-code-snap  /tools/dev/code-snapshot-studio  301
+/tools/dev/dev-code-snap.html  /tools/dev/code-snapshot-studio  301
+/tools/dev/dev-cookie-converter  /tools/dev/cookie-format-converter  301
+/tools/dev/dev-cookie-converter.html  /tools/dev/cookie-format-converter  301
+/tools/dev/dev-pwa-studio  /tools/dev/pwa-builder-studio  301
+/tools/dev/dev-pwa-studio.html  /tools/dev/pwa-builder-studio  301
+/tools/dev/dev-sql-studio  /tools/dev/sql-studio-pro  301
+/tools/dev/dev-web-sandbox  /tools/dev/web-sandbox-studio  301
+/tools/dev/dev-web-sandbox.html  /tools/dev/web-sandbox-studio  301
+/tools/img/img-ai-upscaler  /tools/img/ai-image-upscaler  301
+/tools/img/img-ai-upscaler.html  /tools/img/ai-image-upscaler  301
+/tools/img/img-bg-remover  /tools/img/ai-background-remover  301
+/tools/img/img-bg-remover.html  /tools/img/ai-background-remover  301
+/tools/img/img-exif-stripper  /tools/img/exif-metadata-remover  301
+/tools/img/img-exif-stripper.html  /tools/img/exif-metadata-remover  301
+/tools/img/img-privacy-censor  /tools/img/ai-face-blur-censor  301
+/tools/img/img-svg-vectorizer  /tools/img/svg-vectorizer-pro  301
+/tools/img/img-svg-vectorizer.html  /tools/img/svg-vectorizer-pro  301
+/tools/media/media-video-studio  /tools/media/video-studio-pro  301
+/tools/media/media-video-studio.html  /tools/media/video-studio-pro  301
+/tools/pdf/pdf-ocr-signer  /tools/pdf/pdf-ocr-signer-pro  301
+/tools/pdf/pdf-ocr-signer.html  /tools/pdf/pdf-ocr-signer-pro  301
+/unit-converter-pro  /tools/calc/unit-converter-pro  301
 
-/calc-*   /tools/calc/calc-:splat      301
-/dev-*    /tools/dev/dev-:splat        301
-/img-*    /tools/img/img-:splat        301
-/media-*  /tools/media/media-:splat    301
-/pdf-*    /tools/pdf/pdf-:splat        301
-/sec-*    /tools/sec/sec-:splat        301
-/seo-*    /tools/seo/seo-:splat        301
-/text-*   /tools/text/text-:splat      301
-/tool-*   /tools/tool/tool-:splat      301
-
-# --- 3. Smart Shortcuts ---
-
-# Telegram Join
-/join  https://t.me/FreeGenTools  302
-
-# Admin Mode
+# --- 2. Smart shortcuts ---
+/join  https://t.me/TrustedToolsWeb  302
 /admin  /?admin_mode=true  302
+
+# --- 3. Pretty URLs (.html -> clean URL) ---
+# Explicit legacy rules above run first; /index.html must precede the wildcard.
+/index.html  /  301
+/*.html  /:splat  301

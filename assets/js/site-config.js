@@ -29,7 +29,7 @@ window.SITE_CONFIG = {
     ogSiteName    : "Trusted Tools Web - Secure Developer Suite",
 
     // ── ASSETS & PATHS ────────────────────────────────────────────────────────
-    defaultOGImage : "../../assets/img/og-banner.webp",
+    defaultOGImage : "assets/img/og-banner.jpg",
     favicon        : "favicon.png",
     appleIcon      : "favicon.png",
 
@@ -234,8 +234,8 @@ window.SITE_CONFIG = {
         // FEATURE 10 — IN-FEED ADS
         // ────────────────────────────────────────────────────────────────────
         ads: {
-            /** Set to false to disable ads entirely. */
-            enabled       : true,
+            /** Set to false to disable ads entirely. Keep false until a real AdSense publisher ID/slot is set below. */
+            enabled       : false,
             /** Inject an ad container after every N comments. */
             injectAfterN  : 5,
             /** The raw HTML for your ad unit. Use a Google AdSense tag or any banner. */

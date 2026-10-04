@@ -4,32 +4,40 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     // বর্তমান ক্লিন ইউআরএল বের করা
-    const fullURL = window.location.href.split(/[?#]/)[0];
+    // Canonical URL = cfg.baseUrl + clean path (no .html, no index.html, no trailing slash)
+    const cfg = window.SITE_CONFIG || {};
+    const baseUrl = (cfg.baseUrl || window.location.origin).replace(/\/+$/, '');
+    let cleanPath = window.location.pathname
+        .replace(/\/index\.html$/, '/')
+        .replace(/\.html$/, '');
+    if (cleanPath.length > 1) cleanPath = cleanPath.replace(/\/+$/, '');
+    const fullURL = baseUrl + (cleanPath === '/' ? '/' : cleanPath);
     const fileName = window.location.pathname.split("/").pop() || "index.html";
 
-    // ১. ক্যানোনিকাল (Canonical) আপডেট
+    // Canonical
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute('href', fullURL);
 
-    // ২. অথর (Author) আপডেট
+    // Author
     let authorTag = document.querySelector('meta[name="author"]');
-    if (authorTag) authorTag.setAttribute('content', SITE_CONFIG.author);
+    if (authorTag) authorTag.setAttribute('content', cfg.author);
 
-    // ইমেজ পাথ ফিক্স করা (যদি আগে থেকে http থাকে, তবে নতুন করে baseUrl যোগ করবে না)
-    let currentOgImg = document.querySelector('meta[property="og:image"]')?.getAttribute('content') || SITE_CONFIG.defaultOGImage;
-    let finalOgImg = currentOgImg.startsWith('http') ? currentOgImg : SITE_CONFIG.baseUrl + "/" + currentOgImg;
+    // Resolve image URLs to absolute (relative values are treated as relative to the site root)
+    const toAbs = (u) => {
+        if (!u) return u;
+        if (/^https?:\/\//i.test(u)) return u;
+        return baseUrl + "/" + u.replace(/^(\.\.\/|\.\/|\/)+/, '');
+    };
+    let finalOgImg = toAbs(document.querySelector('meta[property="og:image"]')?.getAttribute('content') || cfg.defaultOGImage);
+    let finalTwImg = toAbs(document.querySelector('meta[name="twitter:image"]')?.getAttribute('content') || cfg.defaultOGImage);
 
-    let currentTwImg = document.querySelector('meta[name="twitter:image"]')?.getAttribute('content') || SITE_CONFIG.defaultOGImage;
-    let finalTwImg = currentTwImg.startsWith('http') ? currentTwImg : SITE_CONFIG.baseUrl + "/" + currentTwImg;
-
-    // ৩. সোশ্যাল মিডিয়া (OG & Twitter) ডেটা ম্যাপিং
     const metaMap = {
         'og:url': fullURL,
-        'og:site_name': SITE_CONFIG.ogSiteName,
+        'og:site_name': cfg.ogSiteName,
         'og:image': finalOgImg,
         'twitter:url': fullURL,
-        'twitter:site': SITE_CONFIG.twitterHandle,
-        'twitter:creator': SITE_CONFIG.twitterHandle,
+        'twitter:site': cfg.twitterHandle,
+        'twitter:creator': cfg.twitterHandle,
         'twitter:image': finalTwImg
     };
 
@@ -49,15 +57,15 @@ document.addEventListener("DOMContentLoaded", function() {
             
             if (data.author) {
                 if (typeof data.author === 'object') {
-                    data.author.name = SITE_CONFIG.author;
-                    data.author.url = SITE_CONFIG.baseUrl;
+                    data.author.name = cfg.author;
+                    data.author.url = cfg.baseUrl;
                 } else {
-                    data.author = SITE_CONFIG.author; // যদি স্ট্রিং হয়
+                    data.author = cfg.author; // যদি স্ট্রিং হয়
                 }
             }
             
             if (data.brand) {
-                data.brand.name = SITE_CONFIG.brandName;
+                data.brand.name = cfg.brandName;
             }
 
             // আপডেটেড ডাটা আবার স্ক্রিপ্টে বসিয়ে দেওয়া

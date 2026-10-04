@@ -9,6 +9,27 @@
 
 const MAX_BODY_BYTES = 8 * 1024;
 
+// Best-effort abuse protection (per Worker isolate): max N requests per IP per window.
+// For hard guarantees add a Cloudflare WAF rate-limiting rule on /api/telegram-notify.
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 60 * 1000;
+const rateBuckets = new Map();
+
+const rateLimited = (request) => {
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  const now = Date.now();
+  if (rateBuckets.size > 500) {
+    for (const [key, v] of rateBuckets) if (now - v.start > RATE_LIMIT_WINDOW_MS) rateBuckets.delete(key);
+  }
+  const bucket = rateBuckets.get(ip);
+  if (!bucket || now - bucket.start > RATE_LIMIT_WINDOW_MS) {
+    rateBuckets.set(ip, { start: now, count: 1 });
+    return false;
+  }
+  bucket.count += 1;
+  return bucket.count > RATE_LIMIT_MAX;
+};
+
 const json = (body, status = 200) => new Response(JSON.stringify(body), {
   status,
   headers: {
@@ -26,7 +47,8 @@ const escapeHtml = (value) => String(value ?? "")
 
 const allowedOrigin = (request) => {
   const origin = request.headers.get("Origin");
-  if (!origin) return true;
+  // Browsers always send Origin on cross-site/same-site POST fetches; reject requests without it.
+  if (!origin) return false;
 
   const requestUrl = new URL(request.url);
   return origin === requestUrl.origin || origin === "https://trustedtoolsweb.com";
@@ -37,6 +59,15 @@ export async function onRequestPost(context) {
 
   if (!allowedOrigin(request)) {
     return json({ error: "Forbidden origin." }, 403);
+  }
+
+  if (rateLimited(request)) {
+    return json({ error: "Too many requests. Please try again later." }, 429);
+  }
+
+  const contentType = request.headers.get("Content-Type") || "";
+  if (!contentType.toLowerCase().includes("application/json")) {
+    return json({ error: "Content-Type must be application/json." }, 415);
   }
 
   const token = env.TELEGRAM_BOT_TOKEN;
@@ -61,6 +92,9 @@ export async function onRequestPost(context) {
     payload = JSON.parse(raw || "{}");
   } catch {
     return json({ error: "Invalid JSON." }, 400);
+  }
+  if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+    return json({ error: "Invalid payload." }, 400);
   }
 
   const pageId = String(payload.pageId || "home").slice(0, 120);

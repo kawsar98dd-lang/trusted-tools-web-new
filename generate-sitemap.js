@@ -1,117 +1,79 @@
+/**
+ * Sitemap generator — Trusted Tools Web (Cloudflare Pages)
+ *
+ * Usage:  node generate-sitemap.js
+ *         SITE_URL=https://example.com node generate-sitemap.js
+ *
+ * - Scans every .html page (index, pages/, tools/<category>/<tool>.html, any new category).
+ * - Emits CLEAN URLs (no .html, no /index.html) — identical to each page's canonical URL.
+ * - Domain comes from SITE_URL, else assets/js/site-config.js baseUrl (single source of truth).
+ * - Skips partials/docs/assets, de-duplicates URLs, and verifies the tool count against
+ *   assets/js/tools-data.js (warns on mismatch).
+ */
 const fs = require('fs');
 const path = require('path');
 
-// Define the production domain (ensure no trailing slash)
-const DOMAIN = process.env.SITE_URL || "https://trustedtoolsweb.com";
+const rootDir = __dirname;
 
-// Comprehensive list of directories to strictly exclude from the sitemap
-// Includes directories found in project root to prevent security leaks
-const IGNORE_DIRS = [
-    'node_modules',
-    '.git',
-    'assets',
-    'components',
-    'Documents File'
-];
-
-// Specific HTML files to exclude from indexing (e.g., partials, docs)
-const IGNORE_FILES = [
-    '404.html',
-    'readme.html',
-    'documentation.html',
-    'footer.html',
-    'header.html'
-];
-
-// Recursive function to scan directories safely
-function walkSync(currentDirPath, callback) {
+function readBaseUrl() {
+    if (process.env.SITE_URL) return process.env.SITE_URL;
     try {
-        const dirents = fs.readdirSync(currentDirPath, { withFileTypes: true });
-        
-        dirents.forEach(dirent => {
-            // Skip ignored directories and hidden folders/files
-            if (IGNORE_DIRS.includes(dirent.name) || dirent.name.startsWith('.')) return; 
+        const cfg = fs.readFileSync(path.join(rootDir, 'assets/js/site-config.js'), 'utf8');
+        const m = cfg.match(/baseUrl\s*:\s*["']([^"']+)["']/);
+        if (m) return m[1];
+    } catch (e) { /* fall through */ }
+    return 'https://trustedtoolsweb.com';
+}
+const DOMAIN = readBaseUrl().replace(/\/+$/, '');
 
-            const filePath = path.join(currentDirPath, dirent.name);
-            
-            if (dirent.isDirectory()) {
-                walkSync(filePath, callback);
-            } else if (dirent.isFile() && dirent.name.endsWith('.html')) {
-                // Ensure the specific file is not in the ignore list
-                if (!IGNORE_FILES.includes(dirent.name)) {
-                    callback(filePath);
-                }
-            }
-        });
-    } catch (error) {
-        // Log the error but prevent the script from crashing entirely
-        console.error(`Error reading directory ${currentDirPath}:`, error);
+const IGNORE_DIRS = ['node_modules', '.git', 'assets', 'components', 'Documents File', 'functions'];
+const IGNORE_FILES = ['404.html', 'readme.html', 'documentation.html', 'footer.html', 'header.html'];
+
+const files = [];
+(function walk(dir) {
+    for (const d of fs.readdirSync(dir, { withFileTypes: true })) {
+        if (d.name.startsWith('.') || IGNORE_DIRS.includes(d.name)) continue;
+        const p = path.join(dir, d.name);
+        if (d.isDirectory()) walk(p);
+        else if (d.isFile() && d.name.endsWith('.html') && !IGNORE_FILES.includes(d.name)) files.push(p);
     }
+})(rootDir);
+files.sort();
+
+const seen = new Set();
+const entries = [];
+for (const file of files) {
+    let rel = path.relative(rootDir, file).replace(/\\/g, '/');
+    if (rel === 'index.html') rel = '';
+    else rel = rel.replace(/\/index\.html$/, '').replace(/\.html$/, '');
+    const url = rel ? `${DOMAIN}/${rel}` : `${DOMAIN}/`;
+    if (seen.has(url)) { console.warn('Duplicate skipped:', url); continue; }
+    seen.add(url);
+
+    let priority = '0.8', changefreq = 'monthly';
+    if (rel === '') { priority = '1.0'; changefreq = 'weekly'; }
+    else if (rel.startsWith('tools/')) { priority = '0.9'; changefreq = 'weekly'; }
+    else if (rel.startsWith('pages/')) { priority = '0.7'; changefreq = 'yearly'; }
+
+    let lastmod;
+    try { lastmod = fs.statSync(file).mtime.toISOString(); } catch (e) { lastmod = new Date().toISOString(); }
+    entries.push({ url, lastmod, changefreq, priority });
 }
 
-// Initialize XML structure
-let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+let xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+for (const e of entries) {
+    xml += `  <url>\n    <loc>${e.url}</loc>\n    <lastmod>${e.lastmod}</lastmod>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>\n`;
+}
+xml += '</urlset>\n';
+fs.writeFileSync(path.join(rootDir, 'sitemap.xml'), xml);
 
-const rootDir = __dirname; 
+const toolCount = entries.filter(e => e.url.includes('/tools/')).length;
+console.log(`sitemap.xml written: ${entries.length} URLs (${toolCount} tool pages) for ${DOMAIN}`);
 
-console.log('Scanning project directories for sitemap generation...');
-
+// Cross-check with tools-data.js (best effort)
 try {
-    walkSync(rootDir, (filePath) => {
-        // Normalize paths for cross-platform compatibility (Windows/Linux)
-        let relativePath = path.relative(rootDir, filePath).replace(/\\/g, '/');
-
-        // Clean URL for SEO by completely removing 'index.html'
-        if (relativePath === 'index.html') {
-            relativePath = '';
-        } else if (relativePath.endsWith('/index.html')) {
-            relativePath = relativePath.replace(/\/index\.html$/, '');
-        }
-
-        const url = relativePath ? `${DOMAIN}/${relativePath}` : DOMAIN;
-
-        // Retrieve file modification time with a fallback to current time
-        let modifiedTime = new Date().toISOString(); 
-        try {
-            const stats = fs.statSync(filePath);
-            modifiedTime = stats.mtime.toISOString();
-        } catch (statError) {
-            console.warn(`Could not read stats for ${filePath}. Using current time.`);
-        }
-
-        // Dynamic Priority and Change Frequency routing
-        let priority = '0.8';       // Default priority for standard pages
-        let changefreq = 'monthly'; // Default change frequency
-
-        if (relativePath === '' || relativePath === '/') {
-            priority = '1.0'; 
-            changefreq = 'weekly';
-        } else if (relativePath.startsWith('tools/')) {
-            priority = '0.9'; 
-            changefreq = 'weekly';
-        } else if (relativePath.startsWith('pages/')) {
-            priority = '0.7'; 
-            changefreq = 'yearly';
-        }
-
-        // Append URL entry to XML
-        xml += `  <url>\n`;
-        xml += `    <loc>${url}</loc>\n`;
-        xml += `    <lastmod>${modifiedTime}</lastmod>\n`;
-        xml += `    <changefreq>${changefreq}</changefreq>\n`;
-        xml += `    <priority>${priority}</priority>\n`;
-        xml += `  </url>\n`;
-    });
-
-    xml += '</urlset>';
-
-    // Write the final sitemap.xml to the root directory
-    const sitemapPath = path.join(rootDir, 'sitemap.xml');
-    fs.writeFileSync(sitemapPath, xml);
-    console.log('✅ Advanced Sitemap generated flawlessly at:', sitemapPath);
-
-} catch (criticalError) {
-    console.error('Critical Error during sitemap generation:', criticalError);
-    process.exit(1); 
-}
+    const data = fs.readFileSync(path.join(rootDir, 'assets/js/tools-data.js'), 'utf8');
+    const n = (data.match(/^\s*link\s*:\s*["']tools\//gm) || []).length;
+    if (n !== toolCount) console.warn(`WARNING: tools-data.js lists ${n} tools but ${toolCount} tool pages were found.`);
+    else console.log(`OK: tools-data.js and tool pages agree (${n}).`);
+} catch (e) { console.warn('Could not cross-check tools-data.js:', e.message); }

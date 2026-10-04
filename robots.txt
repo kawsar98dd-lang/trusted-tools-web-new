@@ -3,11 +3,10 @@ Allow: /
 
 # ইন্টারনাল বা অপ্রয়োজনীয় ফাইল ব্লক করা হলো
 Disallow: /components/
-Disallow: /pages/
+Disallow: /Documents%20File/
+Disallow: /functions/
 Disallow: /README.md
 Disallow: /_redirects
-Disallow: /.htaccess
-Disallow: /upload.php
 # Disallow: /sitemap.xml  <-- এই লাইনটি মুছে ফেলা হয়েছে
 # Disallow: /robots.txt   <-- এই লাইনটি মুছে ফেলা হয়েছে
 
