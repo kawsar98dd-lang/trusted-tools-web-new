@@ -1213,6 +1213,10 @@ const TemplateSystem = (() => {
                 <p>${t.name}</p>
             `;
 
+            /* Hide template cards whose image file is missing so no broken thumbnail is shown */
+            const thumb = card.querySelector('img');
+            if (thumb) thumb.onerror = () => card.remove();
+
             card.onclick = () => {
                 const img       = new Image();
                 img.crossOrigin = "anonymous";

@@ -779,7 +779,7 @@ class TaxMasterUltra {
     _loadHtml2Pdf(callback) {
         if (typeof html2pdf !== 'undefined') { callback(); return; }
         const script = document.createElement('script');
-        script.src   = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js';
+        script.src   = '../../assets/library/pdf-engine/html2pdf/html2pdf.bundle.min.js';
         script.defer = true;
         script.onload  = callback;
         script.onerror = () => this._showToast('Failed to load PDF library.', 'error');

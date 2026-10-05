@@ -97,3 +97,7 @@ The browser calls `POST /api/telegram-notify`; the Cloudflare Pages Function in 
 ## 🗺️ Sitemap
 
 Run `node generate-sitemap.js` after adding tools. It writes clean (extension-less) URLs that match each page's canonical URL, using `baseUrl` from `assets/js/site-config.js`.
+
+## ✅ Local Regression Tests
+
+Run `node tests/run-tests.js` from the project root (Node.js only, no dependencies). It statically checks tool count, canonical/sitemap consistency, local references, JS/JSON syntax, `_redirects`, `_routes.json`, secrets and stale paths. It is not used by the production site and does not replace browser testing.
