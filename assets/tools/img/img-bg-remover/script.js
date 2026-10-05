@@ -221,6 +221,19 @@ async function loadImglyModule() {
     // Return the cached module if already loaded
     if (STATE.imglyModule) return STATE.imglyModule;
 
+    /* Honest preflight: the runtime needs resources.json to list the model/WASM chunks.
+       If it is missing or empty, inference cannot work, so say so instead of failing later. */
+    try {
+        const res  = await fetch(CONFIG.ASSETS_PATH + 'resources.json', { cache: 'no-cache' });
+        const list = res.ok ? await res.json() : null;
+        if (!list || typeof list !== 'object' || Object.keys(list).length === 0) {
+            throw new Error('empty-resources');
+        }
+    } catch (preErr) {
+        console.error('[BG Remover] Model resources are not installed:', preErr);
+        throw new Error('AI model files are not installed on this site yet, so background removal is unavailable.');
+    }
+
     try {
         // Dynamic ESM import — browser caches the response automatically
         const module = await import(CONFIG.IMGLY_CDN);
@@ -228,7 +241,7 @@ async function loadImglyModule() {
         return module;
     } catch (err) {
         console.error('[BG Remover] Failed to load @imgly/background-removal:', err);
-        throw new Error('AI library failed to load. Check your internet connection and try again.');
+        throw new Error('AI library failed to load. Please reload the page and try again.');
     }
 }
 

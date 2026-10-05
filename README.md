@@ -101,3 +101,11 @@ Run `node generate-sitemap.js` after adding tools. It writes clean (extension-le
 ## ✅ Local Regression Tests
 
 Run `node tests/run-tests.js` from the project root (Node.js only, no dependencies). It statically checks tool count, canonical/sitemap consistency, local references, JS/JSON syntax, `_redirects`, `_routes.json`, secrets and stale paths. It is not used by the production site and does not replace browser testing.
+
+## 🎨 Per-page CSS
+
+Tool pages load `assets/css/pages/<category>/<tool>.css`, generated from the shared source `assets/css/tools-template.css` by `node scripts/build-page-css.js`. Edit the source file, then re-run the script before deploying. `tests/css-equivalence.js` and `tests/browser-smoke.js` (Playwright + Chromium, optional) compare rendering and page loads.
+
+## 🤖 Background Remover — required files (not yet installed)
+
+The tool needs the browser-ready `@imgly/background-removal` v1.7.0 build and its data package (ONNX model, onnxruntime-web WASM/MJS files, a populated `resources.json` and its chunks) in `assets/library/imgly-bg-removal/`. Until then the tool shows an honest "model files are not installed" message.

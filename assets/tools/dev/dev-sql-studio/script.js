@@ -220,12 +220,12 @@ function cacheDomRefs() {
 ============================================================================ */
 
 /**
- * initSqlJs()
+ * initSqlEngine()  (renamed: must not shadow the sql.js global window.initSqlJs)
  * Asynchronously initializes the WebAssembly SQLite engine.
  * Creates an empty in-memory Database and sets AppState.sqlReady = true.
  * On failure, shows a global error toast (network or WASM load issue).
  */
-async function initSqlJs() {
+async function initSqlEngine() {
     try {
         // Updated to load the .wasm file locally
         const SQL = await window.initSqlJs({
@@ -1917,8 +1917,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // ── Step 7: Initialize WebAssembly SQLite engine (async) ──────────────────
     // This is the most critical bootstrap step — all query execution depends on it.
-    // initSqlJs() will show a global error toast if the WASM binary fails to load.
-    await initSqlJs();
+    // initSqlEngine() will show a global error toast if the WASM binary fails to load.
+    await initSqlEngine();
 
     // ── Step 8: Welcome toast once everything is ready ────────────────────────
     if (AppState.sqlReady) {

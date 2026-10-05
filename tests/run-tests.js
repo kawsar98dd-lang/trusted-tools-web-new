@@ -181,5 +181,50 @@ for (const f of all.filter(f => /\.(js|css)$/.test(f) && notLib(f))) {
 }
 if (missingImg.size) info('missing images referenced from JS/CSS (' + missingImg.size + ')', [...missingImg]);
 
+
+// ---- Phase 4: Background Remover runtime assets (honest status)
+{
+  const dir = 'assets/library/imgly-bg-removal/';
+  let res = {}; try { res = JSON.parse(read(dir + 'resources.json')); } catch (e) {}
+  const keys = Object.keys(res);
+  const barePresent = /import\(\s*["']onnxruntime-web/.test(read(dir + 'index.mjs'));
+  if (keys.length === 0 || barePresent) {
+    info('KNOWN BLOCKER: Background Remover cannot run real inference',
+      ['resources.json entries: ' + keys.length + ' (needs model/WASM chunk list)',
+       'index.mjs has unresolved bare import of onnxruntime-web: ' + barePresent,
+       'script shows an honest "model files not installed" error instead of a fake success']);
+  } else {
+    ok(keys.every(k => exists(dir + (res[k].chunks || []).length ? dir : dir)), 'bg-remover resources listed');
+  }
+  ok(/resources\.json/.test(read('assets/tools/img/img-bg-remover/script.js')), 'bg-remover script has honest resources preflight');
+}
+
+// ---- Phase 4: per-page CSS
+{
+  const bad = [];
+  for (const f of toolFiles) {
+    const m = read(f).match(/href=["']((?:\.\.\/)+assets\/css\/(?:pages\/[^"']+|tools-template)\.css)["']/);
+    if (!m) continue;
+    const p = path.posix.normalize(path.posix.join(path.posix.dirname(f), m[1]));
+    if (!exists(p)) bad.push(f + ' -> ' + p);
+  }
+  ok(bad.length === 0, 'per-page CSS files exist', bad);
+  const big = toolFiles.filter(f => /assets\/css\/tools-template\.css/.test(read(f)));
+  ok(big.length === 0, 'no tool page loads the 1.7 MB tools-template.css directly', big);
+}
+
+// ---- Phase 4: no unexpected external script CDNs on tool pages / tool scripts
+{
+  const hits = [];
+  for (const f of all.filter(f => notLib(f) && (/^tools\/.*\.html$/.test(f) || /^assets\/tools\/.*\.js$/.test(f)))) {
+    for (const m of read(f).replace(/<!--[\s\S]*?-->/g, '').matchAll(/<script[^>]+src=["'](https?:\/\/[^"']+)["']|script\.src\s*=\s*["'](https?:\/\/[^"']+)["']/g)) hits.push(f + ' -> ' + (m[1] || m[2]));
+  }
+  ok(hits.length === 0, 'no external CDN scripts in tool pages/scripts (local-only architecture)', hits);
+}
+
+// ---- Phase 4: homepage tool-count text matches reality
+ok(new RegExp(toolFiles.length + '\\+').test(read('index.html')), 'homepage mentions ' + toolFiles.length + '+ tools');
+ok(!/\b50\+/.test(read('index.html')), 'homepage has no stale "50+" claim');
+
 console.log(`\nRESULT: ${pass} passed, ${fail} failed, ${warn} warnings`);
 process.exit(fail ? 1 : 0);

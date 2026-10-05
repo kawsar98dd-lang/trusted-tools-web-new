@@ -153,7 +153,7 @@
     <link rel="stylesheet" href="../../assets/css/global.css">
 
     <!-- ─── TOOLS TEMPLATE STYLESHEET (all reusable tool UI components) ─── -->
-    <link rel="stylesheet" href="../../assets/css/tools-template.css">
+    <link rel="stylesheet" href="../../assets/css/pages/img/3d-device-mockup-studio.css">
 
     <!-- ─── THREE.JS r128 (WebGL 3D engine — must load before script.js) ─── -->
     <script src="../../assets/library/3d-engine/threejs/three.min.js"></script>
@@ -394,9 +394,7 @@
 
                 <!-- Article 1: How WebGL Works -->
                 <div class="info-card">
-                    <img onerror="this.onerror=null;this.style.display='none'" src="../../assets/tools/img/img-3d-mockup/info-vector1.webp"
-                         alt="Three.js WebGL 3D engine rendering a device mockup in a browser"
-                         class="mck-info-img" loading="lazy">
+                    <!-- Missing optional illustration (add file to restore): assets/tools/img/img-3d-mockup/info-vector1.webp -->
                     <h2><i class="fa-solid fa-microchip"></i> How the WebGL 3D Engine Works — Entirely Offline</h2>
                     <p>Under the hood of <strong>3D Mockup STUDIO MAX</strong> is <strong>Three.js</strong>, one of the world's most powerful open-source WebGL libraries. WebGL (Web Graphics Library) is a JavaScript API that directly communicates with your device's GPU through your browser, enabling real-time 3D rendering without any plugins or installations.</p>
                     <p>When you load this tool, Three.js initializes a <strong>Scene</strong>, a <strong>PerspectiveCamera</strong>, and an antialiased <strong>WebGLRenderer</strong> — the three foundational pillars of any 3D application. The device models (iPhone, MacBook) are constructed procedurally using <code>BoxGeometry</code> with custom material layers and <code>MeshStandardMaterial</code>, which supports physically-based rendering (PBR). This means light interacts with the device surface the way it would in the real world — reflecting off glossy surfaces and casting subtle shadows.</p>
@@ -405,9 +403,7 @@
 
                 <!-- Article 2: Screenshot Texture Mapping -->
                 <div class="info-card">
-                    <img onerror="this.onerror=null;this.style.display='none'" src="../../assets/tools/img/img-3d-mockup/info-vector2.webp"
-                         alt="Screenshot being mapped as a Three.js texture onto an iPhone screen face"
-                         class="mck-info-img" loading="lazy">
+                    <!-- Missing optional illustration (add file to restore): assets/tools/img/img-3d-mockup/info-vector2.webp -->
                     <h2><i class="fa-solid fa-image"></i> Screenshot Texture Mapping: From File to 3D Screen</h2>
                     <p>The magic of this tool lies in how it maps your screenshot onto the device's screen face. When you drop an image file, the browser's native <strong>FileReader API</strong> reads it as a Data URL — a base64-encoded blob that exists only in memory. This data URL is then fed into <code>THREE.TextureLoader</code>, which decodes it into a GPU-compatible texture.</p>
                     <p>The device geometry is built so that the "screen" face of the phone or laptop corresponds to a specific UV coordinate region. The texture is applied exclusively to that face using <strong>material groups</strong> on the <code>BufferGeometry</code> — meaning the body of the device keeps its Claymorphism material while only the screen face receives your uploaded screenshot as a live texture.</p>
@@ -416,9 +412,7 @@
 
                 <!-- Article 3: Client-Side Privacy -->
                 <div class="info-card">
-                    <img onerror="this.onerror=null;this.style.display='none'" src="../../assets/tools/img/img-3d-mockup/info-vector3.webp"
-                         alt="Privacy shield protecting user images with client-side processing"
-                         class="mck-info-img" loading="lazy">
+                    <!-- Missing optional illustration (add file to restore): assets/tools/img/img-3d-mockup/info-vector3.webp -->
                     <h2><i class="fa-solid fa-user-shield"></i> Client-Side Privacy: Your Images Never Leave Your Device</h2>
                     <p>In most online mockup generators, you click "Upload," and your screenshot travels to a remote server where it is processed, temporarily stored, and often retained for analytics or AI training. This is a significant privacy risk for designers working on unreleased apps, confidential dashboards, or proprietary software.</p>
                     <p><strong>3D Mockup STUDIO MAX</strong> was architected from the ground up to eliminate this risk entirely. There is <strong>no backend server</strong>. There is <strong>no upload endpoint</strong>. There is <strong>no network request</strong> when you drop your image. Everything — texture loading, 3D rendering, lighting calculations, and the final 4K export — runs exclusively within your browser's JavaScript sandbox and GPU context. Your file system is accessed only through the browser's sandboxed <code>FileReader</code> API, which has no ability to send data anywhere without your explicit action.</p>
@@ -427,9 +421,7 @@
 
                 <!-- Article 4: Step-by-Step Guide -->
                 <div class="info-card">
-                    <img onerror="this.onerror=null;this.style.display='none'" src="../../assets/tools/img/img-3d-mockup/info-vector4.webp"
-                         alt="Step-by-step guide showing how to use the 3D mockup generator"
-                         class="mck-info-img" loading="lazy">
+                    <!-- Missing optional illustration (add file to restore): assets/tools/img/img-3d-mockup/info-vector4.webp -->
                     <h2><i class="fa-solid fa-list-check"></i> How to Use 3D Mockup STUDIO MAX: A Step-by-Step Guide</h2>
                     <p>Creating a professional 3D device mockup takes less than 60 seconds with this tool. Here is the complete workflow:</p>
                     <ol>
@@ -443,9 +435,7 @@
 
                 <!-- Article 5: 4K Export Engine -->
                 <div class="info-card">
-                    <img onerror="this.onerror=null;this.style.display='none'" src="../../assets/tools/img/img-3d-mockup/info-vector5.webp"
-                         alt="4K export button and high resolution PNG download from WebGL canvas"
-                         class="mck-info-img" loading="lazy">
+                    <!-- Missing optional illustration (add file to restore): assets/tools/img/img-3d-mockup/info-vector5.webp -->
                     <h2><i class="fa-solid fa-file-image"></i> The 4K Export Engine: How Browser-Native High-Res Works</h2>
                     <p>Exporting a high-resolution image from a WebGL canvas without a server is a technique that leverages a powerful but often overlooked browser capability: the <strong>HTMLCanvasElement.toDataURL()</strong> method. When called, it encodes the current pixel buffer of the canvas as a base64 PNG or JPEG string, entirely in memory.</p>
                     <p>The trick to achieving 4K resolution is that Three.js's <code>WebGLRenderer</code> supports <strong>dynamic resizing</strong>. At the moment you click "Export 4K PNG," the tool executes the following sequence in a single synchronous block: it saves the current display dimensions, resizes the renderer to 3840×2160 pixels, calls <code>renderer.render(scene, camera)</code> to draw one frame at that resolution into the off-screen buffer, calls <code>canvas.toDataURL("image/png", 1.0)</code> to capture that buffer as a lossless PNG data URL, triggers an anchor click to download the file, and finally restores the renderer to its original display dimensions. This entire operation takes less than 500 milliseconds on modern hardware.</p>
@@ -454,9 +444,7 @@
 
                 <!-- Article 6: Business Impact -->
                 <div class="info-card">
-                    <img onerror="this.onerror=null;this.style.display='none'" src="../../assets/tools/img/img-3d-mockup/info-vector6.webp"
-                         alt="Great app mockups increasing conversion rates in app store listings"
-                         class="mck-info-img" loading="lazy">
+                    <!-- Missing optional illustration (add file to restore): assets/tools/img/img-3d-mockup/info-vector6.webp -->
                     <h2><i class="fa-solid fa-chart-line"></i> The Business Impact of a Great Device Mockup</h2>
                     <p>A raw screenshot communicates <em>what</em> an app does. A professional 3D mockup communicates <em>that it belongs</em> — that it is polished, intentional, and worth downloading. The psychological principle at work is called <strong>Aesthetic-Usability Effect</strong>: users consistently perceive visually appealing designs as more usable and trustworthy, even before they interact with the product.</p>
                     <p>For App Store and Google Play listings, the preview screenshots are often the single highest-leverage conversion element on the page — more impactful than the description text or even the star rating for first-time visitors. Studies across ASO (App Store Optimization) practitioners have documented significant lifts in conversion rates when flat screenshots are replaced with contextualized device mockups, particularly those that incorporate lifestyle backgrounds or 3D perspective angles.</p>
