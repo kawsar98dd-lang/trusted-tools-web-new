@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (!container) return;
 
+    // Curated, crawlable related-tools list is already in the HTML (SEO) - nothing to inject.
+    if (container.hasAttribute('data-static-related')) return;
+
     // ১. পাথ ডিটেকশন (যাতে যেকোনো ফোল্ডার থেকে লিংক ঠিকমতো কাজ করে)
     const pathName = window.location.pathname;
     let rootPath = './';

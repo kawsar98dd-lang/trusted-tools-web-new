@@ -109,3 +109,9 @@ Tool pages load `assets/css/pages/<category>/<tool>.css`, generated from the sha
 ## 🤖 Background Remover — required files (not yet installed)
 
 The tool needs the browser-ready `@imgly/background-removal` v1.7.0 build and its data package (ONNX model, onnxruntime-web WASM/MJS files, a populated `resources.json` and its chunks) in `assets/library/imgly-bg-removal/`. Until then the tool shows an honest "model files are not installed" message.
+
+## 🔎 SEO data & tests
+
+- `tests/seo-inventory.json` is the source of truth for every tool's title, description, H1, target keywords and curated related tools (with the previous values under `before`). `node tests/run-tests.js` checks every tool page against it.
+- Category landing pages live in `categories/` (clean URLs such as `/categories/pdf-tools`). The sitemap (`node generate-sitemap.js`) lists only indexable pages.
+- Structured data policy: no `AggregateRating`/`Review` markup (the tests fail if any appears), `FAQPage` only when the same questions and answers are visible on the page, and a `BreadcrumbList` that matches the visible breadcrumb.

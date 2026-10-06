@@ -43,6 +43,8 @@ files.sort();
 const seen = new Set();
 const entries = [];
 for (const file of files) {
+    // Only canonical, indexable pages belong in the sitemap
+    try { if (/<meta[^>]+name=["']robots["'][^>]*noindex/i.test(fs.readFileSync(file, 'utf8'))) continue; } catch (e) { /* ignore */ }
     let rel = path.relative(rootDir, file).replace(/\\/g, '/');
     if (rel === 'index.html') rel = '';
     else rel = rel.replace(/\/index\.html$/, '').replace(/\.html$/, '');

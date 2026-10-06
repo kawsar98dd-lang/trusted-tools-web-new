@@ -23,9 +23,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- PRIMARY SEO METADATA -->
-    <title>Netscape to JSON Cookie Converter — Free, Secure & Instant | Trusted Tools Web</title>
+    <title>Netscape Cookie to JSON Converter (and Back) | Trusted Tools Web</title>
 
-    <meta name="description" content="Convert Netscape HTTP cookies to JSON and vice versa instantly, 100% client-side. Zero uploads. Perfect for Selenium, cURL, Postman, Puppeteer & API debugging. Clean expired sessions, bulk modify domains, and manipulate expiry in one click.">
+    <meta name="description" content="Convert Netscape cookies.txt files to JSON and back for Selenium, Puppeteer, cURL and Postman. The conversion happens in your browser.">
     <meta name="keywords" content="cookie converter, netscape to json, json to netscape, selenium cookie import, curl cookie format, http cookie editor, cookie cleaner, browser cookie export, developer tools, trusted tools web, md kawsar, puppeteer cookies, playwright cookies, bulk domain replace, cookie expiry editor">
     <meta name="author" content="MD KAWSAR">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -34,8 +34,8 @@
     <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://trustedtoolsweb.com/tools/dev/cookie-format-converter">
-    <meta property="og:title" content="Cookie Converter Pro — Netscape & JSON Formatter | Trusted Tools Web">
-    <meta property="og:description" content="Securely convert, clean, and reformat browser cookies between JSON and Netscape HTTP format. No server upload. Zero data retention. Free forever.">
+    <meta property="og:title" content="Netscape Cookie to JSON Converter (and Back) | Trusted Tools Web">
+    <meta property="og:description" content="Convert Netscape cookies.txt files to JSON and back for Selenium, Puppeteer, cURL and Postman. The conversion happens in your browser.">
     <meta property="og:image" content="https://trustedtoolsweb.com/assets/tools/dev/dev-cookie-converter/img/og-banner.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -44,8 +44,8 @@
     <!-- TWITTER CARD -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://trustedtoolsweb.com/tools/dev/cookie-format-converter">
-    <meta name="twitter:title" content="Cookie Converter Pro — Trusted Tools Web">
-    <meta name="twitter:description" content="Convert Netscape cookies to JSON (and back) securely in your browser. Perfect for Selenium, cURL, and API debugging. No server upload.">
+    <meta name="twitter:title" content="Netscape Cookie to JSON Converter (and Back) | Trusted Tools Web">
+    <meta name="twitter:description" content="Convert Netscape cookies.txt files to JSON and back for Selenium, Puppeteer, cURL and Postman. The conversion happens in your browser.">
     <meta name="twitter:image" content="https://trustedtoolsweb.com/assets/tools/dev/dev-cookie-converter/img/og-banner.webp">
 
     <link rel="canonical" href="https://trustedtoolsweb.com/tools/dev/cookie-format-converter">
@@ -63,174 +63,86 @@
     
 
     <!-- JSON-LD: WebApplication -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Cookie Converter Pro Max",
-        "url": "https://trustedtoolsweb.com/tools/dev/cookie-format-converter",
-        "image": "https://trustedtoolsweb.com/assets/tools/dev/dev-cookie-converter/img/og-banner.webp",
-        "description": "A secure, 100% client-side tool to convert browser cookie formats between JSON and Netscape HTTP format. Features include expired cookie cleanup, HttpOnly flag handling, bulk domain modification, expiry manipulation, JSON minifier toggle, duplicate removal, sorting, Cookie header generation, and Puppeteer/Playwright schema filtering.",
-        "applicationCategory": "DeveloperTool",
-        "operatingSystem": "Any",
-        "browserRequirements": "Requires JavaScript",
-        "softwareVersion": "3.1",
-        "inLanguage": "en",
-        "author": {
-            "@type": "Person",
-            "name": "MD KAWSAR",
-            "url": "https://trustedtoolsweb.com"
-        },
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "featureList": [
-            "Netscape HTTP Cookie to JSON conversion",
-            "JSON to Netscape HTTP Cookie conversion",
-            "Auto-format detection (JSON or Netscape)",
-            "Expired cookie cleaner with timestamp parsing",
-            "HttpOnly and Secure flag preservation",
-            "Bulk Domain Modifier (find & replace domains across entire cookie array)",
-            "Expiry Manipulator (extend by 1 year or force session cookies)",
-            "JSON Minifier Toggle (beautified vs. compact 1-liner output)",
-            "Strict Schema Filter for Puppeteer and Playwright compatibility",
-            "Duplicate cookie remover",
-            "Sort cookies by domain and name",
-            "Copy cookies as a Cookie: HTTP header string",
-            "One-click copy and download output",
-            "Zero server upload — 100% client-side processing",
-            "Selenium WebDriver compatible JSON output",
-            "cURL and Wget Netscape format support"
-        ]
-    }
-    </script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Netscape Cookie ↔ JSON Converter",
+  "url": "https://trustedtoolsweb.com/tools/dev/cookie-format-converter",
+  "image": "https://trustedtoolsweb.com/assets/tools/dev/dev-cookie-converter/img/og-banner.webp",
+  "description": "Convert Netscape cookies.txt files to JSON and back for Selenium, Puppeteer, cURL and Postman. The conversion happens in your browser.",
+  "applicationCategory": "DeveloperTool",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "softwareVersion": "3.1",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "MD KAWSAR",
+    "url": "https://trustedtoolsweb.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Netscape HTTP Cookie to JSON conversion",
+    "JSON to Netscape HTTP Cookie conversion",
+    "Auto-format detection (JSON or Netscape)",
+    "Expired cookie cleaner with timestamp parsing",
+    "HttpOnly and Secure flag preservation",
+    "Bulk Domain Modifier (find & replace domains across entire cookie array)",
+    "Expiry Manipulator (extend by 1 year or force session cookies)",
+    "JSON Minifier Toggle (beautified vs. compact 1-liner output)",
+    "Strict Schema Filter for Puppeteer and Playwright compatibility",
+    "Duplicate cookie remover",
+    "Sort cookies by domain and name",
+    "Copy cookies as a Cookie: HTTP header string",
+    "One-click copy and download output",
+    "Zero server upload — 100% client-side processing",
+    "Selenium WebDriver compatible JSON output",
+    "cURL and Wget Netscape format support"
+  ]
+}</script>
 
     <!-- JSON-LD: BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://trustedtoolsweb.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://trustedtoolsweb.com/tools/dev/" },
-            { "@type": "ListItem", "position": 3, "name": "Cookie Converter Pro Max", "item": "https://trustedtoolsweb.com/tools/dev/cookie-format-converter" }
-        ]
-    }
-    </script>
+    
 
     <!-- JSON-LD: FAQPage -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "How do I convert Netscape cookies to JSON format?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Paste your Netscape-format cookie data (tab-separated lines) into the Input Box on the left. The tool will auto-detect the format. Click the 'Convert Now' button and the converted JSON array will appear in the Output Box on the right, ready to copy or download."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How do I convert JSON cookies back to Netscape format?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Paste your JSON cookie array (starting with '[' or '{') into the Input Box. The engine automatically detects the JSON format and converts it to the standard Netscape tab-separated HTTP Cookie File format when you click 'Convert Now'."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is my cookie data safe? Does this tool upload my data?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, your data is completely safe. This tool operates 100% client-side inside your browser using JavaScript. No data is ever sent to any server, stored, or logged. You can verify this by disconnecting from the internet after the page loads — the tool will still function perfectly."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What does the 'Clean Expired' button do?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The 'Clean Expired' button parses the expiration timestamps of all cookies in the input. It removes any cookie whose expiration Unix timestamp is in the past. Session cookies (with an expiry of 0 or -1) are always preserved. This ensures your exported file only contains valid, active cookies."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How can I use this tool with Selenium WebDriver?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Convert your Netscape cookie file to JSON using the 'Convert Now' button. The output JSON array is fully compatible with Selenium WebDriver's driver.add_cookie() method. Each cookie object includes all required fields like domain, name, value, path, secure, httpOnly, and expirationDate."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How do I use the Bulk Domain Modifier feature?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Paste your cookie data into the Input Box, then expand the 'Advanced Developer Tools' panel. In the 'Bulk Domain Modifier' section, type the domain text you want to find in the 'Find Domain' field (e.g., '.example.com') and the replacement in the 'Replace With' field. Click 'Apply Replace' to update every matching cookie domain instantly."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What does the Expiry Manipulator do?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The Expiry Manipulator in the Advanced Developer Tools panel lets you bulk-edit expiration dates. 'Extend by 1 Year' adds 365 days to the expiration timestamp of every non-session cookie in the input, reviving cookies that have recently expired. 'Force Session' resets all expirationDate values to 0, converting every cookie into a temporary session cookie."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What is the Puppeteer / Playwright Schema Filter?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Different automation frameworks require cookies in slightly different JSON shapes. The Puppeteer/Playwright filter, found in the Advanced Developer Tools, strips out fields that are incompatible with these frameworks (such as 'storeId', 'session', 'hostOnly', and 'id') and maps 'expirationDate' to the 'expires' key. For Playwright, session cookies get expires set to -1."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What does the JSON Minify toggle do?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "By default, JSON output is beautified with 4-space indentation for human readability. Enabling the 'Minify JSON Output' toggle in the Advanced Developer Tools will produce a compact single-line JSON string instead. This is useful for embedding cookies directly in API request bodies or environment variable strings."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What do Remove Duplicates, Sort and Copy as Cookie Header do?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Remove Duplicates keeps one cookie per domain, path and name combination (the last one wins). Sort orders cookies alphabetically by domain and then name. Copy as Cookie Header builds a 'name=value; name2=value2' string that you can paste into a Cookie: HTTP header, for example with cURL's -H flag."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Why am I getting a parsing error?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The most common cause of parsing errors is line wrapping, where long cookie value strings are broken into multiple lines by a text editor. Ensure each cookie entry is on a single line. Also verify that your input does not contain raw HTTP request headers (e.g., lines starting with 'Cookie:'). The tool expects either raw JSON objects/arrays or pure tab-separated Netscape lines."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I use this tool with cURL and Wget?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Convert your JSON cookies to Netscape format using the 'Convert Now' button. Download the output file using 'Download File'. You can then pass it directly to cURL with the '-b cookies_netscape.txt' flag or to Wget with the '--load-cookies cookies_netscape.txt' flag."
-                }
-            }
-        ]
-    }
-    </script>
+    
 
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://trustedtoolsweb.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Developer Tools",
+      "item": "https://trustedtoolsweb.com/categories/developer-tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Netscape Cookie ↔ JSON Converter",
+      "item": "https://trustedtoolsweb.com/tools/dev/cookie-format-converter"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
 
     <!-- GLOBAL SITE HEADER (injected by global.js) -->
     <header id="global-header" class="site-header"></header>
+    <nav class="ttw-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../../categories/developer-tools">Developer Tools</a></li><li aria-current="page">Netscape Cookie ↔ JSON Converter</li></ol></nav>
 
     <!-- The global toast system (window.showToast) is provided by global.js -->
 
@@ -244,8 +156,7 @@
             </div>
 
             <h1 class="tool-title">
-                <i class="fa-solid fa-cookie" aria-hidden="true"></i> Cookie Converter <span>Pro Max</span>
-            </h1>
+                    <i class="fa-solid fa-cookie" aria-hidden="true"></i> Netscape Cookie ↔ JSON <span>Converter</span></h1>
 
             <p class="subtitle">
                 Securely Convert Netscape to JSON &amp; Vice Versa. Edit, Clean &amp; Manipulate Cookies Instantly.
@@ -707,8 +618,7 @@
         <div class="container" style="margin-top: 50px;">
             <div id="dynamic-related-tools"
                  data-category="dev"
-                 data-current-page="cookie-format-converter.html">
-            </div>
+                 data-current-page="cookie-format-converter.html" data-static-related="true"><h2 class="section-title">Related tools</h2><ul class="ttw-related-list"><li><a href="../../tools/dev/json-formatter-validator">JSON Formatter &amp; Validator</a><span>Format, validate, minify and repair JSON, browse it as a tree, run JSONPath queries and generate TypeScript or Dart types. Data stays in your browser.</span></li><li><a href="../../tools/dev/code-encoder-decoder">Encoder &amp; Decoder: Base64, Hex, Binary, JWT, AES</a><span>Encode and decode Base64, Hex, Binary and ASCII, inspect JWT tokens, create hashes and HMACs, and use AES-256 encryption. Processed locally in your browser.</span></li><li><a href="../../tools/dev/mock-data-generator">Mock Data Generator for Testing</a><span>Generate fake JSON data, user profiles, addresses and Luhn-valid test card numbers for QA and development. Test data only, not real payment details.</span></li><li><a href="../../tools/dev/web-sandbox-studio">HTML, CSS &amp; JavaScript Playground</a><span>Write HTML, CSS and JavaScript in a Monaco-based editor with live preview and a console. Code runs in your browser, with no sign-up.</span></li></ul></div>
         </div>
         <script type="module" src="../../assets/js/related-tools.js"></script>
 

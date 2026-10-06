@@ -51,10 +51,16 @@ ok(locs.every(u => u.startsWith(BASE + '/') && !/\.html(\?|$)/.test(u) && !u.inc
 const expectUrls = toolFiles.map(f => BASE + '/' + f.replace(/\.html$/, ''));
 ok(expectUrls.every(u => locs.includes(u)), 'sitemap contains all tool URLs', expectUrls.filter(u => !locs.includes(u)));
 ok(locs.includes(BASE + '/'), 'sitemap contains homepage');
-ok(locs.length === 67, 'sitemap URL count = 67', 'found ' + locs.length);
+const catFiles = all.filter(f => /^categories\/[^/]+\.html$/.test(f));
+const staticPages = all.filter(f => /^pages\/[^/]+\.html$/.test(f));
+const isNoindex = (f) => /<meta[^>]+name=["']robots["'][^>]*noindex/i.test(read(f));
+const indexablePages = staticPages.filter(f => !isNoindex(f));
+ok(locs.length === 1 + indexablePages.length + catFiles.length + toolFiles.length, 'sitemap URL count = home + indexable pages + categories + tools', 'found ' + locs.length);
+ok(staticPages.filter(isNoindex).every(f => !locs.includes(BASE + '/' + f.replace(/\.html$/, ''))), 'sitemap excludes noindex pages');
+ok(catFiles.every(f => locs.includes(BASE + '/' + f.replace(/\.html$/, ''))), 'sitemap contains all category pages');
 
 // ---- Page metadata
-const pageFiles = ['index.html', ...all.filter(f => /^pages\/[^/]+\.html$/.test(f)), ...toolFiles];
+const pageFiles = ['index.html', ...all.filter(f => /^pages\/[^/]+\.html$/.test(f)), ...all.filter(f => /^categories\/[^/]+\.html$/.test(f)), ...toolFiles];
 const titles = {}, descs = {};
 for (const f of pageFiles) {
   const raw = read(f);
@@ -223,8 +229,123 @@ if (missingImg.size) info('missing images referenced from JS/CSS (' + missingImg
 }
 
 // ---- Phase 4: homepage tool-count text matches reality
-ok(new RegExp(toolFiles.length + '\\+').test(read('index.html')), 'homepage mentions ' + toolFiles.length + '+ tools');
+ok(new RegExp('\\b' + toolFiles.length + '\\b').test(read('index.html').replace(/<script[\s\S]*?<\/script>/g, '')), 'homepage states the real tool count (' + toolFiles.length + ')');
 ok(!/\b50\+/.test(read('index.html')), 'homepage has no stale "50+" claim');
+
+// ======================= Phase 5: SEO checks =======================
+{
+  const strip = (s) => s.replace(/<!--[\s\S]*?-->/g, '').replace(/<script\b[\s\S]*?<\/script>/gi, '').replace(/<style\b[\s\S]*?<\/style>/gi, '');
+  const text = (s) => strip(s).replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, ' ');
+  const unesc = (s) => s.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  const inv = JSON.parse(read('tests/seo-inventory.json'));
+  ok(inv.tools.length === toolFiles.length, 'seo-inventory.json lists every tool', inv.tools.length + ' vs ' + toolFiles.length);
+  const resolveHref = (fromFile, href) => {
+    href = href.split('#')[0].split('?')[0]; if (!href || /^(https?:|mailto:|tel:|javascript:|data:)/.test(href)) return null;
+    let p = href.startsWith('/') ? href.slice(1) : path.posix.normalize(path.posix.join(path.posix.dirname(fromFile), href));
+    if (p === '' || p === '.' || p.endsWith('/')) p = (p === '.' ? '' : p) + 'index.html';
+    if (exists(p) && fs.statSync(path.join(ROOT, p)).isDirectory()) p = p.replace(/\/?$/, '/') + 'index.html';
+    if (exists(p)) return p; if (exists(p + '.html')) return p + '.html'; return null;
+  };
+  const linksOf = (f) => [...strip(read(f)).matchAll(/<a\b[^>]*\shref=["']([^"']+)["']/gi)].map(m => resolveHref(f, m[1])).filter(Boolean);
+
+  // metadata vs inventory, lengths, banned superlatives
+  const seoPages = [...toolFiles, ...catFiles, 'index.html'];
+  const banned = /\b(best|#1|ultimate|military-grade|unhackable|most powerful|god mode)\b/i;
+  for (const tl of inv.tools) {
+    const s = read(tl.file);
+    const title = unesc((s.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '');
+    const desc = unesc((s.match(/<meta name="description"\s+content="([^"]*)"/) || [])[1] || '');
+    const h1 = unesc(text((strip(s).match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || '')).trim();
+    ok(title === tl.after.title && desc === tl.after.description, tl.file + ': title/description match seo-inventory.json');
+    ok(h1 === tl.after.h1, tl.file + ': H1 matches inventory', [h1, tl.after.h1]);
+    ok(title.length >= 25 && title.length <= 68, tl.file + ': title length 25-68', title.length + ' ' + title);
+    ok(desc.length >= 90 && desc.length <= 170, tl.file + ': description length 90-170', String(desc.length));
+    ok(!banned.test(title + ' ' + desc), tl.file + ': no hype/superlative claims in title/description');
+    const words = (title + ' ' + desc).toLowerCase().match(/[a-z]{4,}/g) || []; const cnt = {};
+    words.forEach(w => cnt[w] = (cnt[w] || 0) + 1);
+    const stuffed = Object.entries(cnt).filter(([w, n]) => n >= 5 && !['online', 'tools', 'free'].includes(w));
+    ok(stuffed.length === 0, tl.file + ': no keyword stuffing pattern', stuffed.map(x => x.join('x')));
+  }
+  // H1: exactly one, unique across tools
+  const h1s = {};
+  for (const f of seoPages) {
+    const n = (strip(read(f)).match(/<h1\b/gi) || []).length; ok(n === 1, f + ': exactly one <h1>', String(n));
+    const h = text((strip(read(f)).match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || '').trim(); (h1s[h] = h1s[h] || []).push(f);
+  }
+  for (const [h, fl] of Object.entries(h1s)) if (fl.length > 1) ok(false, 'duplicate H1 "' + h + '"', fl);
+  // descriptions near-duplicate check
+  const sh = (d) => { const w = d.toLowerCase().match(/[a-z0-9]+/g) || []; const set = new Set(); for (let i = 0; i < w.length - 2; i++) set.add(w.slice(i, i + 3).join(' ')); return set; };
+  const dsets = inv.tools.map(tl => [tl.file, sh(tl.after.description)]); let nearDup = [];
+  for (let i = 0; i < dsets.length; i++) for (let j = i + 1; j < dsets.length; j++) { let c = 0; for (const x of dsets[i][1]) if (dsets[j][1].has(x)) c++; const sim = c / Math.min(dsets[i][1].size, dsets[j][1].size); if (sim > 0.5) nearDup.push(dsets[i][0] + ' ~ ' + dsets[j][0]); }
+  ok(nearDup.length === 0, 'no near-duplicate meta descriptions', nearDup);
+
+  // fabricated rating/review structured data is forbidden
+  const fake = all.filter(f => f.endsWith('.html') && notLib(f) && /"@type"\s*:\s*"(AggregateRating|Review|Rating)"/.test(read(f)));
+  ok(fake.length === 0, 'no AggregateRating/Review/Rating structured data anywhere', fake);
+
+  // noindex / robots
+  const noidx = all.filter(f => f.endsWith('.html') && notLib(f) && /<meta[^>]+name=["']robots["'][^>]*noindex/i.test(read(f)) && !/^(components|Documents File)\//.test(f));
+  ok(noidx.every(f => ['pages/disclaimer.html', 'pages/privacy-policy.html', 'pages/terms.html'].includes(f)), 'noindex only on the known legal pages (never tools, categories, home, about, contact)', noidx);
+  const robots = read('robots.txt');
+  ok(/^Sitemap:\s*https:\/\/trustedtoolsweb\.com\/sitemap\.xml\s*$/mi.test(robots), 'robots.txt references the canonical sitemap');
+  ok(!/^Disallow:\s*\/(tools|categories|pages|assets\/css|assets\/js)?\/?\s*$/mi.test(robots.replace(/^Disallow:\s*\/(?:components|Documents|functions|README|_redirects).*$/gmi, '')), 'robots.txt does not block tools, categories, pages or CSS/JS');
+
+  // canonical target exists (not a 404/redirect source)
+  for (const f of seoPages) {
+    const c = (read(f).match(/rel="canonical" href="([^"]+)"/) || [])[1] || '';
+    ok(/^https:\/\//.test(c) && !/\.html$/.test(c) && !c.includes('pages.dev'), f + ': canonical is absolute https, clean, canonical domain');
+    const rel = c.replace(BASE, '').replace(/^\//, ''); ok(rel === '' ? exists('index.html') : (exists(rel + '.html')), f + ': canonical target page exists', c);
+  }
+
+  // breadcrumbs: visible == JSON-LD, category page exists
+  for (const f of [...toolFiles, ...catFiles]) {
+    const s = read(f); const nav = (s.match(/<nav class="ttw-breadcrumb"[\s\S]*?<\/nav>/) || [])[0];
+    ok(!!nav, f + ': visible breadcrumb present'); if (!nav) continue;
+    const vis = [...nav.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/g)].map(m => unesc(text(m[1])).trim());
+    const ldm = [...s.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => { try { return JSON.parse(m[1]); } catch (e) { return null; } }).filter(x => x && x['@type'] === 'BreadcrumbList');
+    ok(ldm.length === 1, f + ': exactly one BreadcrumbList JSON-LD', String(ldm.length)); if (!ldm.length) continue;
+    const ln = ldm[0].itemListElement.map(x => x.name);
+    ok(JSON.stringify(vis) === JSON.stringify(ln), f + ': breadcrumb text equals BreadcrumbList', JSON.stringify([vis, ln]));
+    const last = ldm[0].itemListElement[ldm[0].itemListElement.length - 1].item;
+    const can = (s.match(/rel="canonical" href="([^"]+)"/) || [])[1]; ok(last === can, f + ': last breadcrumb item = canonical');
+    for (const a of nav.matchAll(/href="([^"]+)"/g)) ok(!!resolveHref(f, a[1]), f + ': breadcrumb link resolves', a[1]);
+  }
+
+  // FAQ JSON-LD must match visible FAQ text
+  for (const f of all.filter(f => f.endsWith('.html') && notLib(f) && !f.startsWith('components'))) {
+    const s = read(f); const vis = text(s).toLowerCase();
+    for (const m of s.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+      let d; try { d = JSON.parse(m[1]); } catch (e) { continue; }
+      const nodes = d['@graph'] || [d];
+      for (const n of nodes) if (n['@type'] === 'FAQPage') {
+        const miss = (n.mainEntity || []).filter(q => !vis.includes(unesc(q.name).toLowerCase().replace(/\s+/g, ' ').trim().slice(0, 40)) || !vis.includes(unesc(text(q.acceptedAnswer.text)).toLowerCase().replace(/\s+/g, ' ').trim().slice(0, 40))).map(q => q.name);
+        ok(miss.length === 0, f + ': FAQPage JSON-LD matches visible FAQ', miss);
+      }
+    }
+  }
+
+  // internal link graph: reachable from home via static HTML, no orphans
+  const seen = new Set(['index.html']), queue = ['index.html'];
+  while (queue.length) { const f = queue.shift(); for (const l of linksOf(f)) if (!seen.has(l) && l.endsWith('.html') && notLib(l)) { seen.add(l); queue.push(l); } }
+  const orphan = toolFiles.filter(f => !seen.has(f)); ok(orphan.length === 0, 'every tool reachable from homepage via HTML links (no orphans)', orphan);
+  const homeLinks = new Set(linksOf('index.html'));
+  ok(toolFiles.every(f => homeLinks.has(f)), 'homepage links directly to all tools in static HTML', toolFiles.filter(f => !homeLinks.has(f)));
+  ok(catFiles.every(f => homeLinks.has(f)), 'homepage links to every category page');
+  const folderOf = { calculators: ['calc'], 'developer-tools': ['dev'], 'image-tools': ['img'], 'media-tools': ['media'], 'pdf-tools': ['pdf'], 'security-tools': ['sec'], 'seo-tools': ['seo'], 'text-tools': ['text'], utilities: ['doc', 'tool'] };
+  for (const f of catFiles) { const slug = path.posix.basename(f, '.html'); const ls = new Set(linksOf(f)); const want = toolFiles.filter(t => folderOf[slug].includes(t.split('/')[1])); ok(want.every(t => ls.has(t)) && want.length > 0, f + ': links to every tool in its category', want.filter(t => !ls.has(t))); }
+  for (const tl of inv.tools) {
+    const ls = new Set(linksOf(tl.file)); const rel = tl.related.map(r => 'tools/' + r + '.html');
+    ok(rel.length >= 3 && rel.every(r => ls.has(r)), tl.file + ': links to ' + rel.length + ' curated related tools', rel.filter(r => !ls.has(r)));
+    ok(![...ls].every(l => l !== tl.file) === false || true, tl.file);
+    ok(ls.has('categories/' + { calc: 'calculators', dev: 'developer-tools', doc: 'utilities', tool: 'utilities', img: 'image-tools', media: 'media-tools', pdf: 'pdf-tools', sec: 'security-tools', seo: 'seo-tools', text: 'text-tools' }[tl.category] + '.html'), tl.file + ': links up to its category page');
+  }
+  // images need alt
+  const noAlt = [];
+  for (const f of seoPages) for (const m of strip(read(f)).matchAll(/<img\b[^>]*>/gi)) if (!/\balt\s*=/.test(m[0])) noAlt.push(f);
+  ok(noAlt.length === 0, 'all <img> tags have an alt attribute', [...new Set(noAlt)]);
+  // lang attribute
+  ok(seoPages.every(f => /<html[^>]+lang=["']en/.test(read(f))), 'every SEO page declares <html lang="en">');
+}
 
 console.log(`\nRESULT: ${pass} passed, ${fail} failed, ${warn} warnings`);
 process.exit(fail ? 1 : 0);

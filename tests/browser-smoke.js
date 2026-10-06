@@ -26,7 +26,8 @@ const server = http.createServer((req, res) => {
   await new Promise(r => server.listen(0, '127.0.0.1', r));
   const origin = 'http://127.0.0.1:' + server.address().port;
   const tools = [...fs.readFileSync(path.join(ROOT, 'assets/js/tools-data.js'), 'utf8').matchAll(/^\s*link\s*:\s*["']([^"']+)["']/gm)].map(m => '/' + m[1].replace(/\.html$/, ''));
-  const urls = ['/', '/pages/about', '/pages/contact', '/pages/privacy-policy', '/pages/terms', '/pages/disclaimer', ...tools].filter(u => !only || u.includes(only));
+  const cats = fs.readdirSync(path.join(ROOT, 'categories')).filter(f => f.endsWith('.html')).map(f => '/categories/' + f.replace(/\.html$/, ''));
+  const urls = ['/', '/pages/about', '/pages/contact', '/pages/privacy-policy', '/pages/terms', '/pages/disclaimer', ...cats, ...tools].filter(u => !only || u.includes(only));
   const browser = await chromium.launch();
   const results = [];
   for (const u of urls) {

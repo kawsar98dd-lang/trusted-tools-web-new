@@ -1,0 +1,2998 @@
+{
+ "generated": "Phase 5",
+ "toolCount": 61,
+ "tools": [
+  {
+   "slug": "calc/age-calculator-pro",
+   "category": "calc",
+   "url": "https://trustedtoolsweb.com/tools/calc/age-calculator-pro",
+   "file": "tools/calc/age-calculator-pro.html",
+   "before": {
+    "title": "Ultra Age AI: God Mode Age Calculator & Life Analytics (Free)",
+    "h1": "Ultra Age AI God Mode",
+    "description": "Calculate your exact age, biological stats, and cosmic age in real-time. Ultra Age AI provides 100% client-side privacy with advanced life analytics and death timer.",
+    "canonical": "https://trustedtoolsweb.com/tools/calc/age-calculator-pro",
+    "ogTitle": "Ultra Age AI - God Mode Analytics",
+    "ogDescription": "Discover your exact age down to the second, consumption stats, and bio-rhythms. 100% Client-side privacy.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Age Calculator – Exact Age in Years, Months, Days",
+    "h1": "Age Calculator",
+    "description": "Find your exact age in years, months, days and hours from a birth date, see next-birthday countdown and more life statistics. Runs in your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/calc/age-calculator-pro"
+   },
+   "primaryKeyword": "age calculator",
+   "secondaryKeywords": [
+    "date of birth calculator",
+    "how old am I",
+    "age in days"
+   ],
+   "longTailIntents": [
+    "calculate exact age in years months and days",
+    "days until my next birthday"
+   ],
+   "searcherType": "general users, students, form fillers",
+   "related": [
+    "calc/percentage-calculator",
+    "calc/unit-converter-pro",
+    "calc/loan-emi-calculator",
+    "tool/focus-timer-pomodoro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Calculators",
+    "Age Calculator"
+   ]
+  },
+  {
+   "slug": "calc/gst-vat-calculator",
+   "category": "calc",
+   "url": "https://trustedtoolsweb.com/tools/calc/gst-vat-calculator",
+   "file": "tools/calc/gst-vat-calculator.html",
+   "before": {
+    "title": "Global GST/VAT Master: Commercial Edition & Invoice Generator (Free)",
+    "h1": "Global GST/VAT Master",
+    "description": "Calculate GST, VAT, and Sales Tax instantly for 15+ countries. Supports quantity pricing, discount modules (% & flat), CGST/SGST split for India, PDF invoices with amount-in-words, and a recent calculations history panel.",
+    "canonical": "https://trustedtoolsweb.com/tools/calc/gst-vat-calculator",
+    "ogTitle": "GST/VAT Master - Commercial Analytics & Invoice Generator",
+    "ogDescription": "Commercial grade tax calculator with Qty, Discount, CGST/SGST split & PDF Invoice generation. 100% Client-side privacy.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "GST & VAT Calculator – Add or Remove Tax Online",
+    "h1": "GST & VAT Calculator",
+    "description": "Add or remove GST, VAT or sales tax from a price, handle quantity and discounts, and see the CGST/SGST split for Indian invoices. Free and browser-based.",
+    "canonical": "https://trustedtoolsweb.com/tools/calc/gst-vat-calculator"
+   },
+   "primaryKeyword": "GST calculator",
+   "secondaryKeywords": [
+    "VAT calculator",
+    "sales tax calculator",
+    "CGST SGST calculator"
+   ],
+   "longTailIntents": [
+    "calculate GST inclusive and exclusive price",
+    "remove VAT from total"
+   ],
+   "searcherType": "small business owners, shopkeepers, accountants",
+   "related": [
+    "calc/percentage-calculator",
+    "calc/loan-emi-calculator",
+    "calc/unit-converter-pro",
+    "doc/resume-cv-builder"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Calculators",
+    "GST & VAT Calculator"
+   ]
+  },
+  {
+   "slug": "calc/loan-emi-calculator",
+   "category": "calc",
+   "url": "https://trustedtoolsweb.com/tools/calc/loan-emi-calculator",
+   "file": "tools/calc/loan-emi-calculator.html",
+   "before": {
+    "title": "Home & Car Loan EMI Calculator — Smart EMI Ultra Pro Max | Trusted Tools Web",
+    "h1": "Home & Car Loan EMI Calculator",
+    "description": "Free Home & Car Loan EMI Calculator with Amortization Schedule, Lump-sum Pre-payment analysis, CSV Export, PDF Download & AI Affordability check. 100% client-side secure.",
+    "canonical": null,
+    "ogTitle": "Home & Car Loan EMI Calculator — Smart EMI Ultra Pro Max",
+    "ogDescription": "Advanced Loan EMI Calculator with PDF reports, CSV export, lump-sum prepayment and Affordability AI.",
+    "jsonLdTypes": [
+     "Brand",
+     "Offer",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Loan EMI Calculator – Home & Car Loan Schedule",
+    "h1": "Home & Car Loan EMI Calculator",
+    "description": "Estimate monthly EMI, total interest and a full amortization schedule for home or car loans, test part-prepayments and export the result as CSV or PDF.",
+    "canonical": "https://trustedtoolsweb.com/tools/calc/loan-emi-calculator"
+   },
+   "primaryKeyword": "loan EMI calculator",
+   "secondaryKeywords": [
+    "home loan EMI calculator",
+    "car loan calculator",
+    "amortization schedule calculator"
+   ],
+   "longTailIntents": [
+    "calculate EMI with prepayment",
+    "loan interest total calculator"
+   ],
+   "searcherType": "loan applicants, home and car buyers",
+   "related": [
+    "calc/percentage-calculator",
+    "calc/gst-vat-calculator",
+    "calc/unit-converter-pro",
+    "calc/age-calculator-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Calculators",
+    "Home & Car Loan EMI Calculator"
+   ]
+  },
+  {
+   "slug": "calc/percentage-calculator",
+   "category": "calc",
+   "url": "https://trustedtoolsweb.com/tools/calc/percentage-calculator",
+   "file": "tools/calc/percentage-calculator.html",
+   "before": {
+    "title": "Percentage Master Pro Max - Free Online Discount, GST, Compound Interest & Finance Calculator",
+    "h1": "Percentage Master Calc.",
+    "description": "11 free percentage calculators in one tool: Discount, GST/VAT, Profit Margin, Compound Interest, Markup, Reverse Percentage, Tip Splitter & more. 100% client-side secure. No ads, no data storage. Works offline.",
+    "canonical": "https://trustedtoolsweb.com/tools/calc/percentage-calculator",
+    "ogTitle": "Percentage Master Pro Max - 11 Free Secure Math & Finance Calculators",
+    "ogDescription": "Calculate Discounts, GST, Marks, Compound Interest, Markup, and more. No data stored. Works offline. 100% free.",
+    "jsonLdTypes": [
+     "Answer",
+     "FAQPage",
+     "Offer",
+     "Person",
+     "Question",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Percentage Calculator – Discount, Margin, Interest",
+    "h1": "Percentage Calculator",
+    "description": "Eleven percentage calculators in one page: discount, GST/VAT, profit margin, markup, reverse percentage, compound interest, tip split and more.",
+    "canonical": "https://trustedtoolsweb.com/tools/calc/percentage-calculator"
+   },
+   "primaryKeyword": "percentage calculator",
+   "secondaryKeywords": [
+    "discount calculator",
+    "profit margin calculator",
+    "compound interest calculator"
+   ],
+   "longTailIntents": [
+    "what is x percent of y",
+    "calculate percentage increase or decrease"
+   ],
+   "searcherType": "students, shoppers, small businesses",
+   "related": [
+    "calc/gst-vat-calculator",
+    "calc/loan-emi-calculator",
+    "calc/unit-converter-pro",
+    "text/word-counter-analyzer"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Calculators",
+    "Percentage Calculator"
+   ]
+  },
+  {
+   "slug": "calc/unit-converter-pro",
+   "category": "calc",
+   "url": "https://trustedtoolsweb.com/tools/calc/unit-converter-pro",
+   "file": "tools/calc/unit-converter-pro.html",
+   "before": {
+    "title": "Unit Converter & Currency Exchange | OmniConvert Ultra — Free Online Tool",
+    "h1": "OmniConvert Ultra: Free Unit Converter, Currency Exchange & Crypto Calculator",
+    "description": "Use OmniConvert Ultra for free real-time Currency Exchange, Engineering Unit Conversion, Crypto Prices, Physics Calculation & Scientific Calculator. The most secure and fast PWA tool for students and professionals.",
+    "canonical": "https://trustedtoolsweb.com/tools/calc/unit-converter-pro",
+    "ogTitle": "OmniConvert Ultra - All-in-One Unit & Currency Converter Tool",
+    "ogDescription": "Convert anything instantly: Currency, Crypto, Length, Weight, Temperature with live charts. Secure and Ad-free experience.",
+    "jsonLdTypes": [
+     "Answer",
+     "FAQPage",
+     "Offer",
+     "Person",
+     "Question",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Unit Converter & Currency Converter | Trusted Tools Web",
+    "h1": "Unit & Currency Converter",
+    "description": "Convert length, weight, temperature, area, speed and more, plus live currency and crypto rates. Includes a scientific calculator. Rates need an internet connection.",
+    "canonical": "https://trustedtoolsweb.com/tools/calc/unit-converter-pro"
+   },
+   "primaryKeyword": "unit converter",
+   "secondaryKeywords": [
+    "currency converter",
+    "scientific calculator",
+    "length converter"
+   ],
+   "longTailIntents": [
+    "convert units online free",
+    "live currency exchange rates"
+   ],
+   "searcherType": "students, engineers, travellers",
+   "related": [
+    "calc/percentage-calculator",
+    "calc/gst-vat-calculator",
+    "calc/loan-emi-calculator",
+    "calc/age-calculator-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Calculators",
+    "Unit & Currency Converter"
+   ]
+  },
+  {
+   "slug": "dev/code-encoder-decoder",
+   "category": "dev",
+   "url": "https://trustedtoolsweb.com/tools/dev/code-encoder-decoder",
+   "file": "tools/dev/code-encoder-decoder.html",
+   "before": {
+    "title": "Universal Master Encoder - Convert Binary, Base64, Hex, JWT, AES-256 & Hash Online Free | Trusted Tools Web",
+    "h1": "Universal Master Encoder",
+    "description": "Free, secure & private Universal Encoder & Decoder. Convert Text to Binary, Hex, Base64, ASCII. Decode JWT tokens. AES-256 Encrypt/Decrypt. HMAC-SHA256. Generate SHA-256/MD5 hashes. Auto-detect encoding. 100% client-side — your data never leaves your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/code-encoder-decoder",
+    "ogTitle": "Universal Master Encoder — Binary, Base64, Hex, AES-256, JWT & Hash | Trusted Tools Web",
+    "ogDescription": "Encode, Decode, Hash & Format code instantly. Supports Base64, JWT, AES-256, SHA-256, Binary, Hex, Morse, URL & more. Auto-detect encoding. No server-side processing — 100% secure & private.",
+    "jsonLdTypes": [
+     "Answer",
+     "FAQPage",
+     "HowTo",
+     "HowToStep",
+     "Offer",
+     "Organization",
+     "Person",
+     "Question",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Base64, Hex, Binary & JWT Encoder/Decoder Online",
+    "h1": "Encoder & Decoder: Base64, Hex, Binary, JWT, AES",
+    "description": "Encode and decode Base64, Hex, Binary and ASCII, inspect JWT tokens, create hashes and HMACs, and use AES-256 encryption. Processed locally in your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/code-encoder-decoder"
+   },
+   "primaryKeyword": "base64 encoder decoder",
+   "secondaryKeywords": [
+    "JWT decoder",
+    "hex to text",
+    "SHA-256 hash generator",
+    "AES encrypt decrypt online"
+   ],
+   "longTailIntents": [
+    "decode a JWT token online",
+    "convert text to binary"
+   ],
+   "searcherType": "developers, security learners",
+   "related": [
+    "dev/json-formatter-validator",
+    "sec/password-generator-pro",
+    "sec/file-encryptor-aes256",
+    "text/advanced-text-editor"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Developer Tools",
+    "Encoder & Decoder: Base64, Hex, Binary, JWT, AES"
+   ]
+  },
+  {
+   "slug": "dev/code-snapshot-studio",
+   "category": "dev",
+   "url": "https://trustedtoolsweb.com/tools/dev/code-snapshot-studio",
+   "file": "tools/dev/code-snapshot-studio.html",
+   "before": {
+    "title": "Code Snap Studio — Pro Code to Image Converter | Trusted Tools",
+    "h1": "Code Snap Studio",
+    "description": "Transform your source code into stunning, professional screenshots with 3D Isometric Tilt, macOS/Windows frames, premium gradient backgrounds, and 1-click Prettier beautify. 100% client-side processing — zero uploads, total privacy.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/code-snapshot-studio",
+    "ogTitle": "Code Snap Studio — Beautiful Code Snippet Generator",
+    "ogDescription": "Generate high-resolution, shareable code images with customizable frames, gradient backgrounds, and 3D isometric effects. Free developer tool.",
+    "jsonLdTypes": [
+     "Answer",
+     "BreadcrumbList",
+     "FAQPage",
+     "ListItem",
+     "Offer",
+     "Person",
+     "Question",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Code to Image Converter – Create Code Screenshots",
+    "h1": "Code to Image Converter",
+    "description": "Turn source code into a shareable image with syntax highlighting, macOS or Windows window frames, gradient backgrounds and optional 3D tilt.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/code-snapshot-studio"
+   },
+   "primaryKeyword": "code to image",
+   "secondaryKeywords": [
+    "code screenshot generator",
+    "code snippet image",
+    "carbon alternative"
+   ],
+   "longTailIntents": [
+    "make a beautiful screenshot of code",
+    "export code as PNG"
+   ],
+   "searcherType": "developers, bloggers, educators",
+   "related": [
+    "dev/web-sandbox-studio",
+    "dev/markdown-editor-pro",
+    "img/image-studio-pro",
+    "img/3d-device-mockup-studio"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Developer Tools",
+    "Code to Image Converter"
+   ]
+  },
+  {
+   "slug": "dev/cookie-format-converter",
+   "category": "dev",
+   "url": "https://trustedtoolsweb.com/tools/dev/cookie-format-converter",
+   "file": "tools/dev/cookie-format-converter.html",
+   "before": {
+    "title": "Netscape to JSON Cookie Converter — Free, Secure & Instant | Trusted Tools Web",
+    "h1": "Cookie Converter Pro Max",
+    "description": "Convert Netscape HTTP cookies to JSON and vice versa instantly, 100% client-side. Zero uploads. Perfect for Selenium, cURL, Postman, Puppeteer & API debugging. Clean expired sessions, bulk modify domains, and manipulate expiry in one click.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/cookie-format-converter",
+    "ogTitle": "Cookie Converter Pro — Netscape & JSON Formatter | Trusted Tools Web",
+    "ogDescription": "Securely convert, clean, and reformat browser cookies between JSON and Netscape HTTP format. No server upload. Zero data retention. Free forever.",
+    "jsonLdTypes": [
+     "Answer",
+     "BreadcrumbList",
+     "FAQPage",
+     "ListItem",
+     "Offer",
+     "Person",
+     "Question",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Netscape Cookie to JSON Converter (and Back) | Trusted Tools Web",
+    "h1": "Netscape Cookie ↔ JSON Converter",
+    "description": "Convert Netscape cookies.txt files to JSON and back for Selenium, Puppeteer, cURL and Postman. The conversion happens in your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/cookie-format-converter"
+   },
+   "primaryKeyword": "netscape cookie to json",
+   "secondaryKeywords": [
+    "cookies.txt to JSON",
+    "JSON to netscape cookie",
+    "cookie converter"
+   ],
+   "longTailIntents": [
+    "convert cookies.txt for puppeteer",
+    "cookie JSON for selenium"
+   ],
+   "searcherType": "QA engineers, automation developers",
+   "related": [
+    "dev/json-formatter-validator",
+    "dev/code-encoder-decoder",
+    "dev/mock-data-generator",
+    "dev/web-sandbox-studio"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Developer Tools",
+    "Netscape Cookie ↔ JSON Converter"
+   ]
+  },
+  {
+   "slug": "dev/internet-speed-test",
+   "category": "dev",
+   "url": "https://trustedtoolsweb.com/tools/dev/internet-speed-test",
+   "file": "tools/dev/internet-speed-test.html",
+   "before": {
+    "title": "Ultra Speed Pro Max — Free Internet Speed Test | Ping, Jitter & Bandwidth | Trusted Tools Web",
+    "h1": "Internet Speed Test — Ultra Speed Pro Max",
+    "description": "Test your internet speed instantly with Ultra Speed Pro Max. Measure Download, Upload speed, Ping & Jitter with enterprise-grade, multi-stream accuracy. 100% Client-Side — no plugins, no data stored. Fast, free & secure.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/internet-speed-test",
+    "ogTitle": "Ultra Speed Pro Max — Internet Speed Test | Trusted Tools Web",
+    "ogDescription": "Check your true internet speed with multi-stream, enterprise-grade precision. Measure Ping, Jitter, Download & Upload. 100% Secure, Client-Side, No Plugins Required.",
+    "jsonLdTypes": [
+     "Answer",
+     "FAQPage",
+     "Offer",
+     "Organization",
+     "Question",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Internet Speed Test – Download, Upload, Ping & Jitter",
+    "h1": "Internet Speed Test",
+    "description": "Measure download and upload speed, ping and jitter from your browser using Cloudflare’s speed endpoints. Results depend on your connection and device.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/internet-speed-test"
+   },
+   "primaryKeyword": "internet speed test",
+   "secondaryKeywords": [
+    "ping test",
+    "upload speed test",
+    "jitter test"
+   ],
+   "longTailIntents": [
+    "test my wifi speed",
+    "check download and upload speed"
+   ],
+   "searcherType": "home users, remote workers, gamers",
+   "related": [
+    "sec/ip-address-lookup",
+    "dev/web-sandbox-studio",
+    "media/video-studio-pro",
+    "media/screen-recorder-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Developer Tools",
+    "Internet Speed Test"
+   ]
+  },
+  {
+   "slug": "dev/json-formatter-validator",
+   "category": "dev",
+   "url": "https://trustedtoolsweb.com/tools/dev/json-formatter-validator",
+   "file": "tools/dev/json-formatter-validator.html",
+   "before": {
+    "title": "Ultra JSON Pro Max — Free Online JSON Formatter, Validator, TypeScript Generator & JSONPath Tool | Trusted Tools Web",
+    "h1": "Ultra JSON Pro Max Free Online JSON Formatter, Validator & TypeScript Generator",
+    "description": "Format, validate, minify, and transform JSON data online — 100% free and client-side. Ultra JSON Pro Max features Tree View, Auto-Fix, TypeScript/Dart interface generation, JSONPath search, Data Cleaner, Sort Keys, XML/CSV conversion, and syntax highlighting. No server uploads, complete privacy.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/json-formatter-validator",
+    "ogTitle": "Ultra JSON Pro Max — JSON Formatter, Validator & TypeScript Generator",
+    "ogDescription": "Format, validate, and visualise JSON data instantly — 100% client-side privacy. Includes Tree View, Auto-Fix, TypeScript/Dart generation, JSONPath search, XML/CSV conversion, and syntax highlighting.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "JSON Formatter & Validator – Beautify, Minify, Fix",
+    "h1": "JSON Formatter & Validator",
+    "description": "Format, validate, minify and repair JSON, browse it as a tree, run JSONPath queries and generate TypeScript or Dart types. Data stays in your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/json-formatter-validator"
+   },
+   "primaryKeyword": "JSON formatter",
+   "secondaryKeywords": [
+    "JSON validator",
+    "JSON beautifier",
+    "JSON to TypeScript",
+    "JSONPath tester"
+   ],
+   "longTailIntents": [
+    "format and validate JSON online",
+    "fix invalid JSON"
+   ],
+   "searcherType": "developers, API testers",
+   "related": [
+    "dev/code-encoder-decoder",
+    "dev/mock-data-generator",
+    "dev/web-sandbox-studio",
+    "dev/sql-studio-pro",
+    "text/diff-checker-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Developer Tools",
+    "JSON Formatter & Validator"
+   ]
+  },
+  {
+   "slug": "dev/markdown-editor-pro",
+   "category": "dev",
+   "url": "https://trustedtoolsweb.com/tools/dev/markdown-editor-pro",
+   "file": "tools/dev/markdown-editor-pro.html",
+   "before": {
+    "title": "Pro Markdown Studio Max — Free Secure Online Markdown Editor | Trusted Tools Web",
+    "h1": "Pro Markdown Studio Max",
+    "description": "Write, edit, and preview Markdown instantly with Pro Markdown Studio Max. 100% client-side privacy — no server storage. Export to PDF, HTML, or .md file. Free, fast, and secure.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/markdown-editor-pro",
+    "ogTitle": "Pro Markdown Studio Max — Secure Online Markdown Editor | Trusted Tools Web",
+    "ogDescription": "Write, preview, and export Markdown securely. 100% client-side privacy with PDF export. No data ever leaves your browser. Try it free on Trusted Tools Web.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Markdown Editor with Live Preview and PDF Export",
+    "h1": "Markdown Editor with Live Preview",
+    "description": "Write Markdown with a live preview and export to PDF, HTML or a .md file. Your text is edited locally in the browser, with no account needed.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/markdown-editor-pro"
+   },
+   "primaryKeyword": "markdown editor",
+   "secondaryKeywords": [
+    "online markdown editor",
+    "markdown to PDF",
+    "markdown to HTML",
+    "markdown preview"
+   ],
+   "longTailIntents": [
+    "write markdown with live preview",
+    "convert markdown to pdf online"
+   ],
+   "searcherType": "writers, developers, documentation authors",
+   "related": [
+    "text/advanced-text-editor",
+    "text/word-counter-analyzer",
+    "dev/web-sandbox-studio",
+    "text/diff-checker-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Developer Tools",
+    "Markdown Editor with Live Preview"
+   ]
+  },
+  {
+   "slug": "dev/mock-data-generator",
+   "category": "dev",
+   "url": "https://trustedtoolsweb.com/tools/dev/mock-data-generator",
+   "file": "tools/dev/mock-data-generator.html",
+   "before": {
+    "title": "QA Mock Data Studio — Free Luhn-Valid JSON & Payment Token Generator | Trusted Tools Web",
+    "h1": "QA Mock Data Studio",
+    "description": "Generate 100% valid mock data, Luhn-checked payment tokens, random user profiles, and localized address data for QA & software testing. Secure, 100% client-side & free. Supports 195 countries.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/mock-data-generator",
+    "ogTitle": "QA Mock Data Studio — Free Luhn-Valid JSON & Payment Token Generator",
+    "ogDescription": "Generate random validation data for software testing instantly — Luhn-valid cards, profiles, and internationalized addresses. 100% client-side and GDPR-safe.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Mock Data Generator – Fake JSON, Users & Test Cards",
+    "h1": "Mock Data Generator for Testing",
+    "description": "Generate fake JSON data, user profiles, addresses and Luhn-valid test card numbers for QA and development. Test data only, not real payment details.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/mock-data-generator"
+   },
+   "primaryKeyword": "mock data generator",
+   "secondaryKeywords": [
+    "fake data generator",
+    "fake JSON generator",
+    "test credit card numbers",
+    "random user data"
+   ],
+   "longTailIntents": [
+    "generate dummy JSON for API testing",
+    "Luhn valid test card number"
+   ],
+   "searcherType": "QA testers, developers",
+   "related": [
+    "dev/json-formatter-validator",
+    "tool/random-name-generator",
+    "dev/sql-studio-pro",
+    "dev/cookie-format-converter"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Developer Tools",
+    "Mock Data Generator for Testing"
+   ]
+  },
+  {
+   "slug": "dev/pwa-builder-studio",
+   "category": "dev",
+   "url": "https://trustedtoolsweb.com/tools/dev/pwa-builder-studio",
+   "file": "tools/dev/pwa-builder-studio.html",
+   "before": {
+    "title": "PWA Studio PRO MAX — Free Progressive Web App Generator & Manifest Builder | Trusted Tools Web",
+    "h1": "PWA Studio PRO MAX",
+    "description": "Convert any website into a Progressive Web App instantly. Generate manifest.json, service worker with offline support, and all PWA icons — 100% free, 100% client-side, no server required. The ultimate online PWA builder and manifest.json generator.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/pwa-builder-studio",
+    "ogTitle": "PWA Studio PRO MAX — Free Progressive Web App Generator | Trusted Tools Web",
+    "ogDescription": "Convert any website into a PWA in seconds. Generate manifest.json, service worker, offline page & all icon sizes. 100% free, browser-based, no upload needed.",
+    "jsonLdTypes": [
+     "HowTo",
+     "HowToStep",
+     "Offer",
+     "Organization",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "PWA Generator – Web App Manifest & Service Worker",
+    "h1": "PWA Generator: Manifest & Service Worker",
+    "description": "Generate a manifest.json, a service worker with offline caching and the app icon set to turn your website into an installable Progressive Web App.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/pwa-builder-studio"
+   },
+   "primaryKeyword": "PWA generator",
+   "secondaryKeywords": [
+    "web app manifest generator",
+    "service worker generator",
+    "PWA icon generator"
+   ],
+   "longTailIntents": [
+    "make my website a PWA",
+    "create manifest.json online"
+   ],
+   "searcherType": "web developers, site owners",
+   "related": [
+    "seo/favicon-generator-pro",
+    "seo/meta-tag-generator",
+    "dev/web-sandbox-studio",
+    "seo/sitemap-generator-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Developer Tools",
+    "PWA Generator: Manifest & Service Worker"
+   ]
+  },
+  {
+   "slug": "dev/sql-studio-pro",
+   "category": "dev",
+   "url": "https://trustedtoolsweb.com/tools/dev/sql-studio-pro",
+   "file": "tools/dev/sql-studio-pro.html",
+   "before": {
+    "title": "SQL Studio ULTRA MAX — Free Offline Browser SQLite Analyzer | Trusted Tools Web",
+    "h1": "SQL Studio ULTRA MAX",
+    "description": "The most powerful 100% offline SQL IDE in your browser. Import CSV or JSON files, auto-build SQLite tables via WebAssembly, write SQL with syntax highlighting, visualize results as charts, and export to CSV, JSON, ZIP, PDF or SQL dump — zero server, total privacy.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/sql-studio-pro",
+    "ogTitle": "SQL Studio ULTRA MAX — Offline Browser SQLite Analyzer | Trusted Tools Web",
+    "ogDescription": "Drop CSV/JSON → Auto-build SQLite tables in WebAssembly → Query with SQL syntax highlighting → Visualize as charts → Export CSV, JSON, ZIP, PDF, SQL Dump. 100% offline. Zero servers. Total privacy.",
+    "jsonLdTypes": [
+     "HowTo",
+     "HowToStep",
+     "Offer",
+     "Organization"
+    ]
+   },
+   "after": {
+    "title": "SQLite Browser – Run SQL on CSV and JSON Files",
+    "h1": "SQL Studio: Query CSV and JSON with SQLite",
+    "description": "Import CSV or JSON into SQLite tables with WebAssembly and run SQL in your browser with syntax highlighting. Files are processed locally.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/sql-studio-pro"
+   },
+   "primaryKeyword": "online SQLite viewer",
+   "secondaryKeywords": [
+    "SQL on CSV",
+    "CSV to SQL",
+    "run SQL in browser",
+    "JSON to SQLite"
+   ],
+   "longTailIntents": [
+    "query a CSV file with SQL",
+    "open a sqlite database online"
+   ],
+   "searcherType": "analysts, students, developers",
+   "related": [
+    "dev/json-formatter-validator",
+    "dev/mock-data-generator",
+    "dev/web-sandbox-studio",
+    "text/bulk-data-extractor"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Developer Tools",
+    "SQL Studio: Query CSV and JSON with SQLite"
+   ]
+  },
+  {
+   "slug": "dev/web-sandbox-studio",
+   "category": "dev",
+   "url": "https://trustedtoolsweb.com/tools/dev/web-sandbox-studio",
+   "file": "tools/dev/web-sandbox-studio.html",
+   "before": {
+    "title": "Web Sandbox STUDIO MAX — Free Offline HTML CSS JS IDE | No Server, Runs in Browser",
+    "h1": "Web Sandbox STUDIO MAX",
+    "description": "A professional, 100% offline HTML/CSS/JS code editor and live preview sandbox — runs entirely in your browser. No server, no sign-up. Features Monaco Editor (VS Code engine), real-time live preview, virtual console, auto-save to localStorage, and one-click ZIP export. The best free CodePen & JSFiddle alternative.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/web-sandbox-studio",
+    "ogTitle": "Web Sandbox STUDIO MAX — Free Offline HTML CSS JS IDE | Trusted Tools Web",
+    "ogDescription": "Write HTML, CSS & JS with a professional Monaco Editor (VS Code engine), see live preview instantly, debug with the Virtual Console, auto-save to localStorage, and export your project as a ZIP — 100% offline, no sign-up, free forever.",
+    "jsonLdTypes": [
+     "HowTo",
+     "HowToStep",
+     "HowToTool",
+     "MonetaryAmount",
+     "Offer",
+     "Organization",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "HTML, CSS & JS Playground – Live Code Editor | Trusted Tools Web",
+    "h1": "HTML, CSS & JavaScript Playground",
+    "description": "Write HTML, CSS and JavaScript in a Monaco-based editor with live preview and a console. Code runs in your browser, with no sign-up.",
+    "canonical": "https://trustedtoolsweb.com/tools/dev/web-sandbox-studio"
+   },
+   "primaryKeyword": "HTML CSS JS playground",
+   "secondaryKeywords": [
+    "online code editor",
+    "live HTML preview",
+    "codepen alternative"
+   ],
+   "longTailIntents": [
+    "test html css javascript online",
+    "live preview editor"
+   ],
+   "searcherType": "front-end developers, students",
+   "related": [
+    "dev/code-snapshot-studio",
+    "dev/json-formatter-validator",
+    "dev/markdown-editor-pro",
+    "sec/js-code-obfuscator",
+    "dev/pwa-builder-studio"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Developer Tools",
+    "HTML, CSS & JavaScript Playground"
+   ]
+  },
+  {
+   "slug": "doc/resume-cv-builder",
+   "category": "doc",
+   "url": "https://trustedtoolsweb.com/tools/doc/resume-cv-builder",
+   "file": "tools/doc/resume-cv-builder.html",
+   "before": {
+    "title": "Smart CV Builder PRO MAX — Free ATS-Friendly Resume Builder Online",
+    "h1": "Smart CV Builder PRO MAX",
+    "description": "Build a job-winning, ATS-optimized resume in minutes. Live preview, ATS keyword matcher, drag-and-drop sections, PDF export, and 100% client-side privacy. No signup needed.",
+    "canonical": "https://trustedtoolsweb.com/tools/doc/resume-cv-builder",
+    "ogTitle": "Smart CV Builder PRO MAX — ATS-Friendly Resume Builder",
+    "ogDescription": "Create a professional, ATS-optimized resume with live preview and keyword matching. 100% free, 100% private.",
+    "jsonLdTypes": [
+     "AggregateRating",
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Free Resume Builder – ATS-Friendly CV Maker | Trusted Tools Web",
+    "h1": "Resume & CV Builder",
+    "description": "Build a resume with live preview, drag-and-drop sections and a keyword matcher for job descriptions, then export it as PDF. Your data stays in the browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/doc/resume-cv-builder"
+   },
+   "primaryKeyword": "resume builder",
+   "secondaryKeywords": [
+    "CV maker",
+    "ATS resume",
+    "resume to PDF"
+   ],
+   "longTailIntents": [
+    "create a resume online free",
+    "check resume keywords against a job description"
+   ],
+   "searcherType": "job seekers, students",
+   "related": [
+    "text/word-counter-analyzer",
+    "pdf/pdf-merger-editor",
+    "img/image-studio-pro",
+    "pdf/pdf-compressor-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Everyday Utilities",
+    "Resume & CV Builder"
+   ]
+  },
+  {
+   "slug": "img/3d-device-mockup-studio",
+   "category": "img",
+   "url": "https://trustedtoolsweb.com/tools/img/3d-device-mockup-studio",
+   "file": "tools/img/3d-device-mockup-studio.html",
+   "before": {
+    "title": "3D Mockup STUDIO MAX — Free WebGL Device Mockup Generator | Export 4K PNG",
+    "h1": "3D Mockup STUDIO MAX",
+    "description": "Generate stunning 3D iPhone and MacBook mockups instantly in your browser. Upload your screenshot, map it onto a photorealistic 3D device, customize lighting and backgrounds, then export at 4K resolution — 100% client-side, no server, no watermarks, completely free.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/3d-device-mockup-studio",
+    "ogTitle": "3D Mockup STUDIO MAX — God Mode Device Mockup Generator",
+    "ogDescription": "Drop your screenshot, see it live on a 3D iPhone or MacBook rendered in WebGL. Export at 4K PNG instantly. Zero server. Zero watermarks. 100% private and free.",
+    "jsonLdTypes": [
+     "Answer",
+     "FAQPage",
+     "Offer",
+     "Person",
+     "Question",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "3D Device Mockup Generator – iPhone & MacBook | Trusted Tools Web",
+    "h1": "3D Device Mockup Generator",
+    "description": "Place a screenshot on a 3D iPhone or MacBook model, adjust the angle and lighting, and export a high-resolution PNG. Rendered with WebGL in your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/3d-device-mockup-studio"
+   },
+   "primaryKeyword": "device mockup generator",
+   "secondaryKeywords": [
+    "iPhone mockup",
+    "MacBook mockup",
+    "app screenshot mockup"
+   ],
+   "longTailIntents": [
+    "put a screenshot on an iphone mockup",
+    "3d mockup free"
+   ],
+   "searcherType": "designers, app makers, marketers",
+   "related": [
+    "dev/code-snapshot-studio",
+    "img/image-studio-pro",
+    "img/meme-generator-studio",
+    "img/svg-vectorizer-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Image Tools",
+    "3D Device Mockup Generator"
+   ]
+  },
+  {
+   "slug": "img/ai-background-remover",
+   "category": "img",
+   "url": "https://trustedtoolsweb.com/tools/img/ai-background-remover",
+   "file": "tools/img/ai-background-remover.html",
+   "before": {
+    "title": "AI Background Remover Ultra Max — Free, Private & 100% Client-Side | Trusted Tools Web",
+    "h1": "BG Remover Ultra Max",
+    "description": "Remove image backgrounds instantly in your browser using AI — 100% free, private, and offline. No server uploads ever. Add strokes, shadows, and custom backgrounds with a pro-grade canvas editor. Supports batch processing and ZIP export.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/ai-background-remover",
+    "ogTitle": "AI Background Remover Ultra Max | Trusted Tools Web",
+    "ogDescription": "Remove backgrounds with AI — 100% private, runs entirely in your browser. No uploads. Add glow, stroke, shadow & custom backgrounds. Free forever.",
+    "jsonLdTypes": [
+     "Answer",
+     "FAQPage",
+     "HowTo",
+     "HowToStep",
+     "Offer",
+     "Organization",
+     "Question",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Background Remover – Make Image Backgrounds Transparent",
+    "h1": "Image Background Remover",
+    "description": "Remove the background from a photo, then add a solid colour, outline or drop shadow and export PNG or WebP. Batch and ZIP export supported.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/ai-background-remover"
+   },
+   "primaryKeyword": "background remover",
+   "secondaryKeywords": [
+    "remove background from image",
+    "transparent PNG maker",
+    "cutout tool"
+   ],
+   "longTailIntents": [
+    "make image background transparent",
+    "remove background free no signup"
+   ],
+   "searcherType": "sellers, designers, creators",
+   "related": [
+    "img/image-studio-pro",
+    "img/ai-image-upscaler",
+    "img/exif-metadata-remover",
+    "img/meme-generator-studio"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Image Tools",
+    "Image Background Remover"
+   ]
+  },
+  {
+   "slug": "img/ai-face-blur-censor",
+   "category": "img",
+   "url": "https://trustedtoolsweb.com/tools/img/ai-face-blur-censor",
+   "file": "tools/img/ai-face-blur-censor.html",
+   "before": {
+    "title": "AI Privacy Censor ULTRA MAX — Face Blur, OCR Redact & EXIF Stripper (Free, No Upload)",
+    "h1": "AI Privacy Censor ULTRA MAX",
+    "description": "The most powerful free AI image privacy tool. Auto-detect and blur faces, redact sensitive text (emails, phones, card numbers) with OCR, manually brush-censor areas, strip GPS/EXIF metadata, and batch-process images — 100% in your browser. No uploads. No servers. Zero data leaves your device.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/ai-face-blur-censor",
+    "ogTitle": "AI Privacy Censor ULTRA MAX — Auto Face Blur, OCR Redaction & EXIF Stripper",
+    "ogDescription": "Blur faces, redact sensitive text, strip GPS metadata & batch-censor images — all 100% client-side. No data ever leaves your browser. Free forever.",
+    "jsonLdTypes": [
+     "ImageObject",
+     "Offer",
+     "Organization",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Blur Faces & Redact Text in Photos – Privacy Censor",
+    "h1": "Blur Faces & Redact Sensitive Text in Images",
+    "description": "Detect and blur faces, redact emails, phone numbers or card numbers found by OCR, or brush over areas by hand before you share a picture.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/ai-face-blur-censor"
+   },
+   "primaryKeyword": "blur faces in photo",
+   "secondaryKeywords": [
+    "redact image online",
+    "censor text in image",
+    "pixelate face"
+   ],
+   "longTailIntents": [
+    "blur a face in a picture online",
+    "hide personal info in screenshot"
+   ],
+   "searcherType": "people sharing screenshots, journalists",
+   "related": [
+    "img/exif-metadata-remover",
+    "img/image-studio-pro",
+    "pdf/pdf-ocr-signer-pro",
+    "img/document-scanner-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Image Tools",
+    "Blur Faces & Redact Sensitive Text in Images"
+   ]
+  },
+  {
+   "slug": "img/ai-image-upscaler",
+   "category": "img",
+   "url": "https://trustedtoolsweb.com/tools/img/ai-image-upscaler",
+   "file": "tools/img/ai-image-upscaler.html",
+   "before": {
+    "title": "AI Image Upscaler PRO MAX – Free 4x/8x HD Enhancer | TrustedToolsWeb",
+    "h1": "AI Image Upscaler PRO MAX",
+    "description": "Upscale & enhance any image to 4x or 8x HD resolution instantly using AI & WebGL. 100% free, browser-based, zero uploads — your images never leave your device. Supports Photo, Anime, PNG, JPG, WebP. No account needed.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/ai-image-upscaler",
+    "ogTitle": "AI Image Upscaler PRO MAX – Free 4x/8x HD Enhancer",
+    "ogDescription": "Upscale any photo or illustration to stunning HD quality using on-device AI. No uploads, no server — 100% private & offline-capable.",
+    "jsonLdTypes": [
+     "AggregateRating",
+     "Offer",
+     "Organization",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Image Upscaler – Enlarge Photos 4x or 8x | Trusted Tools Web",
+    "h1": "Image Upscaler (4x / 8x)",
+    "description": "Enlarge a low-resolution image 4x or 8x with an in-browser AI model. Model files load from a CDN on first use; your picture is not uploaded.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/ai-image-upscaler"
+   },
+   "primaryKeyword": "image upscaler",
+   "secondaryKeywords": [
+    "enlarge image",
+    "increase image resolution",
+    "AI photo enhancer"
+   ],
+   "longTailIntents": [
+    "upscale image 4x free",
+    "make a small photo bigger without losing quality"
+   ],
+   "searcherType": "photographers, sellers, designers",
+   "related": [
+    "img/image-studio-pro",
+    "img/ai-background-remover",
+    "img/svg-vectorizer-pro",
+    "img/exif-metadata-remover"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Image Tools",
+    "Image Upscaler (4x / 8x)"
+   ]
+  },
+  {
+   "slug": "img/document-scanner-pro",
+   "category": "img",
+   "url": "https://trustedtoolsweb.com/tools/img/document-scanner-pro",
+   "file": "tools/img/document-scanner-pro.html",
+   "before": {
+    "title": "Smart DocuScan ULTRA MAX – Free Online Document Scanner | OCR & PDF Export (2026)",
+    "h1": "Smart DocuScan ULTRA MAX",
+    "description": "Scan documents with your phone or webcam, auto-crop with smart OpenCV edge detection, extract text via Tesseract OCR, and export multi-page PDFs — 100% offline in your browser. The best free CamScanner alternative with zero uploads and zero tracking.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/document-scanner-pro",
+    "ogTitle": "Smart DocuScan ULTRA MAX – Free Offline Document Scanner & OCR Tool",
+    "ogDescription": "Scan, auto-crop, extract text via OCR & export multi-page PDF — entirely in your browser. No uploads. No accounts. Works offline. The best free CamScanner alternative.",
+    "jsonLdTypes": [
+     "Answer",
+     "FAQPage",
+     "ImageObject",
+     "Offer",
+     "Organization",
+     "Person",
+     "Question",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Online Document Scanner – Camera Scan to PDF with OCR",
+    "h1": "Document Scanner with OCR and PDF Export",
+    "description": "Scan paper documents with your phone or webcam, auto-crop edges, extract text with Tesseract OCR and export multi-page PDFs from your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/document-scanner-pro"
+   },
+   "primaryKeyword": "online document scanner",
+   "secondaryKeywords": [
+    "scan to PDF",
+    "document scanner app",
+    "OCR scanner",
+    "photo to text"
+   ],
+   "longTailIntents": [
+    "scan a document with my phone camera",
+    "extract text from a scanned page"
+   ],
+   "searcherType": "students, office workers",
+   "related": [
+    "pdf/image-to-pdf-converter",
+    "pdf/pdf-ocr-signer-pro",
+    "pdf/pdf-compressor-pro",
+    "pdf/pdf-merger-editor"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Image Tools",
+    "Document Scanner with OCR and PDF Export"
+   ]
+  },
+  {
+   "slug": "img/exif-metadata-remover",
+   "category": "img",
+   "url": "https://trustedtoolsweb.com/tools/img/exif-metadata-remover",
+   "file": "tools/img/exif-metadata-remover.html",
+   "before": {
+    "title": "Image EXIF Stripper - Free Metadata Remover & Privacy Guard | Trusted Tools Web",
+    "h1": "EXIF Stripper PRO MAX",
+    "description": "Instantly strip hidden EXIF metadata, GPS location data, camera fingerprints, and device serial numbers from your photos. 100% free, offline, client-side. Batch process images and export as ZIP. Zero upload — nothing ever leaves your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/exif-metadata-remover",
+    "ogTitle": "Image EXIF Stripper PRO MAX — Free GPS & Metadata Remover | Trusted Tools Web",
+    "ogDescription": "Remove hidden GPS coordinates, camera model, device serial number, and all metadata from photos instantly. 100% offline, client-side. Batch export as ZIP. Free forever — no upload required.",
+    "jsonLdTypes": [
+     "AggregateRating",
+     "HowTo",
+     "HowToStep",
+     "Offer",
+     "Organization",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "EXIF Remover – Delete Photo Metadata & GPS Location",
+    "h1": "EXIF Metadata Remover",
+    "description": "View and remove EXIF data such as GPS location, camera model and timestamps from your photos before sharing. Processed locally in your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/exif-metadata-remover"
+   },
+   "primaryKeyword": "EXIF remover",
+   "secondaryKeywords": [
+    "remove metadata from photo",
+    "delete GPS data from image",
+    "EXIF viewer"
+   ],
+   "longTailIntents": [
+    "remove location data from photos",
+    "strip metadata before posting online"
+   ],
+   "searcherType": "privacy-conscious photo sharers",
+   "related": [
+    "img/ai-face-blur-censor",
+    "img/image-studio-pro",
+    "sec/steganography-vault",
+    "sec/ip-address-lookup"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Image Tools",
+    "EXIF Metadata Remover"
+   ]
+  },
+  {
+   "slug": "img/image-studio-pro",
+   "category": "img",
+   "url": "https://trustedtoolsweb.com/tools/img/image-studio-pro",
+   "file": "tools/img/image-studio-pro.html",
+   "before": {
+    "title": "Ultra Image Titanium – Free Secure Image Compressor & HEIC Converter | Trusted Tools Web",
+    "h1": "Ultra Image Titanium",
+    "description": "Compress JPG, PNG, WebP and convert HEIC files entirely in your browser. 100% privacy-focused, client-side image tool — no server uploads, no data leaks. Free, unlimited, and blazing fast.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/image-studio-pro",
+    "ogTitle": "Ultra Image Titanium – Privacy-First Image Compressor & Converter",
+    "ogDescription": "Compress, convert & edit images securely in your browser. 100% client-side privacy. Zero server uploads. Supports JPG, PNG, WebP, HEIC.",
+    "jsonLdTypes": [
+     "Offer",
+     "Organization",
+     "Person",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Image Compressor & HEIC to JPG Converter | Trusted Tools Web",
+    "h1": "Image Compressor & HEIC Converter",
+    "description": "Compress JPG, PNG and WebP, convert HEIC photos and resize images in batches. Files are processed in your browser and are not uploaded.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/image-studio-pro"
+   },
+   "primaryKeyword": "image compressor",
+   "secondaryKeywords": [
+    "compress JPG",
+    "HEIC to JPG",
+    "PNG to WebP",
+    "reduce image size"
+   ],
+   "longTailIntents": [
+    "compress images without losing quality",
+    "convert iphone HEIC photos to JPG"
+   ],
+   "searcherType": "bloggers, sellers, iPhone users",
+   "related": [
+    "pdf/image-to-pdf-converter",
+    "img/ai-image-upscaler",
+    "img/exif-metadata-remover",
+    "img/ai-background-remover",
+    "pdf/pdf-compressor-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Image Tools",
+    "Image Compressor & HEIC Converter"
+   ]
+  },
+  {
+   "slug": "img/meme-generator-studio",
+   "category": "img",
+   "url": "https://trustedtoolsweb.com/tools/img/meme-generator-studio",
+   "file": "tools/img/meme-generator-studio.html",
+   "before": {
+    "title": "Free Meme Generator Online — No Watermark, No Signup | Trusted Tools Web",
+    "h1": "Meme Studio Ultra Pro",
+    "description": "Create viral memes in seconds with Meme Studio Ultra Pro — the most advanced free online meme maker. Multi-layer editor, 6+ templates, HD export (PNG/JPEG/WebP), zero watermarks, 100% client-side private processing. No signup required.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/meme-generator-studio",
+    "ogTitle": "Free Meme Generator — Multi-Layer, No Watermark | Trusted Tools Web",
+    "ogDescription": "Build viral memes instantly. Multi-layer canvas engine, 6 templates, HD export, 100% private — no server uploads ever.",
+    "jsonLdTypes": [
+     "Offer",
+     "Organization",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Meme Generator – Create Memes Online, No Watermark",
+    "h1": "Meme Generator",
+    "description": "Make memes with a multi-layer editor, built-in templates or your own image, and export PNG or JPG without a watermark.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/meme-generator-studio"
+   },
+   "primaryKeyword": "meme generator",
+   "secondaryKeywords": [
+    "meme maker",
+    "make a meme online",
+    "meme editor"
+   ],
+   "longTailIntents": [
+    "create a meme with my own picture",
+    "meme generator no watermark"
+   ],
+   "searcherType": "social media users, creators",
+   "related": [
+    "img/image-studio-pro",
+    "text/fancy-font-generator",
+    "img/3d-device-mockup-studio",
+    "img/ai-background-remover"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Image Tools",
+    "Meme Generator"
+   ]
+  },
+  {
+   "slug": "img/qr-code-generator-pro",
+   "category": "img",
+   "url": "https://trustedtoolsweb.com/tools/img/qr-code-generator-pro",
+   "file": "tools/img/qr-code-generator-pro.html",
+   "before": {
+    "title": "QR Code Ultra Pro Max | Secure, Free & Privacy-First Generator 2026",
+    "h1": "QR Ultra Pro Max",
+    "description": "Generate 100% secure, high-resolution QR codes instantly — no sign-up required. Supports Logo, Custom Colors, WiFi, vCard 3.0, Crypto, WhatsApp & more. 100% Client-Side processing: your data never leaves your device.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/qr-code-generator-pro",
+    "ogTitle": "QR Code Ultra Pro Max — 100% Secure & Free Generator",
+    "ogDescription": "Create professional QR codes with logos, gradients and frames. Your data never leaves your browser (Client-Side Privacy). Supports WiFi, vCard, Crypto, WhatsApp & more. Try it now — free forever!",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "QR Code Generator – WiFi, vCard, URL & More | Trusted Tools Web",
+    "h1": "QR Code Generator",
+    "description": "Create QR codes for links, WiFi, contacts (vCard), WhatsApp, crypto and more, with custom colours and an optional logo. Download as PNG or SVG.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/qr-code-generator-pro"
+   },
+   "primaryKeyword": "QR code generator",
+   "secondaryKeywords": [
+    "WiFi QR code",
+    "vCard QR code",
+    "QR code with logo",
+    "WhatsApp QR code"
+   ],
+   "longTailIntents": [
+    "make a qr code for my wifi",
+    "qr code with logo free"
+   ],
+   "searcherType": "business owners, event organisers",
+   "related": [
+    "seo/link-shortener-pro",
+    "img/image-studio-pro",
+    "seo/favicon-generator-pro",
+    "sec/password-generator-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Image Tools",
+    "QR Code Generator"
+   ]
+  },
+  {
+   "slug": "img/svg-vectorizer-pro",
+   "category": "img",
+   "url": "https://trustedtoolsweb.com/tools/img/svg-vectorizer-pro",
+   "file": "tools/img/svg-vectorizer-pro.html",
+   "before": {
+    "title": "SVG Vectorizer ULTRA MAX – Free PNG to SVG Converter | React & Flutter Code Generator",
+    "h1": "SVG Vectorizer ULTRA MAX",
+    "description": "Convert PNG and JPG images to crisp SVG vectors 100% client-side. Advanced raster-to-vector engine with React JSX export, Flutter CustomPaint code, SVG minifier, layer inspector, and batch ZIP export. No uploads. No server. Pure privacy.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/svg-vectorizer-pro",
+    "ogTitle": "SVG Vectorizer ULTRA MAX – Free PNG to SVG Converter | React & Flutter Code Generator",
+    "ogDescription": "Convert PNG/JPG to SVG instantly in your browser. Export React JSX, Flutter code, minify, inspect layers & batch export ZIP — zero server, 100% private.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "SoftwareApplication",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "PNG to SVG Converter – Image Vectorizer | Trusted Tools Web",
+    "h1": "PNG & JPG to SVG Converter",
+    "description": "Trace PNG or JPG images into SVG vectors and export SVG, React JSX or Flutter code. Conversion runs in your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/svg-vectorizer-pro"
+   },
+   "primaryKeyword": "PNG to SVG",
+   "secondaryKeywords": [
+    "image vectorizer",
+    "JPG to SVG",
+    "raster to vector",
+    "SVG to React"
+   ],
+   "longTailIntents": [
+    "convert logo png to svg",
+    "vectorize image online free"
+   ],
+   "searcherType": "designers, front-end developers",
+   "related": [
+    "img/image-studio-pro",
+    "seo/favicon-generator-pro",
+    "img/ai-background-remover",
+    "img/ai-image-upscaler"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Image Tools",
+    "PNG & JPG to SVG Converter"
+   ]
+  },
+  {
+   "slug": "img/youtube-thumbnail-downloader",
+   "category": "img",
+   "url": "https://trustedtoolsweb.com/tools/img/youtube-thumbnail-downloader",
+   "file": "tools/img/youtube-thumbnail-downloader.html",
+   "before": {
+    "title": "YouTube Thumbnail Downloader 4K & Live Editor (Free) | Trusted Tools Web",
+    "h1": "Thumbnail Ultra Pro",
+    "description": "Download YouTube Thumbnails in 4K, HD & HQ instantly — free, secure, and 100% client-side. Live editor lets you adjust brightness, contrast, borders & add a play button overlay. Export as JPG, PNG, or WebP. No sign-up, no server upload.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/youtube-thumbnail-downloader",
+    "ogTitle": "YouTube Thumbnail Downloader 4K & Live Editor — Thumbnail Ultra Pro",
+    "ogDescription": "Grab & edit YouTube thumbnails in 4K instantly. Adjust rounded corners, borders & colors before downloading. 100% Client-Side — no server uploads, no tracking.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "YouTube Thumbnail Downloader – HD & 4K Image | Trusted Tools Web",
+    "h1": "YouTube Thumbnail Downloader",
+    "description": "Paste a YouTube link to download its thumbnail in available sizes, then adjust brightness, contrast or borders in a small editor. Only for videos you may use.",
+    "canonical": "https://trustedtoolsweb.com/tools/img/youtube-thumbnail-downloader"
+   },
+   "primaryKeyword": "YouTube thumbnail downloader",
+   "secondaryKeywords": [
+    "download YouTube thumbnail",
+    "YouTube thumbnail grabber",
+    "video thumbnail HD"
+   ],
+   "longTailIntents": [
+    "get thumbnail image from youtube link",
+    "youtube thumbnail 1080p"
+   ],
+   "searcherType": "content creators, designers",
+   "related": [
+    "img/image-studio-pro",
+    "img/meme-generator-studio",
+    "seo/hashtag-generator-pro",
+    "seo/meta-tag-generator"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Image Tools",
+    "YouTube Thumbnail Downloader"
+   ]
+  },
+  {
+   "slug": "media/audio-studio-pro",
+   "category": "media",
+   "url": "https://trustedtoolsweb.com/tools/media/audio-studio-pro",
+   "file": "tools/media/audio-studio-pro.html",
+   "before": {
+    "title": "Ultra Studio Pro Max — Free Online Audio Editor, 8D Converter & MP3/WAV Mastering Suite",
+    "h1": "Ultra Studio Pro Max AI",
+    "description": "Ultra Studio Pro Max is a professional browser-based audio workstation. Trim, master, and export audio with 8D panning, Bass Boost, EQ, Voice FX, and Studio-quality MP3 320kbps or lossless WAV export. 100% client-side — your files never leave your device.",
+    "canonical": "https://trustedtoolsweb.com/tools/media/audio-studio-pro",
+    "ogTitle": "Ultra Studio Pro Max — Professional Online Audio Editor & AI Mastering",
+    "ogDescription": "Professional Audio Editing Suite in your browser. 8D Audio, Bass Boost, 3-Band EQ, Voice FX & 320kbps MP3 / Lossless WAV Rendering. Secure & 100% Private.",
+    "jsonLdTypes": [
+     "AggregateRating",
+     "Offer",
+     "Organization",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Online Audio Editor – Trim, EQ, Bass Boost & 8D",
+    "h1": "Online Audio Editor and Effects",
+    "description": "Trim audio, apply EQ, bass boost, voice effects and 8D panning, then export MP3 or WAV. Editing happens in your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/media/audio-studio-pro"
+   },
+   "primaryKeyword": "online audio editor",
+   "secondaryKeywords": [
+    "audio trimmer",
+    "8D audio converter",
+    "bass booster",
+    "MP3 cutter"
+   ],
+   "longTailIntents": [
+    "cut an mp3 online",
+    "make 8d audio from a song"
+   ],
+   "searcherType": "podcasters, musicians, students",
+   "related": [
+    "media/video-studio-pro",
+    "media/tone-frequency-generator",
+    "text/text-to-speech-studio",
+    "media/screen-recorder-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Audio & Video Tools",
+    "Online Audio Editor and Effects"
+   ]
+  },
+  {
+   "slug": "media/screen-recorder-pro",
+   "category": "media",
+   "url": "https://trustedtoolsweb.com/tools/media/screen-recorder-pro",
+   "file": "tools/media/screen-recorder-pro.html",
+   "before": {
+    "title": "Screen Recorder Ultra Pro — Free 4K Capture, No Watermark | TrustedTools",
+    "h1": "Screen Recorder Ultra Pro",
+    "description": "Record your screen in 4K with Facecam, system audio & live drawing tools — entirely in your browser. No download, no watermark, no time limit. 100% client-side privacy.",
+    "canonical": "https://trustedtoolsweb.com/tools/media/screen-recorder-pro",
+    "ogTitle": "Screen Recorder Ultra Pro — Record 4K Video Free, No Watermark",
+    "ogDescription": "Record your screen in 4K with Facecam, live drawing, and audio mixing. Zero watermark. 100% client-side privacy. Trusted Tools Web.",
+    "jsonLdTypes": [
+     "AggregateRating",
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Screen Recorder – Record Screen, Webcam & Audio",
+    "h1": "Online Screen Recorder",
+    "description": "Record your screen, window or tab with webcam overlay and audio, draw while recording and save the video. No watermark. Uses your browser’s capture API.",
+    "canonical": "https://trustedtoolsweb.com/tools/media/screen-recorder-pro"
+   },
+   "primaryKeyword": "online screen recorder",
+   "secondaryKeywords": [
+    "record screen with audio",
+    "webcam recorder",
+    "screen capture no watermark"
+   ],
+   "longTailIntents": [
+    "record my screen in the browser",
+    "screen recording with facecam"
+   ],
+   "searcherType": "teachers, support teams, gamers",
+   "related": [
+    "media/video-studio-pro",
+    "media/audio-studio-pro",
+    "img/image-studio-pro",
+    "dev/internet-speed-test"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Audio & Video Tools",
+    "Online Screen Recorder"
+   ]
+  },
+  {
+   "slug": "media/tone-frequency-generator",
+   "category": "media",
+   "url": "https://trustedtoolsweb.com/tools/media/tone-frequency-generator",
+   "file": "tools/media/tone-frequency-generator.html",
+   "before": {
+    "title": "Free Online Frequency Generator – Tone, Binaural Beats & Water Eject | Trusted Tools Web",
+    "h1": "Frequency Gen Ultra Max",
+    "description": "Generate any frequency from 1 Hz to 22 kHz instantly — free, online, no install. Fix water-damaged phone speakers, test subwoofers with sweeps, create binaural beats for focus & sleep, and record noise in your browser. Powered by Web Audio API.",
+    "canonical": "https://trustedtoolsweb.com/tools/media/tone-frequency-generator",
+    "ogTitle": "Free Frequency Generator — Tone, Binaural Beats & Water Eject | Trusted Tools Web",
+    "ogDescription": "The ultimate browser audio tool. Eject water from phone speakers, test audio gear, generate meditation frequencies, and record sound — all 100% client-side. Free & Secure.",
+    "jsonLdTypes": [
+     "Offer",
+     "Organization",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Online Tone & Frequency Generator – 1 Hz to 22 kHz",
+    "h1": "Online Tone & Frequency Generator",
+    "description": "Play sine, square, sawtooth and triangle tones from 1 Hz to 22 kHz, sweeps and binaural beats, plus a speaker water-eject tone. Use at low volume.",
+    "canonical": "https://trustedtoolsweb.com/tools/media/tone-frequency-generator"
+   },
+   "primaryKeyword": "frequency generator",
+   "secondaryKeywords": [
+    "tone generator",
+    "binaural beats generator",
+    "speaker water eject sound",
+    "sine wave generator"
+   ],
+   "longTailIntents": [
+    "play 440 hz tone",
+    "test speaker frequency response"
+   ],
+   "searcherType": "audio hobbyists, phone owners",
+   "related": [
+    "media/audio-studio-pro",
+    "tool/focus-timer-pomodoro",
+    "text/text-to-speech-studio",
+    "media/video-studio-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Audio & Video Tools",
+    "Online Tone & Frequency Generator"
+   ]
+  },
+  {
+   "slug": "media/video-studio-pro",
+   "category": "media",
+   "url": "https://trustedtoolsweb.com/tools/media/video-studio-pro",
+   "file": "tools/media/video-studio-pro.html",
+   "before": {
+    "title": "WASM Video Studio Pro — Free Offline Video Compressor, Trimmer & GIF Maker | Trusted Tools Web",
+    "h1": "WASM Video Studio Pro",
+    "description": "Process videos 100% locally in your browser with zero uploads. Compress MP4, Trim clips, Create GIFs, and Extract Audio — all powered by FFmpeg WebAssembly. Completely free, secure & private.",
+    "canonical": "https://trustedtoolsweb.com/tools/media/video-studio-pro",
+    "ogTitle": "WASM Video Studio Pro — Free Offline Video Editor | Trusted Tools Web",
+    "ogDescription": "Compress, Trim, GIF, Extract Audio — 100% offline in your browser. Zero uploads, zero privacy risk. Powered by FFmpeg WebAssembly.",
+    "jsonLdTypes": [
+     "HowTo",
+     "HowToStep",
+     "Offer",
+     "Organization",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Video Compressor, Trimmer & GIF Maker in Your Browser",
+    "h1": "Video Compressor, Trimmer & GIF Maker",
+    "description": "Compress MP4, trim clips, make GIFs and extract audio using FFmpeg WebAssembly. Videos are processed locally; the FFmpeg engine loads on first use.",
+    "canonical": "https://trustedtoolsweb.com/tools/media/video-studio-pro"
+   },
+   "primaryKeyword": "video compressor",
+   "secondaryKeywords": [
+    "trim video online",
+    "video to GIF",
+    "extract audio from video",
+    "compress MP4"
+   ],
+   "longTailIntents": [
+    "reduce mp4 file size online",
+    "cut a video clip without uploading"
+   ],
+   "searcherType": "creators, students, social media users",
+   "related": [
+    "media/audio-studio-pro",
+    "media/screen-recorder-pro",
+    "img/image-studio-pro",
+    "pdf/pdf-compressor-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Audio & Video Tools",
+    "Video Compressor, Trimmer & GIF Maker"
+   ]
+  },
+  {
+   "slug": "pdf/image-to-pdf-converter",
+   "category": "pdf",
+   "url": "https://trustedtoolsweb.com/tools/pdf/image-to-pdf-converter",
+   "file": "tools/pdf/image-to-pdf-converter.html",
+   "before": {
+    "title": "Image to PDF Converter — Free, Secure & Instant | Trusted Tools Web",
+    "h1": "Image to PDF STUDIO",
+    "description": "Convert JPG, PNG, and HEIC images to PDF instantly in your browser — 100% free, no upload, no account. Drag & drop support, batch processing, image editor & compression. 100% client-side privacy.",
+    "canonical": "https://trustedtoolsweb.com/tools/pdf/image-to-pdf-converter",
+    "ogTitle": "Image to PDF Converter — Free, Secure & Instant",
+    "ogDescription": "Convert photos to PDF directly in your browser. No server uploads, 100% privacy guaranteed. Supports JPG, PNG & HEIC with drag & drop and batch processing.",
+    "jsonLdTypes": [
+     "Offer",
+     "Organization",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Image to PDF Converter – JPG, PNG & HEIC to PDF",
+    "h1": "Image to PDF Converter",
+    "description": "Combine JPG, PNG or HEIC images into one PDF. Reorder pages, rotate, set page size and quality, all in your browser without uploading files.",
+    "canonical": "https://trustedtoolsweb.com/tools/pdf/image-to-pdf-converter"
+   },
+   "primaryKeyword": "image to PDF",
+   "secondaryKeywords": [
+    "JPG to PDF",
+    "PNG to PDF",
+    "photos to PDF",
+    "HEIC to PDF"
+   ],
+   "longTailIntents": [
+    "combine multiple images into one pdf",
+    "convert photos to pdf online"
+   ],
+   "searcherType": "students, office workers",
+   "related": [
+    "pdf/pdf-compressor-pro",
+    "pdf/pdf-merger-editor",
+    "img/document-scanner-pro",
+    "img/image-studio-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "PDF Tools",
+    "Image to PDF Converter"
+   ]
+  },
+  {
+   "slug": "pdf/pdf-compressor-pro",
+   "category": "pdf",
+   "url": "https://trustedtoolsweb.com/tools/pdf/pdf-compressor-pro",
+   "file": "tools/pdf/pdf-compressor-pro.html",
+   "before": {
+    "title": "PDF Compressor — Reduce PDF Size Online Free (100% Client-Side) | Trusted Tools Web",
+    "h1": "PDF Compress TITANIUM",
+    "description": "Compress PDF files securely in your browser with zero server uploads. Reduce file size up to 90% instantly. Supports all PDFs — free, private, and unlimited.",
+    "canonical": "https://trustedtoolsweb.com/tools/pdf/pdf-compressor-pro",
+    "ogTitle": "PDF Compress TITANIUM — Ultra-Secure, Client-Side PDF Optimizer",
+    "ogDescription": "Shrink your PDF files instantly in-browser. No server upload. No data leaks. 100% Client-Side Processing. Unlimited & free.",
+    "jsonLdTypes": [
+     "AggregateRating",
+     "Offer",
+     "Organization",
+     "Person",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "PDF Compressor – Reduce PDF File Size Online | Trusted Tools Web",
+    "h1": "PDF Compressor",
+    "description": "Reduce the size of a PDF for email or upload forms. Compression runs in your browser and the file is not sent to a server. Savings vary by file.",
+    "canonical": "https://trustedtoolsweb.com/tools/pdf/pdf-compressor-pro"
+   },
+   "primaryKeyword": "compress PDF",
+   "secondaryKeywords": [
+    "reduce PDF size",
+    "PDF size reducer",
+    "shrink PDF"
+   ],
+   "longTailIntents": [
+    "compress pdf to under 1mb",
+    "make pdf smaller for email"
+   ],
+   "searcherType": "job applicants, students",
+   "related": [
+    "pdf/pdf-merger-editor",
+    "pdf/image-to-pdf-converter",
+    "img/document-scanner-pro",
+    "img/image-studio-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "PDF Tools",
+    "PDF Compressor"
+   ]
+  },
+  {
+   "slug": "pdf/pdf-merger-editor",
+   "category": "pdf",
+   "url": "https://trustedtoolsweb.com/tools/pdf/pdf-merger-editor",
+   "file": "tools/pdf/pdf-merger-editor.html",
+   "before": {
+    "title": "Ultra PDF AI: God Mode PDF Editor, Merger & Organizer — 100% Private, Browser-Based",
+    "h1": "Merge, Edit & Organize PDFs",
+    "description": "Merge, reorder, rotate, and edit PDFs entirely in your browser with Ultra PDF AI. 100% client-side privacy — your files never leave your device. Mix PDFs with JPG/PNG images, add blank pages, and download instantly. No uploads, no accounts.",
+    "canonical": "https://trustedtoolsweb.com/tools/pdf/pdf-merger-editor",
+    "ogTitle": "Ultra PDF AI: God Mode PDF Editor & Merger — 100% Private",
+    "ogDescription": "Merge, reorder, and edit PDF pages visually in your browser. 100% secure — no server uploads, no sign-up required.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Merge PDF Files – Combine, Reorder & Rotate Pages",
+    "h1": "Merge, Reorder & Edit PDF Pages",
+    "description": "Combine several PDFs into one, reorder, rotate and delete pages and mix in images. Everything is done in your browser, so files stay on your device.",
+    "canonical": "https://trustedtoolsweb.com/tools/pdf/pdf-merger-editor"
+   },
+   "primaryKeyword": "merge PDF",
+   "secondaryKeywords": [
+    "combine PDF files",
+    "reorder PDF pages",
+    "rotate PDF",
+    "PDF page organizer"
+   ],
+   "longTailIntents": [
+    "merge pdf files into one",
+    "delete pages from a pdf"
+   ],
+   "searcherType": "office workers, students",
+   "related": [
+    "pdf/pdf-compressor-pro",
+    "pdf/image-to-pdf-converter",
+    "pdf/pdf-ocr-signer-pro",
+    "img/document-scanner-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "PDF Tools",
+    "Merge, Reorder & Edit PDF Pages"
+   ]
+  },
+  {
+   "slug": "pdf/pdf-ocr-signer-pro",
+   "category": "pdf",
+   "url": "https://trustedtoolsweb.com/tools/pdf/pdf-ocr-signer-pro",
+   "file": "tools/pdf/pdf-ocr-signer-pro.html",
+   "before": {
+    "title": "DocuSign OCR Studio — Free Offline PDF Signer, WebAssembly OCR & SHA-256 Tamper-Proof Signing | Trusted Tools Web",
+    "h1": "DocuSign OCR Studio",
+    "description": "100% client-side PDF OCR, e-signature & tamper-proof signing studio. Draw handwritten signatures with Bezier curves, extract text via Tesseract.js WebAssembly OCR, apply SHA-256 cryptographic seals, and flatten PDFs — all offline, zero server upload, absolutely private. Free forever.",
+    "canonical": "https://trustedtoolsweb.com/tools/pdf/pdf-ocr-signer-pro",
+    "ogTitle": "DocuSign OCR Studio — Free Offline PDF Signer, OCR & SHA-256 Tamper-Proof Tool",
+    "ogDescription": "Enterprise-grade PDF signing, WebAssembly OCR text extraction, and SHA-256 tamper-proofing — 100% offline, zero server, absolute privacy. Free forever on Trusted Tools Web.",
+    "jsonLdTypes": [
+     "Answer",
+     "FAQPage",
+     "HowTo",
+     "HowToStep",
+     "HowToTool",
+     "MonetaryAmount",
+     "Offer",
+     "Organization",
+     "Question",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Sign PDF Online & Extract Text with OCR | Trusted Tools Web",
+    "h1": "Sign PDF and Extract Text with OCR",
+    "description": "Draw a signature on a PDF, run Tesseract OCR to extract text, and add a SHA-256 fingerprint to check the file has not changed. Runs in your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/pdf/pdf-ocr-signer-pro"
+   },
+   "primaryKeyword": "sign PDF online",
+   "secondaryKeywords": [
+    "PDF OCR",
+    "PDF to text",
+    "draw signature on PDF",
+    "PDF hash checker"
+   ],
+   "longTailIntents": [
+    "sign a pdf without printing",
+    "extract text from scanned pdf"
+   ],
+   "searcherType": "freelancers, office workers",
+   "related": [
+    "pdf/pdf-merger-editor",
+    "pdf/pdf-compressor-pro",
+    "img/document-scanner-pro",
+    "sec/file-encryptor-aes256"
+   ],
+   "breadcrumb": [
+    "Home",
+    "PDF Tools",
+    "Sign PDF and Extract Text with OCR"
+   ]
+  },
+  {
+   "slug": "sec/2fa-authenticator-pro",
+   "category": "sec",
+   "url": "https://trustedtoolsweb.com/tools/sec/2fa-authenticator-pro",
+   "file": "tools/sec/2fa-authenticator-pro.html",
+   "before": {
+    "title": "Titan Authenticator Pro — Free Offline 2FA TOTP Generator | Trusted Tools Web",
+    "h1": "Titan Auth Pro",
+    "description": "Generate secure 2FA TOTP codes 100% offline in your browser. Titan Authenticator Pro uses military-grade AES-256 + PBKDF2 encryption. No cloud sync, no sign-up, zero data leaks. Free forever.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/2fa-authenticator-pro",
+    "ogTitle": "Titan Authenticator Pro — Military-Grade Offline 2FA Vault",
+    "ogDescription": "Generate 2FA TOTP codes offline in your browser. AES-256 encrypted. No cloud, no leaks. Secure your accounts now — completely free.",
+    "jsonLdTypes": [
+     "Offer",
+     "Organization",
+     "Person",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "2FA Authenticator – Generate TOTP Codes Online",
+    "h1": "2FA TOTP Authenticator",
+    "description": "Generate time-based one-time passwords (TOTP) from a secret key or QR, with an AES-256 encrypted local vault. Keep a backup: there is no cloud sync.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/2fa-authenticator-pro"
+   },
+   "primaryKeyword": "2FA authenticator",
+   "secondaryKeywords": [
+    "TOTP generator",
+    "authenticator code online",
+    "2FA code generator"
+   ],
+   "longTailIntents": [
+    "generate 2fa code from secret key",
+    "totp online"
+   ],
+   "searcherType": "developers, power users",
+   "related": [
+    "sec/password-generator-pro",
+    "sec/file-encryptor-aes256",
+    "sec/steganography-vault",
+    "sec/p2p-secure-file-share"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Security & Privacy Tools",
+    "2FA TOTP Authenticator"
+   ]
+  },
+  {
+   "slug": "sec/file-encryptor-aes256",
+   "category": "sec",
+   "url": "https://trustedtoolsweb.com/tools/sec/file-encryptor-aes256",
+   "file": "tools/sec/file-encryptor-aes256.html",
+   "before": {
+    "title": "Data Vault ULTRA MAX: AES-256 File Encryptor & Decryptor (Offline, Zero-Knowledge)",
+    "h1": "Data Vault ULTRA MAX",
+    "description": "Encrypt and decrypt any file with military-grade AES-256 encryption, 100% offline in your browser. Features Decoy Vault (plausible deniability), zero-knowledge architecture, and a real-password vs fake-password dual-vault system. No file ever leaves your device.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/file-encryptor-aes256",
+    "ogTitle": "Data Vault ULTRA MAX — AES-256 File Encryptor (Offline)",
+    "ogDescription": "Military-grade AES-256 file encryption, offline and zero-knowledge. Unique Decoy Vault feature for plausible deniability. No file ever uploads to a server.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "File Encryptor – AES-256 Encrypt & Decrypt Files",
+    "h1": "File Encryptor (AES-256)",
+    "description": "Encrypt and decrypt files with AES-256 using the Web Crypto API, with an optional decoy vault. If you forget the password, the file cannot be recovered.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/file-encryptor-aes256"
+   },
+   "primaryKeyword": "encrypt file online",
+   "secondaryKeywords": [
+    "AES-256 file encryption",
+    "password protect a file",
+    "file decryptor"
+   ],
+   "longTailIntents": [
+    "encrypt a file with a password in browser",
+    "decrypt aes file online"
+   ],
+   "searcherType": "privacy-conscious users",
+   "related": [
+    "sec/password-generator-pro",
+    "sec/steganography-vault",
+    "sec/p2p-secure-file-share",
+    "dev/code-encoder-decoder"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Security & Privacy Tools",
+    "File Encryptor (AES-256)"
+   ]
+  },
+  {
+   "slug": "sec/ip-address-lookup",
+   "category": "sec",
+   "url": "https://trustedtoolsweb.com/tools/sec/ip-address-lookup",
+   "file": "tools/sec/ip-address-lookup.html",
+   "before": {
+    "title": "My IP, WebRTC Leak & Advanced Device Security Audit | Trusted Tools",
+    "h1": "Cyber Intelligence",
+    "description": "Free advanced cyber security tool. Check your IP address, detect WebRTC leaks, analyze browser fingerprints, test network latency, and audit device hardware privacy instantly.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/ip-address-lookup",
+    "ogTitle": "Cyber Intelligence Elite - Check Your Digital Footprint",
+    "ogDescription": "Is your VPN leaking? Check your IP, WebRTC status, and unique Browser Fingerprint instantly with this advanced forensic tool.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "What Is My IP Address? WebRTC Leak & Browser Check",
+    "h1": "My IP Address, WebRTC Leak & Browser Check",
+    "description": "See your public IP address, check for WebRTC leaks and review browser fingerprint details. Requires an internet connection and third-party lookups.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/ip-address-lookup"
+   },
+   "primaryKeyword": "what is my IP address",
+   "secondaryKeywords": [
+    "WebRTC leak test",
+    "browser fingerprint test",
+    "IP lookup"
+   ],
+   "longTailIntents": [
+    "check if my vpn leaks my ip",
+    "see what websites can learn about my browser"
+   ],
+   "searcherType": "VPN users, privacy-curious users",
+   "related": [
+    "dev/internet-speed-test",
+    "sec/password-generator-pro",
+    "img/exif-metadata-remover",
+    "sec/2fa-authenticator-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Security & Privacy Tools",
+    "My IP Address, WebRTC Leak & Browser Check"
+   ]
+  },
+  {
+   "slug": "sec/js-code-obfuscator",
+   "category": "sec",
+   "url": "https://trustedtoolsweb.com/tools/sec/js-code-obfuscator",
+   "file": "tools/sec/js-code-obfuscator.html",
+   "before": {
+    "title": "JS Code Armor — Free JavaScript Obfuscator & Code Protector | Trusted Tools Web",
+    "h1": "JS Code Armor",
+    "description": "Protect your JavaScript source code with military-grade obfuscation. Control Flow Flattening, String Encryption, Anti-Debugging, JS Time-Bomb expiry logic, and unique Image Steganography (hide JS inside PNG). 100% Free, Secure & 100% Client-Side Processing.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/js-code-obfuscator",
+    "ogTitle": "JS Code Armor — JavaScript Obfuscator & Protector | Trusted Tools Web",
+    "ogDescription": "Military-grade JS obfuscation with God Mode: Time-Bomb expiry & Image Steganography. 100% Client-Side. Free Forever. No upload, no server, no risk.",
+    "jsonLdTypes": [
+     "HowTo",
+     "HowToStep",
+     "Offer",
+     "Organization",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "JavaScript Obfuscator – Protect Source Code Online",
+    "h1": "JavaScript Obfuscator",
+    "description": "Obfuscate JavaScript with control-flow flattening, string encryption and anti-debugging options. Obfuscation makes code harder to read but is not encryption.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/js-code-obfuscator"
+   },
+   "primaryKeyword": "JavaScript obfuscator",
+   "secondaryKeywords": [
+    "obfuscate JS online",
+    "code protector",
+    "control flow flattening"
+   ],
+   "longTailIntents": [
+    "obfuscate javascript code free",
+    "make js code hard to read"
+   ],
+   "searcherType": "front-end developers",
+   "related": [
+    "dev/web-sandbox-studio",
+    "dev/code-encoder-decoder",
+    "dev/json-formatter-validator",
+    "text/diff-checker-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Security & Privacy Tools",
+    "JavaScript Obfuscator"
+   ]
+  },
+  {
+   "slug": "sec/p2p-secure-file-share",
+   "category": "sec",
+   "url": "https://trustedtoolsweb.com/tools/sec/p2p-secure-file-share",
+   "file": "tools/sec/p2p-secure-file-share.html",
+   "before": {
+    "title": "P2P Share Vault ULTRA – Encrypted WebRTC File Transfer, Zero Server | Trusted Tools Web",
+    "h1": "P2P Share Vault ULTRA",
+    "description": "Transfer files securely between devices with zero servers using WebRTC P2P technology. AES-256 encrypted, QR code pairing, large file chunking & folder ZIP support. 100% browser-based — no uploads, no cloud, no account required.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/p2p-secure-file-share",
+    "ogTitle": "P2P Share Vault ULTRA – Zero-Server Encrypted File Transfer",
+    "ogDescription": "Send files directly between browsers with military-grade AES-256 encryption. No servers. No uploads. Pure WebRTC peer-to-peer. QR code pairing supported.",
+    "jsonLdTypes": [
+     "Offer",
+     "Organization",
+     "Person",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "P2P File Transfer – Send Files with WebRTC | Trusted Tools Web",
+    "h1": "P2P File Transfer with WebRTC",
+    "description": "Send files directly between two devices over WebRTC with AES-256 encryption. Devices pair by exchanging connection codes, so no file passes through a server.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/p2p-secure-file-share"
+   },
+   "primaryKeyword": "P2P file sharing",
+   "secondaryKeywords": [
+    "WebRTC file transfer",
+    "send large files",
+    "share files between devices"
+   ],
+   "longTailIntents": [
+    "transfer files phone to pc in browser",
+    "send file without uploading to server"
+   ],
+   "searcherType": "users moving files between devices",
+   "related": [
+    "sec/file-encryptor-aes256",
+    "sec/password-generator-pro",
+    "sec/steganography-vault",
+    "img/qr-code-generator-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Security & Privacy Tools",
+    "P2P File Transfer with WebRTC"
+   ]
+  },
+  {
+   "slug": "sec/password-generator-pro",
+   "category": "sec",
+   "url": "https://trustedtoolsweb.com/tools/sec/password-generator-pro",
+   "file": "tools/sec/password-generator-pro.html",
+   "before": {
+    "title": "Strong Password Generator (2026) — Military-Grade Security | Trusted Tools Web",
+    "h1": "Password Ultra Pro Max",
+    "description": "Generate unhackable, high-entropy passwords instantly using CSPRNG (Web Crypto API). 100% client-side — no server storage, no tracking. NIST 800-63B compliant. Free forever by Trusted Tools Web.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/password-generator-pro",
+    "ogTitle": "Strong Password Generator — Military-Grade Security | Trusted Tools Web",
+    "ogDescription": "Create military-grade secure passwords instantly with 100% client-side CSPRNG privacy. No server storage. Protect your accounts today.",
+    "jsonLdTypes": [
+     "Answer",
+     "BreadcrumbList",
+     "FAQPage",
+     "ListItem",
+     "Offer",
+     "Person",
+     "Question",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Password Generator – Strong Random Passwords | Trusted Tools Web",
+    "h1": "Strong Password Generator",
+    "description": "Create random passwords with adjustable length and character sets using the browser’s cryptographic random generator. Nothing is sent or stored.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/password-generator-pro"
+   },
+   "primaryKeyword": "password generator",
+   "secondaryKeywords": [
+    "strong password generator",
+    "random password",
+    "passphrase generator"
+   ],
+   "longTailIntents": [
+    "generate a 16 character password",
+    "how strong is my password"
+   ],
+   "searcherType": "everyday users",
+   "related": [
+    "sec/2fa-authenticator-pro",
+    "sec/file-encryptor-aes256",
+    "sec/steganography-vault",
+    "sec/p2p-secure-file-share"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Security & Privacy Tools",
+    "Strong Password Generator"
+   ]
+  },
+  {
+   "slug": "sec/steganography-vault",
+   "category": "sec",
+   "url": "https://trustedtoolsweb.com/tools/sec/steganography-vault",
+   "file": "tools/sec/steganography-vault.html",
+   "before": {
+    "title": "Stegano Vault ULTRA MAX — AES-256 Image Steganography & Text Hiding Tool | Trusted Tools Web",
+    "h1": "Stegano Vault ULTRA MAX",
+    "description": "Hide encrypted secret messages inside any image using military-grade AES-256 encryption + LSB steganography. 100% client-side, offline-ready. No server, no data leaks. The most advanced free image steganography tool online.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/steganography-vault",
+    "ogTitle": "Stegano Vault ULTRA MAX — Hide Encrypted Secrets Inside Images",
+    "ogDescription": "Military-grade AES-256 encryption meets LSB image steganography. Hide any text inside a PNG pixel-perfectly. 100% client-side & free forever.",
+    "jsonLdTypes": [
+     "HowTo",
+     "HowToStep",
+     "Offer",
+     "Organization",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Image Steganography – Hide Encrypted Text in a Picture",
+    "h1": "Image Steganography: Hide a Message in a Picture",
+    "description": "Hide a message inside an image with LSB steganography and optional AES-256 encryption, and extract it later. Use lossless PNG; JPEG recompression can destroy it.",
+    "canonical": "https://trustedtoolsweb.com/tools/sec/steganography-vault"
+   },
+   "primaryKeyword": "image steganography",
+   "secondaryKeywords": [
+    "hide text in image",
+    "steganography online",
+    "LSB steganography"
+   ],
+   "longTailIntents": [
+    "hide a secret message in a png",
+    "extract hidden message from image"
+   ],
+   "searcherType": "students, privacy enthusiasts",
+   "related": [
+    "sec/file-encryptor-aes256",
+    "sec/password-generator-pro",
+    "img/exif-metadata-remover",
+    "sec/p2p-secure-file-share"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Security & Privacy Tools",
+    "Image Steganography: Hide a Message in a Picture"
+   ]
+  },
+  {
+   "slug": "seo/favicon-generator-pro",
+   "category": "seo",
+   "url": "https://trustedtoolsweb.com/tools/seo/favicon-generator-pro",
+   "file": "tools/seo/favicon-generator-pro.html",
+   "before": {
+    "title": "Favicon Generator 2026: Create ICO, PNG & PWA Manifest Free | Trusted Tools Web",
+    "h1": "Favicon X Ultra Pro",
+    "description": "Generate pixel-perfect Favicons (ICO, PNG) and PWA Manifest files instantly. The best free online Favicon Generator 2026. 100% Client-Side, Secure, Fast & SEO-optimized for Google Search Results.",
+    "canonical": "https://trustedtoolsweb.com/tools/seo/favicon-generator-pro",
+    "ogTitle": "Favicon X Ultra Pro – Best Free Favicon Generator 2026",
+    "ogDescription": "Create professional Favicons and App Icons instantly. 100% Client-side privacy. Download ICO, PNG & PWA Manifest files in one click.",
+    "jsonLdTypes": [
+     "AggregateRating",
+     "Offer",
+     "Organization",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Favicon Generator – Create ICO, PNG & Manifest Icons",
+    "h1": "Favicon Generator",
+    "description": "Turn an image into favicon.ico and PNG icon sizes plus a web manifest. Created in your browser and ready to download.",
+    "canonical": "https://trustedtoolsweb.com/tools/seo/favicon-generator-pro"
+   },
+   "primaryKeyword": "favicon generator",
+   "secondaryKeywords": [
+    "ICO converter",
+    "PNG to ICO",
+    "apple touch icon generator"
+   ],
+   "longTailIntents": [
+    "create favicon for my website",
+    "make a favicon from png"
+   ],
+   "searcherType": "site owners, developers",
+   "related": [
+    "dev/pwa-builder-studio",
+    "seo/meta-tag-generator",
+    "img/svg-vectorizer-pro",
+    "img/image-studio-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "SEO & Webmaster Tools",
+    "Favicon Generator"
+   ]
+  },
+  {
+   "slug": "seo/hashtag-generator-pro",
+   "category": "seo",
+   "url": "https://trustedtoolsweb.com/tools/seo/hashtag-generator-pro",
+   "file": "tools/seo/hashtag-generator-pro.html",
+   "before": {
+    "title": "UltraTag AI Elite — Free Viral Keyword & Hashtag Generator 2026 | Trusted Tools Web",
+    "h1": "UltraTag AI Elite",
+    "description": "Generate 50+ viral tags & hashtags instantly for YouTube, Instagram, TikTok & Facebook. AI-powered, 100% free, client-side, no data stored. The best SEO keyword tool in 2026.",
+    "canonical": "https://trustedtoolsweb.com/tools/seo/hashtag-generator-pro",
+    "ogTitle": "UltraTag AI Elite — Free Viral Keyword & Hashtag Generator 2026",
+    "ogDescription": "Stop guessing. Use AI to generate 50+ high-ranking tags for YouTube, TikTok & Instagram. 100% Free, Client-Side & Secure.",
+    "jsonLdTypes": [
+     "Offer",
+     "Organization",
+     "Person",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Hashtag & Keyword Generator for YouTube, Instagram, TikTok",
+    "h1": "Hashtag & Keyword Generator",
+    "description": "Get hashtag and keyword ideas for YouTube, Instagram, TikTok and Facebook posts from your topic. Suggestions are ideas, not ranking guarantees.",
+    "canonical": "https://trustedtoolsweb.com/tools/seo/hashtag-generator-pro"
+   },
+   "primaryKeyword": "hashtag generator",
+   "secondaryKeywords": [
+    "YouTube tags generator",
+    "Instagram hashtags",
+    "TikTok hashtags"
+   ],
+   "longTailIntents": [
+    "hashtags for my instagram post",
+    "youtube video tags generator"
+   ],
+   "searcherType": "social media creators",
+   "related": [
+    "text/fancy-font-generator",
+    "img/youtube-thumbnail-downloader",
+    "seo/meta-tag-generator",
+    "text/word-counter-analyzer"
+   ],
+   "breadcrumb": [
+    "Home",
+    "SEO & Webmaster Tools",
+    "Hashtag & Keyword Generator"
+   ]
+  },
+  {
+   "slug": "seo/link-shortener-pro",
+   "category": "seo",
+   "url": "https://trustedtoolsweb.com/tools/seo/link-shortener-pro",
+   "file": "tools/seo/link-shortener-pro.html",
+   "before": {
+    "title": "URL Shortener Pro Max | Free Link Shortener & QR Code Generator",
+    "h1": "URL Shortener Pro Max",
+    "description": "Shorten long URLs instantly with Custom Aliases, UTM Analytics & High-Quality QR Codes. 100% Free, Secure, Client-Side processing. Best tool for creators & marketers.",
+    "canonical": "https://trustedtoolsweb.com/tools/seo/link-shortener-pro",
+    "ogTitle": "URL Shortener Pro Max - Shorten, Track & Create QR Codes Free",
+    "ogDescription": "Create short links and custom QR codes instantly. Features custom aliases, UTM analytics, and privacy protection. Try it now — 100% free!",
+    "jsonLdTypes": [
+     "Offer",
+     "Organization",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "URL Shortener with Custom Alias, UTM Builder & QR Code",
+    "h1": "URL Shortener, UTM Builder & QR Code",
+    "description": "Shorten links through third-party services (is.gd, TinyURL), add UTM parameters and create a QR code. Links you shorten are sent to those services.",
+    "canonical": "https://trustedtoolsweb.com/tools/seo/link-shortener-pro"
+   },
+   "primaryKeyword": "URL shortener",
+   "secondaryKeywords": [
+    "UTM builder",
+    "short link generator",
+    "custom alias link"
+   ],
+   "longTailIntents": [
+    "shorten a long url free",
+    "add utm parameters to link"
+   ],
+   "searcherType": "marketers, social media users",
+   "related": [
+    "img/qr-code-generator-pro",
+    "seo/meta-tag-generator",
+    "seo/sitemap-generator-pro",
+    "seo/hashtag-generator-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "SEO & Webmaster Tools",
+    "URL Shortener, UTM Builder & QR Code"
+   ]
+  },
+  {
+   "slug": "seo/meta-tag-generator",
+   "category": "seo",
+   "url": "https://trustedtoolsweb.com/tools/seo/meta-tag-generator",
+   "file": "tools/seo/meta-tag-generator.html",
+   "before": {
+    "title": "Meta Gen Ultra — Free SEO Meta Tag Generator, SERP Preview & Social Card Builder",
+    "h1": "Meta Gen Ultra Pro",
+    "description": "Generate pixel-perfect Google Title Tags, Meta Descriptions, Open Graph, and Twitter Cards instantly. Live SERP preview, real-time SEO scoring, and zero data upload. 100% Free & Client-Side.",
+    "canonical": "https://trustedtoolsweb.com/tools/seo/meta-tag-generator",
+    "ogTitle": "Meta Gen Ultra — SEO Meta Tag Generator | Trusted Tools Web",
+    "ogDescription": "Build perfect SEO meta tags and preview them live as a Google SERP result or social card. Fast, free, and 100% client-side.",
+    "jsonLdTypes": [
+     "Answer",
+     "FAQPage",
+     "HowTo",
+     "HowToStep",
+     "Offer",
+     "Organization",
+     "Question",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Meta Tag Generator – Title, Description, Open Graph",
+    "h1": "Meta Tag Generator with SERP Preview",
+    "description": "Write title tags, meta descriptions, Open Graph and Twitter Card tags with a live Google-style preview and length checks, then copy the HTML.",
+    "canonical": "https://trustedtoolsweb.com/tools/seo/meta-tag-generator"
+   },
+   "primaryKeyword": "meta tag generator",
+   "secondaryKeywords": [
+    "open graph generator",
+    "twitter card generator",
+    "SERP preview tool",
+    "title tag length checker"
+   ],
+   "longTailIntents": [
+    "generate meta tags for my website",
+    "preview how my page looks on google"
+   ],
+   "searcherType": "site owners, SEO beginners",
+   "related": [
+    "seo/robots-txt-generator",
+    "seo/sitemap-generator-pro",
+    "seo/favicon-generator-pro",
+    "text/word-counter-analyzer"
+   ],
+   "breadcrumb": [
+    "Home",
+    "SEO & Webmaster Tools",
+    "Meta Tag Generator with SERP Preview"
+   ]
+  },
+  {
+   "slug": "seo/robots-txt-generator",
+   "category": "seo",
+   "url": "https://trustedtoolsweb.com/tools/seo/robots-txt-generator",
+   "file": "tools/seo/robots-txt-generator.html",
+   "before": {
+    "title": "Robots.txt Generator Pro — Block AI Scrapers & Control Crawlers | Trusted Tools Web",
+    "h1": "Robots.txt Generator Pro",
+    "description": "Generate RFC 9309-compliant robots.txt files instantly. Block AI scrapers (GPTBot, CCBot, ClaudeBot), set crawl delay, manage Googlebot access, and add sitemap URLs — 100% free, secure & client-side.",
+    "canonical": "https://trustedtoolsweb.com/tools/seo/robots-txt-generator",
+    "ogTitle": "Robots.txt Generator Pro — Block AI Scrapers & Control Crawlers",
+    "ogDescription": "Create SEO-optimised robots.txt files in seconds. Block AI training bots, manage crawl budgets and add sitemap URLs — 100% client-side and secure.",
+    "jsonLdTypes": [
+     "Answer",
+     "FAQPage",
+     "Offer",
+     "Organization",
+     "Person",
+     "Question",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Robots.txt Generator – Control Crawlers & AI Bots",
+    "h1": "Robots.txt Generator",
+    "description": "Build a robots.txt with allow and disallow rules, crawl-delay, a sitemap line and optional AI-crawler rules such as GPTBot. It is not access control.",
+    "canonical": "https://trustedtoolsweb.com/tools/seo/robots-txt-generator"
+   },
+   "primaryKeyword": "robots.txt generator",
+   "secondaryKeywords": [
+    "block AI bots robots.txt",
+    "disallow rules generator",
+    "crawl delay"
+   ],
+   "longTailIntents": [
+    "create robots.txt file online",
+    "block gptbot in robots txt"
+   ],
+   "searcherType": "webmasters, site owners",
+   "related": [
+    "seo/sitemap-generator-pro",
+    "seo/meta-tag-generator",
+    "dev/pwa-builder-studio",
+    "seo/favicon-generator-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "SEO & Webmaster Tools",
+    "Robots.txt Generator"
+   ]
+  },
+  {
+   "slug": "seo/sitemap-generator-pro",
+   "category": "seo",
+   "url": "https://trustedtoolsweb.com/tools/seo/sitemap-generator-pro",
+   "file": "tools/seo/sitemap-generator-pro.html",
+   "before": {
+    "title": "Bulk URL to XML Sitemap Generator — Free, Fast & Unlimited | Trusted Tools Web",
+    "h1": "Bulk URL to XML Sitemap Generator",
+    "description": "Generate Google & Bing-ready XML Sitemaps instantly from any URL list. Set Priority, ChangeFreq & LastMod. 100% client-side — your data never leaves the browser. Free forever.",
+    "canonical": "https://trustedtoolsweb.com/tools/seo/sitemap-generator-pro",
+    "ogTitle": "Bulk URL to XML Sitemap Generator — Free & Unlimited | Trusted Tools Web",
+    "ogDescription": "Convert any URL list into a Google-ready XML Sitemap in seconds. Supports 50,000 URLs, CSV import, Priority & LastMod settings. 100% secure & free.",
+    "jsonLdTypes": [
+     "Offer",
+     "Organization",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "XML Sitemap Generator – Build a Sitemap from a URL List",
+    "h1": "XML Sitemap Generator from a URL List",
+    "description": "Paste a list of URLs and generate a valid XML sitemap with priority, change frequency and last-modified values. It does not crawl your site.",
+    "canonical": "https://trustedtoolsweb.com/tools/seo/sitemap-generator-pro"
+   },
+   "primaryKeyword": "XML sitemap generator",
+   "secondaryKeywords": [
+    "sitemap.xml generator",
+    "bulk URL sitemap",
+    "sitemap from url list"
+   ],
+   "longTailIntents": [
+    "create sitemap xml from list of urls",
+    "sitemap for google search console"
+   ],
+   "searcherType": "webmasters, SEO beginners",
+   "related": [
+    "seo/robots-txt-generator",
+    "seo/meta-tag-generator",
+    "dev/pwa-builder-studio",
+    "text/bulk-data-extractor"
+   ],
+   "breadcrumb": [
+    "Home",
+    "SEO & Webmaster Tools",
+    "XML Sitemap Generator from a URL List"
+   ]
+  },
+  {
+   "slug": "text/advanced-text-editor",
+   "category": "text",
+   "url": "https://trustedtoolsweb.com/tools/text/advanced-text-editor",
+   "file": "tools/text/advanced-text-editor.html",
+   "before": {
+    "title": "TextNova Core — Advanced Text Manipulation Studio | Trusted Tools",
+    "h1": "TextNova Core",
+    "description": "TextNova Core: The ultimate free, client-side text manipulation studio for developers. Format JSON & SQL, test Regex, generate UUIDs & SHA-256 hashes, encode Base64 — all securely inside your browser. Zero server uploads. Zero data risk.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/advanced-text-editor",
+    "ogTitle": "TextNova Core — Free Advanced Text Manipulation Studio",
+    "ogDescription": "Format JSON, beautify SQL, convert case, encode/decode Base64 & URL, generate hashes and UUIDs — 100% client-side. Your data never leaves your browser.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Online Text Editor – Format, Regex, Hash & UUID Tools",
+    "h1": "Online Text Editor with Developer Utilities",
+    "description": "A text workspace for formatting JSON and SQL, testing regular expressions, generating UUIDs and SHA-256 hashes, and other text transformations.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/advanced-text-editor"
+   },
+   "primaryKeyword": "online text editor",
+   "secondaryKeywords": [
+    "regex tester",
+    "UUID generator",
+    "text formatter",
+    "SQL formatter"
+   ],
+   "longTailIntents": [
+    "test regular expressions online",
+    "generate uuid online"
+   ],
+   "searcherType": "developers, writers",
+   "related": [
+    "text/diff-checker-pro",
+    "text/word-counter-analyzer",
+    "dev/json-formatter-validator",
+    "dev/markdown-editor-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Text Tools",
+    "Online Text Editor with Developer Utilities"
+   ]
+  },
+  {
+   "slug": "text/bulk-data-extractor",
+   "category": "text",
+   "url": "https://trustedtoolsweb.com/tools/text/bulk-data-extractor",
+   "file": "tools/text/bulk-data-extractor.html",
+   "before": {
+    "title": "Bulk Data Extractor & Regex Miner PRO — Extract Emails, Phones, URLs, IPs | Trusted Tools Web",
+    "h1": "Bulk Data Extractor & Regex Miner PRO",
+    "description": "Instantly extract Emails, Phone Numbers, URLs, IP Addresses & Custom Regex patterns from any text, file, or image with AI-powered OCR. 100% client-side, free, private, and secure. Export results as CSV or ZIP.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/bulk-data-extractor",
+    "ogTitle": "Bulk Data Extractor & Regex Miner PRO | Trusted Tools Web",
+    "ogDescription": "Extract Emails, Phones, URLs, IPs & Custom Regex from text, files, or images (OCR). Free, 100% client-side. Export to CSV or ZIP instantly.",
+    "jsonLdTypes": [
+     "HowTo",
+     "HowToStep",
+     "Offer",
+     "Organization",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Extract Emails, Phone Numbers & URLs from Text",
+    "h1": "Email, Phone & URL Extractor",
+    "description": "Pull emails, phone numbers, URLs, IP addresses or your own regex matches out of pasted text, files or images (OCR). Works in your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/bulk-data-extractor"
+   },
+   "primaryKeyword": "extract emails from text",
+   "secondaryKeywords": [
+    "phone number extractor",
+    "URL extractor",
+    "regex extractor",
+    "OCR text extractor"
+   ],
+   "longTailIntents": [
+    "extract all emails from a document",
+    "get urls from text"
+   ],
+   "searcherType": "marketers, analysts, developers",
+   "related": [
+    "text/number-prefix-formatter",
+    "text/advanced-text-editor",
+    "text/diff-checker-pro",
+    "dev/sql-studio-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Text Tools",
+    "Email, Phone & URL Extractor"
+   ]
+  },
+  {
+   "slug": "text/diff-checker-pro",
+   "category": "text",
+   "url": "https://trustedtoolsweb.com/tools/text/diff-checker-pro",
+   "file": "tools/text/diff-checker-pro.html",
+   "before": {
+    "title": "Ultra Diff Pro Max — Free Online Diff Checker, Code Compare & Text Difference Finder (2026)",
+    "h1": "Ultra Diff Pro Max",
+    "description": "Compare text, code, JSON, HTML and find differences instantly with Ultra Diff Pro Max. 100% client-side processing — your data never leaves your browser. Features split view, unified view, beautifier, minifier, and one-click diff report export.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/diff-checker-pro",
+    "ogTitle": "Ultra Diff Pro Max — Secure Online Code & Text Comparison Tool",
+    "ogDescription": "Find differences in code or text instantly. Features include JSON Beautifier, Minifier, Split/Unified Views, and 100% Offline Privacy. No data leaves your browser.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Diff Checker – Compare Two Texts or Code Online",
+    "h1": "Diff Checker: Compare Text & Code",
+    "description": "Paste two versions of text, code, JSON or HTML and see added, removed and changed lines side by side. The comparison happens in your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/diff-checker-pro"
+   },
+   "primaryKeyword": "diff checker",
+   "secondaryKeywords": [
+    "compare text online",
+    "text compare",
+    "code diff"
+   ],
+   "longTailIntents": [
+    "find the difference between two texts",
+    "compare two json files"
+   ],
+   "searcherType": "developers, writers, editors",
+   "related": [
+    "text/advanced-text-editor",
+    "dev/json-formatter-validator",
+    "text/word-counter-analyzer",
+    "dev/markdown-editor-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Text Tools",
+    "Diff Checker: Compare Text & Code"
+   ]
+  },
+  {
+   "slug": "text/fancy-font-generator",
+   "category": "text",
+   "url": "https://trustedtoolsweb.com/tools/text/fancy-font-generator",
+   "file": "tools/text/fancy-font-generator.html",
+   "before": {
+    "title": "TextPro Max: Fancy Font Generator, Glitch Text & Typography Studio | Trusted Tools Web",
+    "h1": "TextPro Max Studio",
+    "description": "Create aesthetic fancy fonts, Zalgo glitch text, ASCII art, Morse code, and typography images instantly. 100% free, secure, and client-side — no server uploads, no data leaks. Perfect for Instagram, TikTok, gaming & social media.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/fancy-font-generator",
+    "ogTitle": "TextPro Max Studio — Fancy Fonts, Glitch Art & Typography | Trusted Tools Web",
+    "ogDescription": "Generate aesthetic fonts, Zalgo glitch effects, ASCII art & typography images. 100% client-side privacy — your text never leaves your browser.",
+    "jsonLdTypes": [
+     "Offer",
+     "Organization",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Fancy Font Generator – Cool Text, Glitch & Morse Code",
+    "h1": "Fancy Font & Text Style Generator",
+    "description": "Turn plain text into fancy Unicode fonts, Zalgo glitch text, ASCII art or Morse code to paste into bios and posts. Some apps may not display every style.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/fancy-font-generator"
+   },
+   "primaryKeyword": "fancy font generator",
+   "secondaryKeywords": [
+    "cool text generator",
+    "glitch text",
+    "Zalgo text generator",
+    "Morse code translator"
+   ],
+   "longTailIntents": [
+    "stylish fonts for instagram bio",
+    "text to morse code"
+   ],
+   "searcherType": "social media users",
+   "related": [
+    "seo/hashtag-generator-pro",
+    "img/meme-generator-studio",
+    "text/word-counter-analyzer",
+    "text/handwriting-converter-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Text Tools",
+    "Fancy Font & Text Style Generator"
+   ]
+  },
+  {
+   "slug": "text/handwriting-converter-pro",
+   "category": "text",
+   "url": "https://trustedtoolsweb.com/tools/text/handwriting-converter-pro",
+   "file": "tools/text/handwriting-converter-pro.html",
+   "before": {
+    "title": "Handwriter Ultra Pro Max: Text to Handwriting Converter (Bangla & English)",
+    "h1": "Handwriter Ultra Pro Max",
+    "description": "Convert digital text to realistic human handwriting instantly. Supports Bangla (Galada) & English fonts. Free PDF export, customizable ink, and 100% client-side privacy. The best assignment maker tool in BD.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/handwriting-converter-pro",
+    "ogTitle": "Handwriter Ultra Pro Max - Realistic Text to Note Generator",
+    "ogDescription": "Generate professional handwritten assignments with Galada & Mina fonts. 100% Free & Private.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Text to Handwriting Converter – English & Bangla",
+    "h1": "Text to Handwriting Converter",
+    "description": "Turn typed text into handwriting-style pages in English or Bangla, adjust ink and paper, and export a PDF or images.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/handwriting-converter-pro"
+   },
+   "primaryKeyword": "text to handwriting",
+   "secondaryKeywords": [
+    "handwriting generator",
+    "assignment handwriting",
+    "Bangla handwriting font"
+   ],
+   "longTailIntents": [
+    "convert typed text to handwritten notes",
+    "bangla text to handwriting online"
+   ],
+   "searcherType": "students",
+   "related": [
+    "text/fancy-font-generator",
+    "text/word-counter-analyzer",
+    "pdf/image-to-pdf-converter",
+    "text/text-to-speech-studio"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Text Tools",
+    "Text to Handwriting Converter"
+   ]
+  },
+  {
+   "slug": "text/number-prefix-formatter",
+   "category": "text",
+   "url": "https://trustedtoolsweb.com/tools/text/number-prefix-formatter",
+   "file": "tools/text/number-prefix-formatter.html",
+   "before": {
+    "title": "Number Prefix Ultra Pro Max — Bulk Phone Number Formatter | Trusted Tools Web",
+    "h1": "Number Prefix Ultra Pro Max",
+    "description": "Free bulk phone number formatter tool. Instantly add country codes (prefixes), suffixes, and generate WhatsApp & Telegram links to thousands of numbers. 100% Client-Side — your data never leaves your device.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/number-prefix-formatter",
+    "ogTitle": "Number Prefix Ultra Pro Max | Free Bulk Formatter — Trusted Tools Web",
+    "ogDescription": "Format thousands of phone numbers instantly. Add country codes, prefixes, and suffixes securely in your browser. No server upload. 100% private.",
+    "jsonLdTypes": [
+     "AggregateRating",
+     "Offer",
+     "Organization",
+     "Person",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Bulk Phone Number Formatter – Add Country Code & WhatsApp Links",
+    "h1": "Bulk Phone Number Formatter",
+    "description": "Add a country code, prefix or suffix to a list of phone numbers and generate WhatsApp or Telegram links in bulk. Formatting only; no numbers are checked.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/number-prefix-formatter"
+   },
+   "primaryKeyword": "add country code to phone numbers",
+   "secondaryKeywords": [
+    "bulk phone number formatter",
+    "WhatsApp link generator",
+    "number prefix tool"
+   ],
+   "longTailIntents": [
+    "add 91 to a list of numbers",
+    "generate whatsapp links from numbers"
+   ],
+   "searcherType": "marketers, support teams",
+   "related": [
+    "text/bulk-data-extractor",
+    "text/advanced-text-editor",
+    "tool/gmail-alias-generator",
+    "img/qr-code-generator-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Text Tools",
+    "Bulk Phone Number Formatter"
+   ]
+  },
+  {
+   "slug": "text/text-to-speech-studio",
+   "category": "text",
+   "url": "https://trustedtoolsweb.com/tools/text/text-to-speech-studio",
+   "file": "tools/text/text-to-speech-studio.html",
+   "before": {
+    "title": "Ultra Text To Speech Studio — Free Unlimited Voice Generator | Trusted Tools Web",
+    "h1": "Ultra TTS Studio Pro",
+    "description": "Convert Text, PDF, and Images to natural speech instantly. Free unlimited TTS Studio with multi-voice mixer, background music, OCR image-to-text, and 100% offline client-side privacy. No sign-up required.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/text-to-speech-studio",
+    "ogTitle": "Ultra TTS Studio — Free Unlimited Voice Generator",
+    "ogDescription": "Generate studio-quality voiceovers from text, PDFs, or images. 100% client-side privacy with unlimited recording. No limits, no sign-up.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Text to Speech – Read Text, PDF or Images Aloud",
+    "h1": "Text to Speech Studio",
+    "description": "Convert text, PDF files or OCR-read images to speech with your browser’s voices and download audio. Available voices depend on your device and browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/text-to-speech-studio"
+   },
+   "primaryKeyword": "text to speech",
+   "secondaryKeywords": [
+    "TTS online",
+    "PDF to speech",
+    "read text aloud",
+    "image to speech"
+   ],
+   "longTailIntents": [
+    "convert text to voice online free",
+    "read a pdf out loud"
+   ],
+   "searcherType": "students, content creators",
+   "related": [
+    "media/audio-studio-pro",
+    "text/word-counter-analyzer",
+    "pdf/pdf-ocr-signer-pro",
+    "text/handwriting-converter-pro"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Text Tools",
+    "Text to Speech Studio"
+   ]
+  },
+  {
+   "slug": "text/typing-speed-test",
+   "category": "text",
+   "url": "https://trustedtoolsweb.com/tools/text/typing-speed-test",
+   "file": "tools/text/typing-speed-test.html",
+   "before": {
+    "title": "HyperType X — Pro Coding Speed Test | Trusted Tools Web",
+    "h1": "HyperType X — Pro Coding Speed Test",
+    "description": "Boost your programming productivity with HyperType X — the #1 free WPM test for developers. Practice with real code snippets, measure Net WPM & accuracy, and build coding muscle memory. 100% client-side, no sign-up required.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/typing-speed-test",
+    "ogTitle": "HyperType X — Master Your Keystrokes | Free Coding Speed Test",
+    "ogDescription": "Improve coding efficiency with real code-syntax paragraphs. Measure WPM and Accuracy with the developer-focused HyperType X engine — free, no login, 100% private.",
+    "jsonLdTypes": [
+     "Offer",
+     "Organization",
+     "Person",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Typing Speed Test for Programmers – WPM with Code",
+    "h1": "Typing Speed Test for Coding (WPM)",
+    "description": "Practise typing real code snippets and measure net WPM and accuracy. Useful for programmers who want to type symbols and brackets faster.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/typing-speed-test"
+   },
+   "primaryKeyword": "typing speed test",
+   "secondaryKeywords": [
+    "coding typing test",
+    "WPM test",
+    "programmer typing practice"
+   ],
+   "longTailIntents": [
+    "typing test with code snippets",
+    "measure my wpm for coding"
+   ],
+   "searcherType": "programmers, students",
+   "related": [
+    "text/word-counter-analyzer",
+    "text/advanced-text-editor",
+    "tool/focus-timer-pomodoro",
+    "text/fancy-font-generator"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Text Tools",
+    "Typing Speed Test for Coding (WPM)"
+   ]
+  },
+  {
+   "slug": "text/word-counter-analyzer",
+   "category": "text",
+   "url": "https://trustedtoolsweb.com/tools/text/word-counter-analyzer",
+   "file": "tools/text/word-counter-analyzer.html",
+   "before": {
+    "title": "Word Counter Ultra Pro — Free Secure SEO Text Analyzer | Trusted Tools Web (2026)",
+    "h1": "Word Counter Pro Max",
+    "description": "The best 100% client-side Word Counter & SEO Text Analyzer. Instantly check keyword density, character limits for X/Twitter, reading time, and more — all securely processed in your browser. No uploads. No server. No risk.",
+    "canonical": "https://trustedtoolsweb.com/tools/text/word-counter-analyzer",
+    "ogTitle": "Word Counter Ultra Pro — Secure SEO Text Analyzer | Trusted Tools Web",
+    "ogDescription": "Analyze text securely with zero server latency. Check keyword density, reading time, social media limits, and more — all processed locally in your browser.",
+    "jsonLdTypes": [
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Word Counter & Character Counter – Reading Time & Density",
+    "h1": "Word Counter & Text Analyzer",
+    "description": "Count words, characters, sentences and reading time, check keyword density and compare your length to platform limits such as X (Twitter).",
+    "canonical": "https://trustedtoolsweb.com/tools/text/word-counter-analyzer"
+   },
+   "primaryKeyword": "word counter",
+   "secondaryKeywords": [
+    "character counter",
+    "keyword density checker",
+    "reading time calculator"
+   ],
+   "longTailIntents": [
+    "count words in my essay",
+    "characters left for a tweet"
+   ],
+   "searcherType": "writers, students, SEO beginners",
+   "related": [
+    "text/typing-speed-test",
+    "text/advanced-text-editor",
+    "text/diff-checker-pro",
+    "seo/meta-tag-generator"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Text Tools",
+    "Word Counter & Text Analyzer"
+   ]
+  },
+  {
+   "slug": "tool/avatar-generator-pro",
+   "category": "tool",
+   "url": "https://trustedtoolsweb.com/tools/tool/avatar-generator-pro",
+   "file": "tools/tool/avatar-generator-pro.html",
+   "before": {
+    "title": "Identity Matrix — Secure Avatar & Glitch Art Generator | TrustedToolsWeb",
+    "h1": "Identity Matrix V6",
+    "description": "Generate unique, secure, and artistic avatars instantly with Identity Matrix. Features 8-Bit Retro, Neural Circuit, Cyber Glitch, and 6 more styles. 100% Client-Side Privacy, Deterministic Seed Engine, and Ultra 4K Export — no data ever leaves your browser.",
+    "canonical": "https://trustedtoolsweb.com/tools/tool/avatar-generator-pro",
+    "ogTitle": "Identity Matrix V6 — Generate Secure Digital Identities | TrustedToolsWeb",
+    "ogDescription": "Don't use your real photo. Generate a professional, artistic, and anonymous avatar instantly with 9 algorithm engines. 100% browser-based — zero data stored.",
+    "jsonLdTypes": [
+     "Offer",
+     "Organization",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Avatar Generator – Unique Retro & Glitch Avatars",
+    "h1": "Avatar Generator",
+    "description": "Create unique avatars from any seed in styles like 8-bit retro, neural circuit and cyber glitch, and download them as images.",
+    "canonical": "https://trustedtoolsweb.com/tools/tool/avatar-generator-pro"
+   },
+   "primaryKeyword": "avatar generator",
+   "secondaryKeywords": [
+    "profile picture generator",
+    "pixel avatar generator",
+    "random avatar"
+   ],
+   "longTailIntents": [
+    "generate avatar from a username",
+    "unique profile picture maker"
+   ],
+   "searcherType": "gamers, developers, designers",
+   "related": [
+    "tool/random-name-generator",
+    "img/meme-generator-studio",
+    "img/svg-vectorizer-pro",
+    "dev/mock-data-generator"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Everyday Utilities",
+    "Avatar Generator"
+   ]
+  },
+  {
+   "slug": "tool/focus-timer-pomodoro",
+   "category": "tool",
+   "url": "https://trustedtoolsweb.com/tools/tool/focus-timer-pomodoro",
+   "file": "tools/tool/focus-timer-pomodoro.html",
+   "before": {
+    "title": "Ultra Focus Pro Max — Free Pomodoro Timer with Pink Noise & Binaural Beats | Trusted Tools Web",
+    "h1": "Ultra Focus Pro Max",
+    "description": "Boost productivity with Ultra Focus Pro Max. A next-generation Pomodoro timer featuring Pink Noise, 40Hz Gamma Binaural Beats, gamified XP tracking, and a drift-free timer engine. 100% free, client-side, and privacy-first.",
+    "canonical": "https://trustedtoolsweb.com/tools/tool/focus-timer-pomodoro",
+    "ogTitle": "Ultra Focus Pro Max — Hack Your Brain into Flow State | Trusted Tools Web",
+    "ogDescription": "Struggling to focus? Use the Holographic Focus Timer with built-in Neuro-Audio: Pink Noise, Gamma Binaural Beats, gamified streaks, and a drift-free Pomodoro engine. Completely free.",
+    "jsonLdTypes": [
+     "AggregateRating",
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Pomodoro Timer – Focus Timer with Pink Noise | Trusted Tools Web",
+    "h1": "Pomodoro Focus Timer",
+    "description": "A Pomodoro timer with focus and break cycles, optional pink noise and binaural beats, and simple session tracking.",
+    "canonical": "https://trustedtoolsweb.com/tools/tool/focus-timer-pomodoro"
+   },
+   "primaryKeyword": "pomodoro timer",
+   "secondaryKeywords": [
+    "focus timer",
+    "study timer",
+    "binaural beats for focus"
+   ],
+   "longTailIntents": [
+    "25 minute pomodoro timer online",
+    "study timer with white noise"
+   ],
+   "searcherType": "students, remote workers",
+   "related": [
+    "media/tone-frequency-generator",
+    "text/typing-speed-test",
+    "calc/age-calculator-pro",
+    "text/word-counter-analyzer"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Everyday Utilities",
+    "Pomodoro Focus Timer"
+   ]
+  },
+  {
+   "slug": "tool/gmail-alias-generator",
+   "category": "tool",
+   "url": "https://trustedtoolsweb.com/tools/tool/gmail-alias-generator",
+   "file": "tools/tool/gmail-alias-generator.html",
+   "before": {
+    "title": "Gmail Alias Generator Pro — Bulk Dot & Plus Trick Tool | Trusted Tools Web",
+    "h1": "Gmail Alias Generator Pro",
+    "description": "Instantly generate 10,000+ unique Gmail aliases using the Dot (.) and Plus (+) tricks. 100% client-side secure, free bulk email generator for privacy, QA testing, and spam protection. No data stored.",
+    "canonical": "https://trustedtoolsweb.com/tools/tool/gmail-alias-generator",
+    "ogTitle": "Gmail Alias Generator Pro — Secure Bulk Email Tool | Trusted Tools Web",
+    "ogDescription": "Turn one Gmail address into thousands of unique aliases. 100% Secure, Client-Side processing. Protect your privacy and test apps effortlessly using Dot and Plus tricks.",
+    "jsonLdTypes": [
+     "CreativeWork",
+     "Offer",
+     "Person",
+     "WebApplication"
+    ]
+   },
+   "after": {
+    "title": "Gmail Alias Generator – Dot & Plus Email Trick",
+    "h1": "Gmail Alias Generator (Dot & Plus Trick)",
+    "description": "Generate many Gmail address variants using the dot and plus tricks. All variants deliver to the same inbox, which is handy for filters and sign-up tracking.",
+    "canonical": "https://trustedtoolsweb.com/tools/tool/gmail-alias-generator"
+   },
+   "primaryKeyword": "Gmail alias generator",
+   "secondaryKeywords": [
+    "Gmail dot trick",
+    "Gmail plus addressing",
+    "email alias generator"
+   ],
+   "longTailIntents": [
+    "make multiple gmail addresses from one",
+    "gmail plus sign trick"
+   ],
+   "searcherType": "privacy-minded users, testers",
+   "related": [
+    "sec/password-generator-pro",
+    "tool/random-name-generator",
+    "dev/mock-data-generator",
+    "text/bulk-data-extractor"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Everyday Utilities",
+    "Gmail Alias Generator (Dot & Plus Trick)"
+   ]
+  },
+  {
+   "slug": "tool/random-name-generator",
+   "category": "tool",
+   "url": "https://trustedtoolsweb.com/tools/tool/random-name-generator",
+   "file": "tools/tool/random-name-generator.html",
+   "before": {
+    "title": "Random Name Generator & JSON Profile Creator — Free Dev Tool | Trusted Tools Web",
+    "h1": "Ultra Name Generator Pro",
+    "description": "Generate authentic random user profiles, names, and emails for Bangladesh, USA, India & 195 global regions. Free JSON & TXT export for developers and QA testers. 100% client-side — no data stored.",
+    "canonical": "https://trustedtoolsweb.com/tools/tool/random-name-generator",
+    "ogTitle": "Ultra Name Generator Pro — Free Random Profile Creator | Trusted Tools Web",
+    "ogDescription": "Instantly generate 500 mock user profiles with names, emails & regions for software testing. Export as JSON or TXT. 100% private & client-side.",
+    "jsonLdTypes": [
+     "AggregateRating",
+     "Offer",
+     "Organization",
+     "Person",
+     "SoftwareApplication"
+    ]
+   },
+   "after": {
+    "title": "Random Name Generator – Fake User Profiles as JSON",
+    "h1": "Random Name & User Profile Generator",
+    "description": "Generate random names, emails and profile data for many regions and export JSON or TXT for testing, mock-ups and writing. Data is fictional.",
+    "canonical": "https://trustedtoolsweb.com/tools/tool/random-name-generator"
+   },
+   "primaryKeyword": "random name generator",
+   "secondaryKeywords": [
+    "fake name generator",
+    "random user profile",
+    "test user data"
+   ],
+   "longTailIntents": [
+    "generate fake profiles for testing",
+    "random names from bangladesh or usa"
+   ],
+   "searcherType": "developers, writers, testers",
+   "related": [
+    "dev/mock-data-generator",
+    "tool/avatar-generator-pro",
+    "tool/gmail-alias-generator",
+    "dev/json-formatter-validator"
+   ],
+   "breadcrumb": [
+    "Home",
+    "Everyday Utilities",
+    "Random Name & User Profile Generator"
+   ]
+  }
+ ]
+}

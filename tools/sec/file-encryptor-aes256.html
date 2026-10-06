@@ -26,9 +26,9 @@
     <!-- ═══════════════════════════════════════════════════
          [USER CONFIG] SEO SETTINGS
          ═══════════════════════════════════════════════════ -->
-    <title>Data Vault ULTRA MAX: AES-256 File Encryptor &amp; Decryptor (Offline, Zero-Knowledge)</title>
-    <meta name="title"       content="Data Vault ULTRA MAX: AES-256 File Encryptor &amp; Decryptor (Offline, Zero-Knowledge)">
-    <meta name="description" content="Encrypt and decrypt any file with military-grade AES-256 encryption, 100% offline in your browser. Features Decoy Vault (plausible deniability), zero-knowledge architecture, and a real-password vs fake-password dual-vault system. No file ever leaves your device.">
+    <title>File Encryptor – AES-256 Encrypt &amp; Decrypt Files</title>
+    <meta name="title"       content="File Encryptor – AES-256 Encrypt &amp; Decrypt Files">
+    <meta name="description" content="Encrypt and decrypt files with AES-256 using the Web Crypto API, with an optional decoy vault. If you forget the password, the file cannot be recovered.">
     <meta name="keywords"    content="secure file encryptor, AES-256 decryption, zero knowledge file locker, offline privacy tool, file encryption browser, client-side encryption, plausible deniability vault, decoy vault, AES encryption tool, file locker online, secure file storage, privacy tool, end to end encryption files, trusted tools web">
     <meta name="author"      content="MD KAWSAR">
     <meta name="robots"      content="index, follow, max-image-preview:large">
@@ -39,8 +39,8 @@
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type"         content="website">
     <meta property="og:url"          content="https://trustedtoolsweb.com/tools/sec/file-encryptor-aes256">
-    <meta property="og:title"        content="Data Vault ULTRA MAX — AES-256 File Encryptor (Offline)">
-    <meta property="og:description"  content="Military-grade AES-256 file encryption, offline and zero-knowledge. Unique Decoy Vault feature for plausible deniability. No file ever uploads to a server.">
+    <meta property="og:title"        content="File Encryptor – AES-256 Encrypt &amp; Decrypt Files">
+    <meta property="og:description"  content="Encrypt and decrypt files with AES-256 using the Web Crypto API, with an optional decoy vault. If you forget the password, the file cannot be recovered.">
     <meta property="og:image"        content="https://trustedtoolsweb.com/assets/img/og-banner.jpg">
     <meta property="og:image:width"  content="1200">
     <meta property="og:image:height" content="630">
@@ -50,8 +50,8 @@
     <!-- Twitter Card -->
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:url"         content="https://trustedtoolsweb.com/tools/sec/file-encryptor-aes256">
-    <meta name="twitter:title"       content="Data Vault ULTRA MAX — AES-256 File Encryptor (Offline)">
-    <meta name="twitter:description" content="Encrypt any file with AES-256 in your browser. No uploads, no servers. Decoy Vault for plausible deniability. 100% Zero-Knowledge.">
+    <meta name="twitter:title"       content="File Encryptor – AES-256 Encrypt &amp; Decrypt Files">
+    <meta name="twitter:description" content="Encrypt and decrypt files with AES-256 using the Web Crypto API, with an optional decoy vault. If you forget the password, the file cannot be recovered.">
     <meta name="twitter:image"       content="https://trustedtoolsweb.com/assets/img/og-banner.jpg">
 
     <!-- Favicon -->
@@ -70,34 +70,58 @@
 
    
     <!-- Schema Markup (JSON-LD) — WebApplication -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Data Vault ULTRA MAX: AES-256 File Encryptor",
-        "url": "https://trustedtoolsweb.com/tools/sec/file-encryptor-aes256",
-        "description": "A zero-knowledge, 100% client-side AES-256 file encryption and decryption tool. Features plausible deniability via the Decoy Vault system. No file ever leaves your browser.",
-        "applicationCategory": "SecurityApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript",
-        "softwareVersion": "1.0",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-        },
-        "author": {
-            "@type": "Person",
-            "name": "MD KAWSAR",
-            "url": "https://trustedtoolsweb.com"
-        },
-        "featureList": "AES-256 Encryption, AES-256 Decryption, Decoy Vault, Plausible Deniability, Zero-Knowledge Architecture, Offline Processing, Client-Side Only, No Server Upload, Mobile Friendly",
-        "screenshot": "https://trustedtoolsweb.com/assets/img/og-banner.jpg",
-        "keywords": "secure file encryptor, AES-256 decryption, zero knowledge file locker, offline privacy tool, file encryption browser"
-    }
-    </script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "File Encryptor (AES-256)",
+  "url": "https://trustedtoolsweb.com/tools/sec/file-encryptor-aes256",
+  "description": "Encrypt and decrypt files with AES-256 using the Web Crypto API, with an optional decoy vault. If you forget the password, the file cannot be recovered.",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "softwareVersion": "1.0",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "MD KAWSAR",
+    "url": "https://trustedtoolsweb.com"
+  },
+  "featureList": "AES-256 Encryption, AES-256 Decryption, Decoy Vault, Plausible Deniability, Zero-Knowledge Architecture, Offline Processing, Client-Side Only, No Server Upload, Mobile Friendly",
+  "screenshot": "https://trustedtoolsweb.com/assets/img/og-banner.jpg",
+  "keywords": "secure file encryptor, AES-256 decryption, zero knowledge file locker, offline privacy tool, file encryption browser"
+}</script>
 
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://trustedtoolsweb.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Security & Privacy Tools",
+      "item": "https://trustedtoolsweb.com/categories/security-tools"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "File Encryptor (AES-256)",
+      "item": "https://trustedtoolsweb.com/tools/sec/file-encryptor-aes256"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
 
@@ -106,6 +130,7 @@
 
     <!-- Global Header (populated by global.js) -->
     <header id="global-header" class="site-header"></header>
+    <nav class="ttw-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="../../">Home</a></li><li><a href="../../categories/security-tools">Security &amp; Privacy Tools</a></li><li aria-current="page">File Encryptor (AES-256)</li></ol></nav>
 
 
     <main>
@@ -128,8 +153,7 @@
 
             <!-- Tool Title -->
             <h1 class="tool-title">
-                <i class="fa-solid fa-vault"></i> Data Vault <span>ULTRA MAX</span>
-            </h1>
+                    <i class="fa-solid fa-vault"></i> File Encryptor <span>(AES-256)</span></h1>
             <p class="subtitle">Military-Grade AES-256 File Encryption &amp; Decryption. Runs entirely in your browser — no uploads, no servers, no compromise.</p>
 
             <!-- ─────────────────────────────────────────
@@ -557,8 +581,7 @@
                 -->
                 <div id="dynamic-related-tools"
                      data-category="sec"
-                     data-current-page="file-encryptor-aes256.html">
-                </div>
+                     data-current-page="file-encryptor-aes256.html" data-static-related="true"><h2 class="section-title">Related tools</h2><ul class="ttw-related-list"><li><a href="../../tools/sec/password-generator-pro">Strong Password Generator</a><span>Create random passwords with adjustable length and character sets using the browser’s cryptographic random generator. Nothing is sent or stored.</span></li><li><a href="../../tools/sec/steganography-vault">Image Steganography: Hide a Message in a Picture</a><span>Hide a message inside an image with LSB steganography and optional AES-256 encryption, and extract it later. Use lossless PNG; JPEG recompression can destroy it.</span></li><li><a href="../../tools/sec/p2p-secure-file-share">P2P File Transfer with WebRTC</a><span>Send files directly between two devices over WebRTC with AES-256 encryption and QR pairing. Files are not stored on a server; a connection service pairs devices.</span></li><li><a href="../../tools/dev/code-encoder-decoder">Encoder &amp; Decoder: Base64, Hex, Binary, JWT, AES</a><span>Encode and decode Base64, Hex, Binary and ASCII, inspect JWT tokens, create hashes and HMACs, and use AES-256 encryption. Processed locally in your browser.</span></li></ul></div>
             </div>
             <script type="module" src="../../assets/js/related-tools.js"></script>
 

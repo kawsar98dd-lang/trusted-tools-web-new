@@ -122,7 +122,7 @@
         <div class="policy-card">
             <div class="policy-header">
                 <h1 class="policy-title">Privacy Policy</h1>
-                <p class="last-updated">Last Updated: January 14, 2026</p>
+                <p class="last-updated">Last Updated: October 6, 2026</p>
             </div>
 
             <div class="policy-content">
@@ -160,12 +160,26 @@
 
                 <h2>4. How We Handle Your Files</h2>
                 <p>
-                    For tools like Image Compressor, PDF Converter, or Code Diff Checker:
+                    For most tools, such as the Image Compressor, PDF tools or Diff Checker:
                 </p>
                 <ul>
-                    <li><strong>Zero Upload Policy:</strong> We do not upload your files to any cloud server.</li>
-                    <li><strong>Local Processing:</strong> All calculations and conversions occur within your browser's memory using JavaScript.</li>
-                    <li><strong>Automatic Deletion:</strong> Since data is never stored, simply refreshing the page wipes all temporary data instantly.</li>
+                    <li><strong>No file uploads:</strong> We do not upload the files or text you work with to our servers.</li>
+                    <li><strong>Local Processing:</strong> Calculations and conversions occur within your browser's memory using JavaScript and WebAssembly.</li>
+                    <li><strong>Temporary data:</strong> Data is not stored by us, so refreshing the page clears what the tool holds in memory. A few tools (for example the Resume Builder or 2FA Authenticator) can save data in your own browser storage, which you can clear in your browser settings.</li>
+                </ul>
+
+                <h2>Tools and Features That Use External Services</h2>
+                <p>
+                    A few features cannot work without contacting another service. Only the information needed for that feature is sent:
+                </p>
+                <ul>
+                    <li><strong>Unit &amp; Currency Converter:</strong> requests current exchange rates from a third-party rates service.</li>
+                    <li><strong>Internet Speed Test and IP Address Lookup:</strong> contact Cloudflare speed servers and third-party IP-information services, which see your IP address.</li>
+                    <li><strong>YouTube Thumbnail Downloader:</strong> requests the thumbnail and video details from YouTube and related image and metadata services.</li>
+                    <li><strong>URL Shortener:</strong> sends the link you shorten to third-party shortening services (such as is.gd and TinyURL), so do not shorten private links.</li>
+                    <li><strong>P2P File Transfer:</strong> uses public STUN servers to discover network addresses; files travel directly between your devices.</li>
+                    <li><strong>AI Image Upscaler and Video Studio:</strong> download their AI model or FFmpeg engine files from a CDN the first time you use them; your images and videos are not uploaded.</li>
+                    <li><strong>Comments:</strong> if you post a comment or attach a file, the comment and attachment are sent to our comments backend and upload service and stored there. New comments may also trigger a notification to the site operator.</li>
                 </ul>
 
                 <h2>5. CCPA Privacy Rights (Do Not Sell My Personal Information)</h2>

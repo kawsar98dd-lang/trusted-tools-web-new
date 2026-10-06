@@ -2385,3 +2385,26 @@ body.light-mode .ttw-voice-preview-player {
         font-size : 0.95rem;
     }
 }
+
+/* ===== Breadcrumbs & curated related-tools list (Phase 5 SEO) ===== */
+.ttw-breadcrumb { max-width: 950px; margin: 14px auto 0; padding: 0 16px; font-size: 0.85rem; }
+.ttw-breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 0; }
+.ttw-breadcrumb li { display: inline-flex; align-items: center; color: #8b949e; max-width: 100%; overflow-wrap: anywhere; }
+.ttw-breadcrumb li + li::before { content: "\203A"; margin: 0 8px; color: #6e7681; }
+.ttw-breadcrumb a { color: var(--accent-color, #00e5ff); text-decoration: none; padding: 6px 0; display: inline-block; }
+.ttw-breadcrumb a:hover, .ttw-breadcrumb a:focus-visible { text-decoration: underline; }
+.ttw-related-list { list-style: none; margin: 0 0 10px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.ttw-related-list li { background: var(--container-bg, #161b22); border: 1px solid var(--border-color, #30363d); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.ttw-related-list a { font-weight: 700; color: var(--accent-color, #00e5ff); text-decoration: none; overflow-wrap: anywhere; }
+.ttw-related-list a:hover, .ttw-related-list a:focus-visible { text-decoration: underline; }
+.ttw-related-list span { font-size: 0.85rem; color: #8b949e; line-height: 1.5; }
+body.light-mode .ttw-breadcrumb li, body.light-mode .ttw-related-list span { color: #57606a; }
+
+/* Homepage category index (Phase 5 SEO) */
+.ttw-home-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px 28px; }
+.ttw-home-col h3 { font-size: 1.05rem; margin: 0 0 8px; }
+.ttw-home-col h3 a { color: var(--accent-color, #00e5ff); text-decoration: none; }
+.ttw-home-col h3 small { color: #8b949e; font-weight: 400; }
+.ttw-home-col ul { list-style: none; margin: 0; padding: 0; }
+.ttw-home-col li a { display: inline-block; padding: 5px 0; color: inherit; text-decoration: none; font-size: 0.92rem; overflow-wrap: anywhere; }
+.ttw-home-col li a:hover, .ttw-home-col li a:focus-visible { color: var(--accent-color, #00e5ff); text-decoration: underline; }
